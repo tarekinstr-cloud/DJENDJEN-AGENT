@@ -13,4 +13,4 @@ CONTACT_PHONE = os.getenv("CONTACT_PHONE", "")
 CONTACT_WHATSAPP = os.getenv("CONTACT_WHATSAPP", "")
 
 OUTPUT_DIR = os.getenv("OUTPUT_DIR", "output")
-MODEL = os.getenv("CLAUDE_MODEL", "claude-opus-4-8")
+MODEL = os.getenv("CLAUDE_MODEL", "claude-haiku-4-5-20251001")
