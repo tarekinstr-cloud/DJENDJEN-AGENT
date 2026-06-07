@@ -2,295 +2,334 @@ import random
 from datetime import datetime, timedelta
 
 AGENCY_NAME = "Djen-Djen Travel"
-UMRAH_PRICE = "215,000 DZD"
-PHONE = "📞 Contactez-nous pour plus d'infos"
-HASHTAGS_UMRAH = "#Omra #Omra2026 #DjenDjenTravel #Algerie #Voyage #Makkah #Madinah"
-HASHTAGS_TIPS = "#ConseilsVoyage #DjenDjenTravel #Algerie #Voyage #Astuce"
-HASHTAGS_INTER = "#DjenDjenTravel #Algerie #Voyage #Sondage #Communauté"
-HASHTAGS_TESTI = "#Avis #DjenDjenTravel #Algerie #Omra #Satisfaction"
+UMRAH_PRICE = "215,000 دج"
+PHONE = "📞 تواصلوا معنا للمزيد من المعلومات"
+HASHTAGS_UMRAH = "#عمرة #عمرة2026 #DjenDjenTravel #الجزائر #سفر #مكة #المدينة"
+HASHTAGS_TIPS = "#نصائح_السفر #DjenDjenTravel #الجزائر #سفر #نصيحة"
+HASHTAGS_INTER = "#DjenDjenTravel #الجزائر #سفر #استطلاع #مجتمع"
+HASHTAGS_TESTI = "#تقييم #DjenDjenTravel #الجزائر #عمرة #رضا"
+
+ARABIC_DAYS = {
+    "Monday": "الاثنين",
+    "Tuesday": "الثلاثاء",
+    "Wednesday": "الأربعاء",
+    "Thursday": "الخميس",
+    "Friday": "الجمعة",
+    "Saturday": "السبت",
+    "Sunday": "الأحد",
+}
+
+ARABIC_MONTHS = {
+    "January": "جانفي",
+    "February": "فيفري",
+    "March": "مارس",
+    "April": "أفريل",
+    "May": "ماي",
+    "June": "جوان",
+    "July": "جويلية",
+    "August": "أوت",
+    "September": "سبتمبر",
+    "October": "أكتوبر",
+    "November": "نوفمبر",
+    "December": "ديسمبر",
+}
+
+ARABIC_CATEGORIES = {
+    "عمرة": "عمرة",
+    "نصائح السفر": "نصائح السفر",
+    "تفاعلي": "تفاعلي",
+    "شهادة": "شهادة عميل",
+}
+
+
+def arabic_date(dt: datetime) -> str:
+    day_en = dt.strftime("%A")
+    month_en = dt.strftime("%B")
+    return f"{ARABIC_DAYS[day_en]} {dt.day} {ARABIC_MONTHS[month_en]} {dt.year}"
+
 
 UMRAH_POSTS = [
-    """🕋 OFFRE OMRA 2026 — {price} seulement !
+    """🕋 عرض العمرة 2026 — بـ {price} بس !
 
-Partez accomplir votre Omra avec {agency}, votre agence de confiance en Algérie.
+سافروا تأدّوا العمرة مع {agency}، الوكالة اللي تثقوا فيها في الجزائر.
 
-✅ Vol aller-retour inclus
-✅ Hébergement 4★ à La Mecque & Médine
-✅ Transferts & encadrement religieux
-✅ Visa Omra pris en charge
-✅ Accompagnateur expérimenté tout au long du séjour
+✅ رحلة ذهاب وإياب
+✅ إقامة 4 نجوم في مكة المكرمة والمدينة المنورة
+✅ نقل ومرافقة دينية
+✅ تأشيرة العمرة مضمونة
+✅ مرافق متمرس طول الرحلة
 
-💰 À partir de {price} par personne
+💰 من {price} للشخص الواحد
 
-Les places sont limitées — réservez dès maintenant pour garantir votre place !
-
-{phone}
-{hashtags}""",
-
-    """🌙 VOTRE RÊVE À PORTÉE DE MAIN — Omra {price}
-
-{agency} vous offre un voyage spirituel inoubliable vers les Lieux Saints.
-
-🛫 Départ depuis Alger
-🏨 Hôtels proches des Harams
-🤲 Encadrement religieux qualifié
-📋 Toutes les démarches administratives gérées pour vous
-
-✨ Prix tout inclus : {price} par personne
-
-Ne laissez pas passer cette opportunité unique !
-Appelez-nous ou envoyez un message en privé pour réserver.
+الأماكن محدودة — احجزوا درك باش تضمنوا مكانكم !
 
 {phone}
 {hashtags}""",
 
-    """🕌 OMRA — L'OFFRE QUI FAIT LA DIFFÉRENCE !
+    """🌙 حلمكم قريب — عمرة بـ {price}
 
-Avec {agency}, votre voyage spirituel est entre de bonnes mains.
+{agency} تقدملكم رحلة روحانية لا تُنسى لأقدس البقاع.
 
-📦 Notre forfait à {price} comprend :
-• Billet d'avion aller-retour
-• Hébergement en chambre double/triple
-• Pension complète (selon formule)
-• Guide religieux dédié
-• Assurance voyage
-• Carte SIM locale offerte
+🛫 المغادرة من الجزائر العاصمة
+🏨 فنادق قريبة من الحرمين الشريفين
+🤲 مرافقة دينية متخصصة
+📋 كل الإجراءات الإدارية علينا
 
-🗓️ Départs programmés tout au long de l'année
+✨ السعر شامل كل شيء : {price} للشخص
 
-Faites confiance à l'expérience — faites confiance à {agency} !
+ما تفوّتوش هاد الفرصة النادرة !
+تصلو بينا ولا راسلونا على الخاص باش تحجزوا.
 
 {phone}
 {hashtags}""",
 
-    """✈️ PARTEZ EN OMRA AVEC SÉRÉNITÉ — {price}
+    """🕌 عمرة — العرض اللي يفرق !
 
-{agency} s'occupe de tout pour que vous vous consacriez uniquement à l'adoration.
+مع {agency}، رحلتكم الروحانية في أيدي أمينة.
 
-🌟 Pourquoi nous choisir ?
-→ Plus de 10 ans d'expérience dans le voyage religieux
-→ Équipe professionnelle & bienveillante
-→ Suivi personnalisé de chaque pèlerin
-→ Tarif transparent, sans surprises
+📦 الفورفي ديالنا بـ {price} يشمل :
+• تذكرة الطائرة ذهاب وإياب
+• إقامة في غرفة مزدوجة أو ثلاثية
+• وجبات كاملة (حسب الفورمول)
+• مرشد ديني خاص
+• تأمين على السفر
+• شريحة SIM محلية مجانية
 
-💎 Forfait complet dès {price}
+🗓️ مواعيد مغادرة على مدار السنة
 
-Contactez-nous aujourd'hui et partez l'esprit tranquille.
+ثقوا في التجربة — ثقوا في {agency} !
+
+{phone}
+{hashtags}""",
+
+    """✈️ سافروا للعمرة بقلب مرتاح — {price}
+
+{agency} تتكفل بكل شيء باش تتفرغوا للعبادة.
+
+🌟 علاش تختارونا ؟
+← أكثر من 10 سنوات في السفر الديني
+← فريق محترف ومتفاني
+← متابعة شخصية لكل حاج
+← سعر واضح بلا مفاجآت
+
+💎 فورفي كامل من {price}
+
+تواصلوا معنا اليوم وسافروا بدون هم.
 
 {phone}
 {hashtags}""",
 ]
 
 TIPS_POSTS = [
-    """💡 ASTUCE VOYAGE #1 — Préparez votre valise comme un pro !
+    """💡 نصيحة السفر #1 — جهّزوا الشنطة ديالكم كالمحترفين !
 
-Voyager serein commence par une bonne préparation. Voici nos conseils :
+السفر براحة يبدا من التحضير المزيان. هاهي نصايحنا :
 
-🧳 Emportez uniquement le nécessaire (max 23 kg en soute)
-💊 Mettez vos médicaments en bagage cabine
-📄 Gardez vos documents (passeport, billets) toujours accessibles
-🔌 Prenez un adaptateur universel
-💧 Restez hydraté pendant le vol
+🧳 خذوا غير الضروري (ما تعدّوش 23 كيلو في الحامولة)
+💊 حطوا الدواء في حقيبة الكابين
+📄 الوثائق (جواز السفر، التذاكر) تكونوا وصّلينها دايما
+🔌 خذوا محوّل كهربائي عالمي
+💧 اشربوا بزاف ماء في الطائرة
 
-Avec {agency}, vous voyagez l'esprit léger — on gère le reste !
-
-{phone}
-{hashtags}""",
-
-    """🌍 ASTUCE VOYAGE #2 — Évitez le mal des transports !
-
-Un long trajet ? Voici comment le rendre agréable :
-
-😴 Dormez bien la veille du départ
-🍋 Évitez les repas lourds avant et pendant le vol
-👁️ Regardez l'horizon ou fermez les yeux
-🎧 Musique douce ou podcasts pour se détendre
-🧘 Faites quelques étirements toutes les 2 heures
-
-{agency} veille à votre confort du début à la fin du voyage !
+مع {agency}، سافروا بقلب خفيف — إحنا نتكفلوا بالباقي !
 
 {phone}
 {hashtags}""",
 
-    """📸 ASTUCE VOYAGE #3 — Immortalisez vos souvenirs !
+    """🌍 نصيحة السفر #2 — تفادوا دوار السفر !
 
-Quelques conseils pour garder de beaux souvenirs de vos voyages :
+رحلة طويلة ؟ هاك كيفاش تخليوها مريحة :
 
-📱 Chargez vos appareils avant de partir
-☁️ Activez la sauvegarde automatique de vos photos
-🌅 Photographiez tôt le matin pour une belle lumière
-🗺️ Notez les noms des lieux visités pour ne rien oublier
-📔 Tenez un petit journal de voyage
+😴 نوموا مليح الليلة اللي قبل المغادرة
+🍋 ما تاكلوش ثقيل قبل وأثناء الطيران
+👁️ شوفوا الأفق ولا غمضوا عيونكم
+🎧 موسيقى هادية ولا بودكاست باش تسترخوا
+🧘 تمططوا شوية كل ساعتين
 
-Chaque voyage avec {agency} est une histoire à raconter !
-
-{phone}
-{hashtags}""",
-
-    """💰 ASTUCE VOYAGE #4 — Gérez votre budget intelligemment !
-
-Voyager malin, c'est voyager mieux. Nos conseils finance :
-
-🏦 Changez de l'argent à l'avance pour éviter les mauvais taux
-💳 Informez votre banque de votre destination
-🧾 Gardez vos reçus pour le suivi de dépenses
-🎁 Prévoyez un budget cadeaux et souvenirs
-⚠️ Gardez une réserve d'urgence
-
-Avec {agency}, nos forfaits tout inclus vous évitent les mauvaises surprises !
+{agency} تسهر على راحتكم من الأول للآخر !
 
 {phone}
 {hashtags}""",
 
-    """🧴 ASTUCE VOYAGE #5 — Santé & hygiène en voyage !
+    """📸 نصيحة السفر #3 — خلّدوا ذكرياتكم !
 
-Rester en bonne santé pendant votre voyage, c'est essentiel :
+نصايح باش تحتفظوا بأجمل لحظات سفركم :
 
-💉 Vérifiez vos vaccinations avant de partir
-🤲 Lavez-vous régulièrement les mains
-🥗 Évitez les aliments douteux dans certains pays
-🌡️ Emportez un thermomètre et une trousse de premiers soins
-☀️ Protégez-vous du soleil (crème SPF, chapeau)
+📱 شحنوا أجهزتكم قبل ما تسافروا
+☁️ فعّلوا النسخ الاحتياطي التلقائي للصور
+🌅 صوّروا في الصباح الباكر — الضوء يكون أجمل
+🗺️ دوّنوا أسماء الأماكن باش ما تنساوش
+📔 اكتبوا يومية سفر
 
-Voyagez sainement avec {agency} — votre bien-être est notre priorité !
+كل رحلة مع {agency} هي حكاية تستاهل تُروى !
+
+{phone}
+{hashtags}""",
+
+    """💰 نصيحة السفر #4 — دبّروا الميزانية ديالكم بذكاء !
+
+السفر الذكي هو السفر الأحسن. نصايحنا المالية :
+
+🏦 صرفوا الفلوس مسبقًا باش تتفادوا الأسعار الغالية
+💳 عاودوا بلّغوا البنك ديالكم بالوجهة
+🧾 احتفظوا بالفواتير لمتابعة المصاريف
+🎁 حضّروا ميزانية للهدايا والتذكارات
+⚠️ احتفظوا بمبلغ احتياطي للطوارئ
+
+مع {agency}، فورفياتنا الشاملة تحميكم من أي مفاجأة !
+
+{phone}
+{hashtags}""",
+
+    """🧴 نصيحة السفر #5 — الصحة والنظافة في السفر !
+
+تبقوا بصحة كاملة في رحلتكم — هاذا مهم :
+
+💉 تحققوا من التطعيمات قبل السفر
+🤲 اغسلوا إيديكم بانتظام
+🥗 تفادوا المأكولات المشكوك فيها في بعض البلدان
+🌡️ خذوا ترمومتر وحقيبة إسعافات أولية
+☀️ احموا أنفسكم من الشمس (كريم واقي، قبعة)
+
+سافروا بصحة مع {agency} — صحتكم أولويتنا !
 
 {phone}
 {hashtags}""",
 ]
 
 INTERACTIVE_POSTS = [
-    """🗳️ SONDAGE DU JOUR !
+    """🗳️ استطلاع اليوم !
 
-Quelle est votre destination de rêve pour 2026 ?
+وين تحبوا تسافروا في 2026 ؟
 
-👉 Commentez avec votre réponse :
-🕋 A — La Mecque & Médine (Omra)
-🇹🇷 B — Istanbul, Turquie
-🇦🇪 C — Dubaï, Émirats
-🇫🇷 D — Paris, France
-🌍 E — Autre destination (laquelle ?)
+👉 علّقوا بإجابتكم :
+🕋 أ — مكة المكرمة والمدينة المنورة (عمرة)
+🇹🇷 ب — إسطنبول، تركيا
+🇦🇪 ج — دبي، الإمارات
+🇫🇷 د — باريس، فرنسا
+🌍 هـ — وجهة أخرى (قولولنا وين !)
 
-Partagez vos rêves avec nous ! {agency} peut les réaliser 🌟
-
-{phone}
-{hashtags}""",
-
-    """❓ QUESTION DU JOUR !
-
-Quand vous voyagez, quelle est votre priorité absolue ?
-
-🏨 A — Un hébergement confortable
-🍽️ B — La gastronomie locale
-🗺️ C — Les sites historiques & culturels
-💆 D — La tranquillité & la détente
-📸 E — Les belles photos & souvenirs
-
-Répondez en commentaire — on est curieux de vous connaître ! 😊
-
-{agency} adapte chaque voyage à VOS envies.
+شاركونا أحلامكم ! {agency} تقدر تحققها 🌟
 
 {phone}
 {hashtags}""",
 
-    """🤔 DÉBAT VOYAGEUR !
+    """❓ سؤال اليوم !
 
-Quelle formule préférez-vous ?
+كي تسافروا، شنو هو أهم شيء عندكم ؟
 
-✈️🏨 A — Forfait tout inclus (sans prise de tête)
-🗓️ B — Voyage organisé en groupe (plus convivial)
-🎒 C — Voyage sur mesure (selon mes envies)
+🏨 أ — إقامة مريحة
+🍽️ ب — المأكولات المحلية
+🗺️ ج — المواقع التاريخية والثقافية
+💆 د — الراحة والهدوء
+📸 هـ — الصور والذكريات الجميلة
 
-Dites-nous en commentaire ! Et si vous avez une anecdote de voyage, partagez-la — on adore vous lire 🥰
+جاوبوا في التعليقات — نحبو نعرفوكم أكثر ! 😊
 
-{agency} propose les 3 formules pour tous les profils de voyageurs !
-
-{phone}
-{hashtags}""",
-
-    """💬 PARTAGEZ VOTRE EXPÉRIENCE !
-
-Avez-vous déjà voyagé avec {agency} ?
-
-Si oui — qu'est-ce que vous avez préféré dans votre voyage ?
-Si non — quelle destination vous fait envie ?
-
-👇 Répondez en commentaire, on lit et répond à TOUS les messages !
-
-Votre avis compte énormément pour nous et pour notre communauté 🙏
+{agency} تكيّف كل رحلة حسب رغباتكم.
 
 {phone}
 {hashtags}""",
 
-    """🌟 JEU CONCOURS — GAGNEZ UN BON DE RÉDUCTION !
+    """🤔 نقاش المسافرين !
 
-Pour participer :
-1️⃣ Likez cette publication
-2️⃣ Partagez sur votre profil
-3️⃣ Taguez 2 amis qui adorent voyager
+أنتم علاش تفضّلوا ؟
 
-Le gagnant remportera un bon de réduction sur son prochain voyage avec {agency} !
+✈️🏨 أ — فورفي شامل كل شيء (بلا هم)
+🗓️ ب — رحلة منظمة مع مجموعة (أمتع وأحلى)
+🎒 ج — رحلة حسب مقاسي (على طريقتي)
 
-Tirage au sort dans 48h ⏰ Bonne chance à tous !
+قولولنا في التعليقات ! وكي عندكم نكتة ولا قصة من سفر، شاركونا — نحبو نقراوكم 🥰
+
+{agency} تقدم الصيغ الثلاثة لكل أنواع المسافرين !
+
+{phone}
+{hashtags}""",
+
+    """💬 شاركونا تجربتكم !
+
+واش سبق سافرتوا مع {agency} ؟
+
+إذا نعم — شنو عجبكم أكثر في رحلتكم ؟
+إذا لا — أي وجهة تجذبكم ؟
+
+👇 علّقوا هنا، إحنا نقراوا ونجاوبوا على كل التعليقات !
+
+رأيكم يهمنا بزاف ويهم المجتمع ديالنا كلو 🙏
+
+{phone}
+{hashtags}""",
+
+    """🌟 مسابقة — ربحوا قسيمة تخفيض !
+
+باش تشاركوا :
+1️⃣ عجبوا المنشور
+2️⃣ شاركوه على بروفايلكم
+3️⃣ تاغوا 2 صحاب يحبوا السفر
+
+الفائز يربح قسيمة تخفيض على رحلته الجاية مع {agency} !
+
+القرعة بعد 48 ساعة ⏰ بالتوفيق للجميع !
 
 {phone}
 {hashtags}""",
 ]
 
 TESTIMONIAL_POSTS = [
-    """⭐⭐⭐⭐⭐ TÉMOIGNAGE CLIENT
+    """⭐⭐⭐⭐⭐ شهادة عميل
 
-« J'ai effectué mon Omra avec {agency} en 2025 et ce fut une expérience spirituelle et humaine extraordinaire. L'organisation était parfaite, l'hébergement excellent et l'accompagnateur très compétent. Je recommande vivement cette agence à tous ! »
+« عملت عمرتي مع {agency} في 2025 وكانت تجربة روحانية وإنسانية ما نتناسهاش. التنظيم كان مثالي، الإقامة ممتازة، والمرافق كان كفؤ بزاف. ننصح بهاد الوكالة لكل الناس ! »
 
-— Fatima B., Alger
+— فاطمة ب.، الجزائر العاصمة
 
-Merci Fatima pour ce beau témoignage 🙏
-Vous aussi, faites confiance à {agency} pour votre prochain voyage !
-
-{phone}
-{hashtags}""",
-
-    """💛 ILS NOUS FONT CONFIANCE — LISEZ LEURS MOTS !
-
-« Dès le premier contact, l'équipe de {agency} nous a mis à l'aise. Ils ont géré tous les détails de notre voyage à Istanbul : visa, hôtel, excursions. On n'a eu qu'à profiter ! On reviendra sans hésiter. »
-
-— Karim & Souad, Oran
-
-Merci pour votre confiance et votre fidélité 🌟
-Contactez-nous pour vivre la même expérience !
+يعطيك الصحة يا فاطمة على هاد الشهادة الجميلة 🙏
+وأنتم كذلك، ثقوا في {agency} لرحلتكم الجاية !
 
 {phone}
 {hashtags}""",
 
-    """🙏 UN TÉMOIGNAGE QUI NOUS TOUCHE LE CŒUR
+    """💛 يثقوا فينا — اقراوا كلامهم !
 
-« Accomplir l'Omra était mon rêve depuis des années. Grâce à {agency}, ce rêve est devenu réalité. L'organisation était irréprochable, les guides très pédagogues, et le prix vraiment raisonnable pour la qualité offerte. Jazakoum Allahou Khayran. »
+« من أول تواصل، فريق {agency} ريّحونا. تكفلوا بكل تفاصيل رحلتنا لإسطنبول : التأشيرة، الفندق، الجولات. ما عندناش غير نستمتعوا ! نرجعوا معهم بلا تردد. »
 
-— Hadj Mohamed R., Constantine
+— كريم وسعاد، وهران
 
-Que Allah accepte votre Omra 🤲
-Rejoignez des milliers de pèlerins satisfaits — réservez avec {agency} !
-
-{phone}
-{hashtags}""",
-
-    """🌸 TÉMOIGNAGE — PREMIÈRE EXPÉRIENCE INTERNATIONALE
-
-« C'était mon premier voyage à l'étranger et j'avais peur de mal gérer. L'équipe de {agency} m'a accompagné pas à pas, du visa jusqu'au retour. Je suis rentrée avec des souvenirs plein la tête et l'envie de repartir ! »
-
-— Amina L., Sétif
-
-Premier voyage ou dixième — {agency} vous accompagne toujours avec le même soin 💪
+يعطيكم الصحة على ثقتكم ووفائكم 🌟
+تواصلوا معنا وعيشوا نفس التجربة !
 
 {phone}
 {hashtags}""",
 
-    """📣 CE QUE DISENT NOS CLIENTS PARLE MIEUX QUE NOUS !
+    """🙏 شهادة تلمس القلب
 
-« Forfait Omra à {price} — j'avais des doutes au début, mais la qualité était au-delà de mes attentes. Hôtel à 200m du Haram, repas délicieux, groupe formidable. Je repars l'année prochaine avec {agency} c'est certain ! »
+« العمرة كانت حلمي من سنين. بفضل {agency}، الحلم تحقق. التنظيم كان لا غبار عليه، المرشدين كانوا بيداغوجيين، والسعر كان معقول للجودة المقدمة. جزاكم الله خيرًا. »
 
-— Noureddine T., Blida
+— الحاج محمد ر.، قسنطينة
 
-Votre satisfaction est notre plus belle récompense 🏆
+تقبّل الله عمرتكم 🤲
+انضموا لآلاف الحجاج الراضين — احجزوا مع {agency} !
+
+{phone}
+{hashtags}""",
+
+    """🌸 شهادة — أول تجربة في الخارج
+
+« كانت أول مرة نسافر لبرا وكنت خايف ما نعرفش ندبّر. فريق {agency} رافقني خطوة بخطوة من التأشيرة لحتى العودة. رجعت بذكريات ملاح وبالحرص نعاود نسافر ! »
+
+— أمينة ل.، سطيف
+
+أول رحلة ولا عاشرة — {agency} دايما معاكم بنفس الاهتمام 💪
+
+{phone}
+{hashtags}""",
+
+    """📣 كلام عملاؤنا يحكي عوضنا !
+
+« فورفي العمرة بـ {price} — في الأول كنت مشكّك، أما الجودة فاقت توقعاتي. الفندق على بعد 200 متر من الحرم، الأكل لذيذ، والمجموعة كانت رائعة. نرجع العام الجاي مع {agency} حتمًا ! »
+
+— نور الدين ت.، البليدة
+
+رضاكم هو أجمل مكافأة لينا 🏆
 
 {phone}
 {hashtags}""",
@@ -301,10 +340,10 @@ def get_week_posts(week_number: int, start_date: datetime) -> list[dict]:
     random.seed(week_number)
 
     categories = [
-        ("Omra", random.choice(UMRAH_POSTS)),
-        ("Astuce Voyage", random.choice(TIPS_POSTS)),
-        ("Interactif", random.choice(INTERACTIVE_POSTS)),
-        ("Témoignage", random.choice(TESTIMONIAL_POSTS)),
+        ("عمرة", random.choice(UMRAH_POSTS)),
+        ("نصائح السفر", random.choice(TIPS_POSTS)),
+        ("تفاعلي", random.choice(INTERACTIVE_POSTS)),
+        ("شهادة", random.choice(TESTIMONIAL_POSTS)),
     ]
 
     days_offsets = [0, 2, 4, 6]
@@ -317,24 +356,63 @@ def get_week_posts(week_number: int, start_date: datetime) -> list[dict]:
             agency=AGENCY_NAME,
             price=UMRAH_PRICE,
             phone=PHONE,
-            hashtags=HASHTAGS_UMRAH if category == "Omra"
-            else HASHTAGS_TIPS if category == "Astuce Voyage"
-            else HASHTAGS_INTER if category == "Interactif"
+            hashtags=HASHTAGS_UMRAH if category == "عمرة"
+            else HASHTAGS_TIPS if category == "نصائح السفر"
+            else HASHTAGS_INTER if category == "تفاعلي"
             else HASHTAGS_TESTI,
         )
         posts.append({
             "week": week_number,
-            "date": post_date.strftime("%A %d %B %Y"),
+            "date": arabic_date(post_date),
             "category": category,
             "content": content,
         })
 
-    posts.sort(key=lambda p: p["date"])
+    posts.sort(key=lambda p: (start_date + timedelta(days=days_offsets[i])).toordinal()
+               if False else post_date.toordinal())
+    return posts
+
+
+def get_week_posts(week_number: int, start_date: datetime) -> list[dict]:
+    random.seed(week_number)
+
+    pool = [
+        ("عمرة", UMRAH_POSTS),
+        ("نصائح السفر", TIPS_POSTS),
+        ("تفاعلي", INTERACTIVE_POSTS),
+        ("شهادة", TESTIMONIAL_POSTS),
+    ]
+
+    days_offsets = [0, 2, 4, 6]
+    random.shuffle(days_offsets)
+
+    posts = []
+    for i, (category, templates) in enumerate(pool):
+        template = random.choice(templates)
+        post_date = start_date + timedelta(days=days_offsets[i])
+        content = template.format(
+            agency=AGENCY_NAME,
+            price=UMRAH_PRICE,
+            phone=PHONE,
+            hashtags=HASHTAGS_UMRAH if category == "عمرة"
+            else HASHTAGS_TIPS if category == "نصائح السفر"
+            else HASHTAGS_INTER if category == "تفاعلي"
+            else HASHTAGS_TESTI,
+        )
+        posts.append({
+            "week": week_number,
+            "date": arabic_date(post_date),
+            "sort_key": post_date.toordinal(),
+            "category": category,
+            "content": content,
+        })
+
+    posts.sort(key=lambda p: p["sort_key"])
     return posts
 
 
 def generate_posts(num_weeks: int = 4, output_file: str = "posts.txt"):
-    start_date = datetime(2026, 6, 8)  # Next Monday
+    start_date = datetime(2026, 6, 8)
     all_posts = []
 
     for week in range(1, num_weeks + 1):
@@ -343,9 +421,9 @@ def generate_posts(num_weeks: int = 4, output_file: str = "posts.txt"):
 
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("=" * 70 + "\n")
-        f.write(f"  CALENDRIER FACEBOOK — {AGENCY_NAME.upper()}\n")
-        f.write(f"  Généré le : {datetime.now().strftime('%d/%m/%Y à %H:%M')}\n")
-        f.write(f"  Période : {num_weeks} semaines | {num_weeks * 4} publications\n")
+        f.write(f"  روزنامة فيسبوك — {AGENCY_NAME}\n")
+        f.write(f"  تاريخ الإنشاء : {datetime.now().strftime('%d/%m/%Y - %H:%M')}\n")
+        f.write(f"  المدة : {num_weeks} أسابيع | {num_weeks * 4} منشور\n")
         f.write("=" * 70 + "\n\n")
 
         current_week = 0
@@ -353,23 +431,23 @@ def generate_posts(num_weeks: int = 4, output_file: str = "posts.txt"):
             if post["week"] != current_week:
                 current_week = post["week"]
                 f.write(f"\n{'━' * 70}\n")
-                f.write(f"  SEMAINE {current_week}\n")
+                f.write(f"  الأسبوع {current_week}\n")
                 f.write(f"{'━' * 70}\n\n")
 
-            f.write(f"📅 DATE      : {post['date']}\n")
-            f.write(f"🏷️  CATÉGORIE : {post['category']}\n")
+            f.write(f"📅 التاريخ    : {post['date']}\n")
+            f.write(f"🏷️  الفئة      : {post['category']}\n")
             f.write(f"{'─' * 70}\n")
             f.write(post["content"])
             f.write(f"\n\n{'─' * 70}\n\n")
 
         f.write("=" * 70 + "\n")
-        f.write("  FIN DU CALENDRIER\n")
-        f.write(f"  Total : {len(all_posts)} publications sur {num_weeks} semaines\n")
+        f.write("  نهاية الروزنامة\n")
+        f.write(f"  المجموع : {len(all_posts)} منشور على {num_weeks} أسابيع\n")
         f.write("=" * 70 + "\n")
 
-    print(f"✅ {len(all_posts)} publications générées dans '{output_file}'")
-    print(f"   Période couverte : {num_weeks} semaines")
-    print(f"   Catégories : Omra, Astuces Voyage, Interactif, Témoignages")
+    print(f"✅ {len(all_posts)} منشور تم إنشاؤه في '{output_file}'")
+    print(f"   المدة المغطاة : {num_weeks} أسابيع")
+    print(f"   الفئات : عمرة، نصائح السفر، تفاعلي، شهادات")
 
 
 if __name__ == "__main__":
