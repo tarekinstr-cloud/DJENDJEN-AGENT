@@ -23,8 +23,7 @@ website/
 ├── js/
 │   ├── main.js         Language switch, mobile nav, booking modal
 │   └── forms.js        Request-form tabs, validation & WhatsApp message builder
-├── assets/
-│   └── logo.webp        ← ADD YOUR LOGO HERE (referenced by navbar + footer)
+├── logo.png            Agency logo (referenced by navbar + footer on every page)
 └── README.md
 ```
 
@@ -47,10 +46,11 @@ Edit those values to change the WhatsApp destinations (international format,
 no `+`). Arabic uses classical Arabic for Omra and Algerian darija for the
 other services.
 
-## ⚠️ Add the logo
+## Logo
 
-Drop your logo file into `website/assets/logo.webp`.
-The navbar and footer already reference it at that path.
+The logo lives at `website/logo.png` and is referenced by the navbar and
+footer on every page. To change it, replace that file (keep the name
+`logo.png`, or update the `src` in each `.html` if you use another name).
 
 ## Run locally
 
