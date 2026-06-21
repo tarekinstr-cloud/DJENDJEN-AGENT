@@ -20,13 +20,13 @@ website/
 ├── js/
 │   └── main.js         Language switch, mobile nav, booking modal, form validation
 ├── assets/
-│   └── logo.jpg        ← ADD YOUR LOGO HERE (referenced by navbar + footer)
+│   └── logo.webp        ← ADD YOUR LOGO HERE (referenced by navbar + footer)
 └── README.md
 ```
 
 ## ⚠️ Add the logo
 
-Drop your logo file into `website/assets/logo.jpg`.
+Drop your logo file into `website/assets/logo.webp`.
 The navbar and footer already reference it at that path.
 
 ## Run locally
