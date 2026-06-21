@@ -62,11 +62,12 @@
     });
   }
 
-  /* ---------- 3. Booking modal ---------- */
+  /* ---------- 3. Booking modal (only on pages that include it) ---------- */
   var modal = document.getElementById("bookingModal");
   var lastFocused = null;
 
   function openModal() {
+    if (!modal) return;
     lastFocused = document.activeElement;
     modal.hidden = false;
     modal.classList.add("is-open");
@@ -75,21 +76,24 @@
     if (btn) btn.focus();
   }
   function closeModal() {
+    if (!modal) return;
     modal.classList.remove("is-open");
     modal.hidden = true;
     document.body.style.overflow = "";
     if (lastFocused) lastFocused.focus();
   }
 
-  document.querySelectorAll("[data-open-modal]").forEach(function (el) {
-    el.addEventListener("click", openModal);
-  });
-  document.querySelectorAll("[data-close-modal]").forEach(function (el) {
-    el.addEventListener("click", closeModal);
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
-  });
+  if (modal) {
+    document.querySelectorAll("[data-open-modal]").forEach(function (el) {
+      el.addEventListener("click", openModal);
+    });
+    document.querySelectorAll("[data-close-modal]").forEach(function (el) {
+      el.addEventListener("click", closeModal);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+    });
+  }
 
   var confirmPay = document.getElementById("confirmPay");
   if (confirmPay) {

@@ -13,16 +13,39 @@ Deploy by uploading the `website/` folder to any static host
 
 ```
 website/
-├── index.html          Homepage (bilingual FR/AR, fully responsive)
+├── index.html          Homepage (Omra packages + all request forms)
+├── umrah.html          Omra page (details + Omra request form)
+├── voyages.html        Voyages, billets, hôtels & visas (request forms)
+├── apropos.html        À propos / من نحن (story, values, contact)
 ├── css/
 │   ├── tokens.css      Design system: colors, type, spacing, radius (CSS variables)
 │   └── styles.css      Components, layout, responsive rules, RTL mirroring
 ├── js/
-│   └── main.js         Language switch, mobile nav, booking modal, form validation
+│   ├── main.js         Language switch, mobile nav, booking modal
+│   └── forms.js        Request-form tabs, validation & WhatsApp message builder
 ├── assets/
 │   └── logo.webp        ← ADD YOUR LOGO HERE (referenced by navbar + footer)
 └── README.md
 ```
+
+## Request forms → WhatsApp
+
+Each service (Omra, Voyages, Billets, Hôtels, Visas) has a form. The visitor
+fills it, then chooses an office — **Bureau 1** or **Bureau 2** — and the
+filled message opens in WhatsApp ready to send.
+
+Office numbers live in one place, at the top of `js/forms.js`:
+
+```js
+var OFFICES = {
+  "1": "213661417571",   // 0661 41 75 71
+  "2": "213656281747"    // 0656 28 17 47
+};
+```
+
+Edit those values to change the WhatsApp destinations (international format,
+no `+`). Arabic uses classical Arabic for Omra and Algerian darija for the
+other services.
 
 ## ⚠️ Add the logo
 
