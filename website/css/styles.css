@@ -322,6 +322,33 @@ select.input { appearance: none; background-image:
 }
 
 /* WhatsApp office choice */
+/* Textarea (notes) */
+textarea.input { resize: vertical; min-height: 92px; line-height: 1.6; }
+
+/* Travelers (dynamic name + age rows) */
+.travelers { margin-block-end: var(--sp-6); }
+.travelers__label { display: block; font-weight: 700; font-size: .9rem; margin-block-end: var(--sp-3); color: var(--ink); }
+.travelers__list { display: grid; gap: var(--sp-3); }
+.traveler-row { display: grid; grid-template-columns: 1fr 96px 44px; gap: var(--sp-3); align-items: center; }
+.traveler-remove {
+  width: 44px; height: 44px; border-radius: var(--r-md);
+  border: 1px solid var(--line); background: var(--surface);
+  color: var(--red-500); font-size: 1.1rem; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.traveler-remove:hover { background: var(--red-100); border-color: var(--red-300); color: var(--red-700); }
+.traveler-remove:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.btn-add-traveler {
+  margin-block-start: var(--sp-3); min-height: 44px; padding: 0 var(--sp-5);
+  border-radius: var(--r-pill); border: 1px dashed var(--blue-300);
+  background: var(--blue-50); color: var(--blue-700); font-weight: 700; font-size: .9rem;
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+}
+.btn-add-traveler:hover { background: var(--blue-100); border-style: solid; }
+.btn-add-traveler:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.travelers__error { display: none; color: var(--red-700); font-size: .82rem; font-weight: 600; margin-block-start: var(--sp-3); }
+
 .wa-actions {
   margin-block-start: var(--sp-6); padding-block-start: var(--sp-6);
   border-block-start: 1px solid var(--line);
@@ -338,6 +365,7 @@ select.input { appearance: none; background-image:
 @media (max-width: 560px) {
   .field-row { grid-template-columns: 1fr; }
   .wa-actions__btns { flex-direction: column; }
+  .traveler-row { grid-template-columns: 1fr 72px 44px; gap: var(--sp-2); }
 }
 
 /* =====================================================================
