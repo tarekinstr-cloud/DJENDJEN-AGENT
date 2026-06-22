@@ -252,6 +252,32 @@ h1, h2, h3 {
 .meal-note h3 { font-size: 1.2rem; margin: 0 0 var(--sp-3); }
 .meal-note > p { color: var(--ink-soft); margin: 0 0 var(--sp-2); }
 
+.details-subhead { font-family: var(--font-heading); font-size: 1.5rem; color: var(--blue-900); margin: var(--sp-12) 0 var(--sp-6); }
+.price-tables { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); }
+.price-table {
+  width: 100%; border-collapse: collapse; background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.price-table caption {
+  font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem;
+  color: var(--blue-900); text-align: start; padding: var(--sp-4) var(--sp-6) 0;
+}
+.price-table th, .price-table td {
+  padding: var(--sp-3) var(--sp-6); text-align: start; font-size: .95rem;
+  border-block-start: 1px solid var(--line);
+}
+.price-table thead th {
+  background: var(--blue-50); color: var(--blue-700); font-weight: 700;
+  font-size: .82rem; text-transform: uppercase; letter-spacing: .04em;
+}
+.price-table tbody td:last-child { font-weight: 700; color: var(--blue-900); white-space: nowrap; }
+.price-table tbody tr:nth-child(even) { background: var(--bg); }
+
+@media (max-width: 720px) {
+  .price-tables { grid-template-columns: 1fr; }
+}
+
 /* =====================================================================
    Form inputs
    ===================================================================== */
