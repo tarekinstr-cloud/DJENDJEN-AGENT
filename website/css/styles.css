@@ -330,6 +330,10 @@ textarea.input { resize: vertical; min-height: 92px; line-height: 1.6; }
 .travelers__label { display: block; font-weight: 700; font-size: .9rem; margin-block-end: var(--sp-3); color: var(--ink); }
 .travelers__list { display: grid; gap: var(--sp-3); }
 .traveler-row { display: grid; grid-template-columns: 1fr 96px 44px; gap: var(--sp-3); align-items: center; }
+/* Passport column appears only for international trips */
+.traveler-passport { display: none; }
+.travelers.is-international .traveler-row { grid-template-columns: 1fr 80px 1.1fr 44px; }
+.travelers.is-international .traveler-passport { display: block; }
 .traveler-remove {
   width: 44px; height: 44px; border-radius: var(--r-md);
   border: 1px solid var(--line); background: var(--surface);
@@ -366,6 +370,9 @@ textarea.input { resize: vertical; min-height: 92px; line-height: 1.6; }
   .field-row { grid-template-columns: 1fr; }
   .wa-actions__btns { flex-direction: column; }
   .traveler-row { grid-template-columns: 1fr 72px 44px; gap: var(--sp-2); }
+  /* International on mobile: name on its own line, then age · passport · remove */
+  .travelers.is-international .traveler-row { grid-template-columns: 1fr 1fr 44px; }
+  .travelers.is-international [data-traveler-name] { grid-column: 1 / -1; }
 }
 
 /* =====================================================================
@@ -382,6 +389,7 @@ textarea.input { resize: vertical; min-height: 92px; line-height: 1.6; }
 .footer a:hover { color: #fff; }
 .footer__contact li { display: flex; gap: var(--sp-3); align-items: center; }
 .footer__contact .ico { color: var(--blue-300); }
+.footer__tag { font-size: .78rem; color: #7FA8BE; }
 .footer__bottom {
   margin-block-start: var(--sp-12); padding-block-start: var(--sp-6);
   border-block-start: 1px solid rgba(255,255,255,.12);

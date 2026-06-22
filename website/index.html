@@ -175,8 +175,8 @@
         <div class="section-head">
           <p class="eyebrow" data-fr="Votre demande" data-ar="طلبك">Votre demande</p>
           <h2 data-fr="Envoyez votre demande sur WhatsApp" data-ar="ابعث طلبك على واتساب">Envoyez votre demande sur WhatsApp</h2>
-          <p data-fr="Choisissez un service, remplissez le formulaire, puis choisissez le bureau. Votre message part déjà rempli sur WhatsApp." data-ar="اختر الخدمة، عمّر الفورمة، ومن بعد اختر المكتب. الرسالة تروح معمّرة على واتساب.">
-            Choisissez un service, remplissez le formulaire, puis choisissez le bureau. Votre message part déjà rempli sur WhatsApp.
+          <p data-fr="Choisissez un service, remplissez le formulaire et envoyez-le directement sur WhatsApp. Votre message part déjà rempli." data-ar="اختار الخدمة، عمّر الفورمة، وابعثها مباشرة على واتساب. الرسالة تروح معمّرة.">
+            Choisissez un service, remplissez le formulaire et envoyez-le directement sur WhatsApp. Votre message part déjà rempli.
           </p>
         </div>
 
@@ -225,11 +225,7 @@
             </div>
 
             <div class="wa-actions">
-              <p class="wa-actions__hint"><span class="wa-dot"></span><span data-fr="Choisissez un bureau" data-ar="اختر المكتب">Choisissez un bureau</span></p>
-              <div class="wa-actions__btns">
-                <button type="button" class="btn btn--primary wa-send" data-office="1"><span class="wa-icon">💬</span> <span data-fr="Bureau 1" data-ar="المكتب 1">Bureau 1</span></button>
-                <button type="button" class="btn btn--secondary wa-send" data-office="2"><span class="wa-icon">💬</span> <span data-fr="Bureau 2" data-ar="المكتب 2">Bureau 2</span></button>
-              </div>
+              <button type="button" class="btn btn--primary btn--lg btn--block wa-send"><span class="wa-icon">💬</span> <span data-fr="Envoyer votre demande sur WhatsApp" data-ar="أرسل طلبك عبر واتساب">Envoyer votre demande sur WhatsApp</span></button>
             </div>
           </form>
         </div>
@@ -270,11 +266,7 @@
               </div>
             </div>
             <div class="wa-actions">
-              <p class="wa-actions__hint"><span class="wa-dot"></span><span data-fr="Choisissez un bureau" data-ar="اختر المكتب">Choisissez un bureau</span></p>
-              <div class="wa-actions__btns">
-                <button type="button" class="btn btn--primary wa-send" data-office="1"><span class="wa-icon">💬</span> <span data-fr="Bureau 1" data-ar="المكتب 1">Bureau 1</span></button>
-                <button type="button" class="btn btn--secondary wa-send" data-office="2"><span class="wa-icon">💬</span> <span data-fr="Bureau 2" data-ar="المكتب 2">Bureau 2</span></button>
-              </div>
+              <button type="button" class="btn btn--primary btn--lg btn--block wa-send"><span class="wa-icon">💬</span> <span data-fr="Envoyer votre demande sur WhatsApp" data-ar="أرسل طلبك عبر واتساب">Envoyer votre demande sur WhatsApp</span></button>
             </div>
           </form>
         </div>
@@ -285,6 +277,15 @@
                 data-wa-title-fr="Bonjour, je souhaite réserver un billet :"
                 data-wa-title-ar="السلام عليكم، حاب نحجز تذكرة سفر:">
             <h3 data-fr="Billet d'avion" data-ar="تذكرة سفر">Billet d'avion</h3>
+            <div class="field">
+              <label data-fr="Destination du voyage" data-ar="وجهة الرحلة">Destination du voyage</label>
+              <select class="input" data-role="trip-scope" required>
+                <option value="" data-fr="— Choisir —" data-ar="— اختر —">— Choisir —</option>
+                <option value="domestic" data-fr="Domestique (national)" data-ar="داخلية">Domestique (national)</option>
+                <option value="international" data-fr="Internationale" data-ar="دولية">Internationale</option>
+              </select>
+              <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+            </div>
             <div class="field-row">
               <div class="field">
                 <label data-fr="Nom complet" data-ar="الاسم الكامل">Nom complet</label>
@@ -349,6 +350,7 @@
                 <div class="traveler-row" data-traveler-row>
                   <input class="input" type="text" data-traveler-name required aria-label="Nom du voyageur" data-ph-fr="Nom du voyageur" data-ph-ar="اسم المسافر" placeholder="Nom du voyageur" />
                   <input class="input" type="number" min="0" dir="ltr" data-traveler-age aria-label="Âge" data-ph-fr="Âge" data-ph-ar="العمر" placeholder="Âge" />
+                  <input class="input traveler-passport" type="text" dir="ltr" data-traveler-passport aria-label="N° passeport" data-ph-fr="N° passeport" data-ph-ar="رقم الجواز" placeholder="N° passeport" />
                   <button type="button" class="traveler-remove" data-remove-traveler aria-label="Supprimer">✕</button>
                 </div>
               </div>
@@ -360,11 +362,7 @@
               <textarea class="input" rows="3" data-ph-fr="Bagages, préférences de siège, escales…" data-ph-ar="الأمتعة، تفضيلات المقعد، التوقّفات…" placeholder="Bagages, préférences de siège, escales…"></textarea>
             </div>
             <div class="wa-actions">
-              <p class="wa-actions__hint"><span class="wa-dot"></span><span data-fr="Choisissez un bureau" data-ar="اختر المكتب">Choisissez un bureau</span></p>
-              <div class="wa-actions__btns">
-                <button type="button" class="btn btn--primary wa-send" data-office="1"><span class="wa-icon">💬</span> <span data-fr="Bureau 1" data-ar="المكتب 1">Bureau 1</span></button>
-                <button type="button" class="btn btn--secondary wa-send" data-office="2"><span class="wa-icon">💬</span> <span data-fr="Bureau 2" data-ar="المكتب 2">Bureau 2</span></button>
-              </div>
+              <button type="button" class="btn btn--primary btn--lg btn--block wa-send"><span class="wa-icon">💬</span> <span data-fr="Envoyer votre demande sur WhatsApp" data-ar="أرسل طلبك عبر واتساب">Envoyer votre demande sur WhatsApp</span></button>
             </div>
           </form>
         </div>
@@ -433,11 +431,7 @@
               </div>
             </div>
             <div class="wa-actions">
-              <p class="wa-actions__hint"><span class="wa-dot"></span><span data-fr="Choisissez un bureau" data-ar="اختر المكتب">Choisissez un bureau</span></p>
-              <div class="wa-actions__btns">
-                <button type="button" class="btn btn--primary wa-send" data-office="1"><span class="wa-icon">💬</span> <span data-fr="Bureau 1" data-ar="المكتب 1">Bureau 1</span></button>
-                <button type="button" class="btn btn--secondary wa-send" data-office="2"><span class="wa-icon">💬</span> <span data-fr="Bureau 2" data-ar="المكتب 2">Bureau 2</span></button>
-              </div>
+              <button type="button" class="btn btn--primary btn--lg btn--block wa-send"><span class="wa-icon">💬</span> <span data-fr="Envoyer votre demande sur WhatsApp" data-ar="أرسل طلبك عبر واتساب">Envoyer votre demande sur WhatsApp</span></button>
             </div>
           </form>
         </div>
@@ -485,11 +479,7 @@
               </div>
             </div>
             <div class="wa-actions">
-              <p class="wa-actions__hint"><span class="wa-dot"></span><span data-fr="Choisissez un bureau" data-ar="اختر المكتب">Choisissez un bureau</span></p>
-              <div class="wa-actions__btns">
-                <button type="button" class="btn btn--primary wa-send" data-office="1"><span class="wa-icon">💬</span> <span data-fr="Bureau 1" data-ar="المكتب 1">Bureau 1</span></button>
-                <button type="button" class="btn btn--secondary wa-send" data-office="2"><span class="wa-icon">💬</span> <span data-fr="Bureau 2" data-ar="المكتب 2">Bureau 2</span></button>
-              </div>
+              <button type="button" class="btn btn--primary btn--lg btn--block wa-send"><span class="wa-icon">💬</span> <span data-fr="Envoyer votre demande sur WhatsApp" data-ar="أرسل طلبك عبر واتساب">Envoyer votre demande sur WhatsApp</span></button>
             </div>
           </form>
         </div>
@@ -515,7 +505,7 @@
         <div>
           <h4 data-fr="Contact" data-ar="اتصل بنا">Contact</h4>
           <ul class="footer__contact">
-            <li><span class="ico">📞</span> <a href="tel:+213661417571"><bdi>0661 41 75 71</bdi></a></li>
+            <li><span class="ico">📞</span> <a href="tel:+213661417571"><bdi>0661 41 75 71</bdi></a> <span class="footer__tag" data-fr="(Renseignements)" data-ar="(للاستفسار)">(للاستفسار)</span></li>
             <li><span class="ico">📞</span> <a href="tel:+213673098932"><bdi>0673 09 89 32</bdi></a></li>
             <li><span class="ico">☎️</span> <a href="tel:+213030547293"><bdi>030 54 72 93</bdi></a></li>
           </ul>

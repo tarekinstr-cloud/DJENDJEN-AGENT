@@ -9,10 +9,13 @@
 (function () {
   "use strict";
 
-  // Office WhatsApp numbers (international format, no +)
-  var OFFICES = {
-    "1": "213661417571",
-    "2": "213656281747"
+  // WhatsApp booking number (international format, no +)
+  var SEND_NUMBER = "213656281747";
+
+  // Traveler validation messages
+  var TRAVELER_MSG = {
+    noname: { fr: "Ajoutez au moins un voyageur.", ar: "أضف مسافراً واحداً على الأقل." },
+    nopass: { fr: "Saisissez le numéro de passeport de chaque voyageur.", ar: "أدخل رقم جواز السفر لكل مسافر." }
   };
 
   var htmlEl = document.documentElement;
@@ -74,17 +77,38 @@
     return ok;
   }
 
-  // At least one named traveler (for forms that list travelers)
+  function showTravelerError(err, type, lang) {
+    if (!err) return;
+    err.textContent = (TRAVELER_MSG[type] || TRAVELER_MSG.noname)[lang];
+    err.style.display = "block";
+  }
+
+  // At least one named traveler; passport required per traveler when international
   function validateTravelers(form) {
     var container = form.querySelector("[data-travelers]");
     if (!container) return true;
-    var hasName = Array.prototype.some.call(
-      container.querySelectorAll("[data-traveler-name]"),
-      function (i) { return i.value.trim(); }
-    );
     var err = container.querySelector("[data-travelers-error]");
-    if (err) err.style.display = hasName ? "none" : "block";
-    return hasName;
+    var lang = currentLang();
+
+    var namedRows = Array.prototype.filter.call(
+      container.querySelectorAll("[data-traveler-row]"),
+      function (row) {
+        var n = row.querySelector("[data-traveler-name]");
+        return n && n.value.trim();
+      }
+    );
+    if (!namedRows.length) { showTravelerError(err, "noname", lang); return false; }
+
+    if (container.classList.contains("is-international")) {
+      var missingPass = namedRows.some(function (row) {
+        var p = row.querySelector("[data-traveler-passport]");
+        return !p || !p.value.trim();
+      });
+      if (missingPass) { showTravelerError(err, "nopass", lang); return false; }
+    }
+
+    if (err) err.style.display = "none";
+    return true;
   }
 
   // Clear field error as the user types/changes (delegated → covers dynamic rows)
@@ -96,7 +120,7 @@
       if (field) field.classList.remove("field--error");
       control.removeAttribute("aria-invalid");
     }
-    if (control.matches("[data-traveler-name]") && control.value.trim()) {
+    if (control.matches("[data-traveler-name], [data-traveler-passport]") && control.value.trim()) {
       var c = control.closest("[data-travelers]");
       var err = c && c.querySelector("[data-travelers-error]");
       if (err) err.style.display = "none";
@@ -109,11 +133,14 @@
       var container = btn.closest("[data-travelers]");
       var list = container.querySelector("[data-travelers-list]");
       var rows = list.querySelectorAll("[data-traveler-row]");
+      var intl = container.classList.contains("is-international");
       var clone = rows[rows.length - 1].cloneNode(true); // keeps current language
       clone.querySelectorAll("input").forEach(function (inp) {
         inp.value = "";
-        inp.removeAttribute("required");        // only the first traveler is required
+        inp.removeAttribute("required");        // only the first traveler's name is required
         inp.removeAttribute("aria-invalid");
+        // Keep passport required while international (validated per named traveler)
+        if (intl && inp.hasAttribute("data-traveler-passport")) inp.setAttribute("required", "");
       });
       list.appendChild(clone);
       var firstInput = clone.querySelector("input");
@@ -142,6 +169,32 @@
       if (input) {
         input.disabled = oneway;
         if (oneway) { input.value = ""; var f = input.closest(".field"); if (f) f.classList.remove("field--error"); }
+      }
+    }
+    sel.addEventListener("change", sync);
+    sync();
+  });
+
+  /* ---------- Trip scope (domestic / international) → toggle passports ---------- */
+  document.querySelectorAll('[data-role="trip-scope"]').forEach(function (sel) {
+    function sync() {
+      var intl = sel.value === "international";
+      var form = sel.closest(".request-form");
+      var container = form.querySelector("[data-travelers]");
+      if (!container) return;
+      container.classList.toggle("is-international", intl);
+      container.querySelectorAll("[data-traveler-passport]").forEach(function (p) {
+        if (intl) {
+          p.setAttribute("required", "");
+        } else {
+          p.removeAttribute("required");
+          p.value = "";
+          p.removeAttribute("aria-invalid");
+        }
+      });
+      if (!intl) {
+        var err = container.querySelector("[data-travelers-error]");
+        if (err) err.style.display = "none";
       }
     }
     sel.addEventListener("change", sync);
@@ -180,11 +233,17 @@
         node.querySelectorAll("[data-traveler-row]").forEach(function (row) {
           var name = row.querySelector("[data-traveler-name]");
           var age = row.querySelector("[data-traveler-age]");
+          var passport = row.querySelector("[data-traveler-passport]");
           var nv = name ? name.value.trim() : "";
           var av = age ? age.value.trim() : "";
-          if (!nv && !av) return;
+          var pv = passport ? passport.value.trim() : "";
+          if (!nv && !av && !pv) return;
           var ageWord = lang === "ar" ? "العمر" : "âge";
-          collected.push((collected.length + 1) + ". " + nv + (av ? " (" + ageWord + " " + av + ")" : ""));
+          var passWord = lang === "ar" ? "جواز" : "passeport";
+          var line = (collected.length + 1) + ". " + nv;
+          if (av) line += " (" + ageWord + " " + av + ")";
+          if (pv) line += " — " + passWord + ": " + pv;
+          collected.push(line);
         });
         if (collected.length) {
           lines.push("");
@@ -228,10 +287,8 @@
         return;
       }
       var lang = currentLang();
-      var office = btn.getAttribute("data-office");
-      var number = OFFICES[office];
       var text = encodeURIComponent(buildMessage(form, lang));
-      window.open("https://wa.me/" + number + "?text=" + text, "_blank", "noopener");
+      window.open("https://wa.me/" + SEND_NUMBER + "?text=" + text, "_blank", "noopener");
     });
   });
 })();
