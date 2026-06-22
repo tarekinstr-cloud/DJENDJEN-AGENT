@@ -34,6 +34,27 @@
     t.addEventListener("click", function () { activateTab(t.getAttribute("data-tab")); });
   });
 
+  /* ---------- Open a tab from the URL hash (#req=billets) ---------- *
+   * Used by the navbar links (Billets / Hôtels / Visas). Works on load
+   * and on hash change; scrolls to the request section once opened.    */
+  function openTabFromHash() {
+    var m = (location.hash || "").match(/req=([a-z]+)/i);
+    if (!m) return;
+    var name = m[1].toLowerCase();
+    var panel = document.querySelector('.forms__panel[data-panel="' + name + '"]');
+    if (!panel) return; // page doesn't have this tab
+    activateTab(name);
+    var section = document.getElementById("request");
+    if (section) {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      section.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    }
+  }
+  if (panels.length) {
+    window.addEventListener("hashchange", openTabFromHash);
+    openTabFromHash();
+  }
+
   /* ---------- Validation ---------- */
   function validate(form) {
     var ok = true;
