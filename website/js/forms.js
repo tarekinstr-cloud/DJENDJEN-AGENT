@@ -203,6 +203,28 @@
     sync();
   });
 
+  /* ---------- "Demander des infos" buttons → prefill the voyage form ---------- */
+  document.querySelectorAll("[data-trip-request]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var lang = currentLang();
+      var dest = btn.getAttribute("data-dest-" + lang) || btn.getAttribute("data-dest-fr") || "";
+      activateTab("voyages");
+      var input = document.querySelector('.forms__panel[data-panel="voyages"] [data-role="trip-destination"]')
+                || document.querySelector('[data-role="trip-destination"]');
+      if (input) {
+        input.value = dest;
+        var f = input.closest(".field");
+        if (f) f.classList.remove("field--error");
+        input.removeAttribute("aria-invalid");
+      }
+      var section = document.getElementById("request");
+      if (section) {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        section.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      }
+    });
+  });
+
   /* ---------- Build message ---------- */
   function fieldLabel(field, lang) {
     var label = field.querySelector("label");

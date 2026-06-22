@@ -278,6 +278,22 @@ h1, h2, h3 {
   .price-tables { grid-template-columns: 1fr; }
 }
 
+/* Destinations (voyages page) */
+.dest-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gutter); align-items: start; }
+.dest-details { margin-block-start: var(--sp-4); border-block-start: 1px solid var(--line); padding-block-start: var(--sp-4); }
+.dest-details summary {
+  cursor: pointer; list-style: none; display: flex; align-items: center;
+  font-weight: 700; color: var(--blue-700); font-size: .9rem; min-height: 32px;
+}
+.dest-details summary::-webkit-details-marker { display: none; }
+.dest-details summary::after { content: "▾"; margin-inline-start: auto; transition: transform .2s; color: var(--blue-500); }
+.dest-details[open] summary::after { transform: rotate(180deg); }
+.dest-details summary:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--r-sm); }
+.dest-details__body { margin-block-start: var(--sp-4); }
+.dest-sub { font-weight: 700; color: var(--ink); font-size: .85rem; margin: var(--sp-4) 0 var(--sp-2); }
+.dest-sub:first-child { margin-block-start: 0; }
+@media (max-width: 720px) { .dest-grid { grid-template-columns: 1fr; } }
+
 /* =====================================================================
    Form inputs
    ===================================================================== */
