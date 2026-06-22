@@ -11,6 +11,8 @@
 
   // WhatsApp booking number (international format, no +)
   var SEND_NUMBER = "213656281747";
+  // Messenger page (no prefilled message support → we copy to clipboard)
+  var MESSENGER_URL = "https://m.me/DjenDjen.Travel";
 
   // Traveler validation messages
   var TRAVELER_MSG = {
@@ -270,25 +272,81 @@
     return lines.join("\n");
   }
 
-  /* ---------- Send to WhatsApp ---------- */
+  /* ---------- Clipboard + toast (for Messenger) ---------- */
+  function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).catch(function () { return legacyCopy(text); });
+    }
+    return Promise.resolve(legacyCopy(text));
+  }
+  function legacyCopy(text) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.top = "-1000px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      return true;
+    } catch (e) { return false; }
+  }
+
+  var toastTimer = null;
+  function showToast(msg) {
+    var toast = document.getElementById("djToast");
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.id = "djToast";
+      toast.className = "toast";
+      toast.setAttribute("role", "status");
+      toast.setAttribute("aria-live", "polite");
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    // force reflow so the transition re-triggers
+    void toast.offsetWidth;
+    toast.classList.add("is-visible");
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove("is-visible"); }, 3200);
+  }
+
+  /* ---------- Send (WhatsApp / Messenger) ---------- */
+  function formIsValid(form) {
+    var ok = validate(form);
+    var okTravelers = validateTravelers(form);
+    if (ok && okTravelers) return true;
+    var bad = form.querySelector(".field--error input, .field--error select, .field--error textarea");
+    if (bad) { bad.focus(); }
+    else if (!okTravelers) {
+      var t = form.querySelector("[data-traveler-name]");
+      if (t) t.focus();
+    }
+    return false;
+  }
+
   document.querySelectorAll(".wa-send").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var form = btn.closest(".request-form");
       if (!form) return;
-      var ok = validate(form);
-      var okTravelers = validateTravelers(form);
-      if (!ok || !okTravelers) {
-        var bad = form.querySelector(".field--error input, .field--error select, .field--error textarea");
-        if (bad) { bad.focus(); }
-        else if (!okTravelers) {
-          var t = form.querySelector("[data-traveler-name]");
-          if (t) t.focus();
-        }
-        return;
-      }
+      if (!formIsValid(form)) return;
+
       var lang = currentLang();
-      var text = encodeURIComponent(buildMessage(form, lang));
-      window.open("https://wa.me/" + SEND_NUMBER + "?text=" + text, "_blank", "noopener");
+      var message = buildMessage(form, lang);
+      var channel = btn.getAttribute("data-send") || "whatsapp";
+
+      if (channel === "messenger") {
+        // Messenger can't carry a prefilled message → copy it for the user to paste
+        copyToClipboard(message);
+        showToast(lang === "ar"
+          ? "تم نسخ طلبك ✓ الصقه في المحادثة (Ctrl+V)"
+          : "Demande copiée ✓ Collez-la dans la conversation (Ctrl+V)");
+        window.open(MESSENGER_URL, "_blank", "noopener");
+      } else {
+        window.open("https://wa.me/" + SEND_NUMBER + "?text=" + encodeURIComponent(message), "_blank", "noopener");
+      }
     });
   });
 })();

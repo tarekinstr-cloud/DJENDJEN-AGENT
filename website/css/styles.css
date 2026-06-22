@@ -139,6 +139,12 @@ h1, h2, h3 {
 .btn--urgent    { background: var(--red-500); color: #fff; }
 .btn--urgent:hover    { background: var(--red-700); box-shadow: 0 6px 18px rgba(214, 40, 40, .3); }
 
+/* Channel buttons: WhatsApp (brand green) + Messenger (Sakīna blue) */
+.btn--whatsapp  { background: #25D366; color: #fff; min-height: 50px; }
+.btn--whatsapp:hover  { background: #1EBE5A; box-shadow: 0 6px 18px rgba(37, 211, 102, .3); }
+.btn--messenger { background: var(--blue-500); color: #fff; min-height: 50px; }
+.btn--messenger:hover { background: var(--blue-700); box-shadow: 0 6px 18px rgba(20, 136, 194, .3); }
+
 .btn--ghost     { background: transparent; color: var(--blue-700); border-color: transparent; }
 .btn--ghost:hover     { background: var(--blue-50); }
 
@@ -427,6 +433,21 @@ textarea.input { resize: vertical; min-height: 92px; line-height: 1.6; }
   .footer__grid { grid-template-columns: 1fr; gap: var(--sp-8); }
   .hero__trust { gap: var(--sp-6); }
 }
+
+/* =====================================================================
+   Toast (clipboard confirmation)
+   ===================================================================== */
+.toast {
+  position: fixed; z-index: 200;
+  inset-block-end: var(--sp-8); inset-inline: 0;
+  margin-inline: auto; width: max-content; max-width: calc(100% - var(--sp-8));
+  background: var(--blue-900); color: #fff;
+  padding: var(--sp-3) var(--sp-6); border-radius: var(--r-pill);
+  font-weight: 600; font-size: .92rem; box-shadow: var(--shadow-lg);
+  opacity: 0; transform: translateY(12px); pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.toast.is-visible { opacity: 1; transform: none; }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
