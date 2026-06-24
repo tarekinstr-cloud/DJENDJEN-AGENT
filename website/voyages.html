@@ -316,9 +316,36 @@
                 <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
               </div>
               <div class="field">
-                <label data-fr="Nombre de personnes" data-ar="عدد الأشخاص">Nombre de personnes</label>
-                <input class="input" type="number" min="1" dir="ltr" required placeholder="2" />
+                <label data-fr="Type de chambre" data-ar="نوع الغرفة">Type de chambre</label>
+                <select class="input" required>
+                  <option value="" data-fr="— Choisir —" data-ar="— اختر —">— Choisir —</option>
+                  <option data-fr="Simple" data-ar="مفردة">Simple</option>
+                  <option data-fr="Double" data-ar="ثنائية">Double</option>
+                  <option data-fr="Triple" data-ar="ثلاثية">Triple</option>
+                </select>
                 <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Nombre de chambres" data-ar="عدد الغرف">Nombre de chambres</label>
+                <input class="input" type="number" min="1" value="1" dir="ltr" required />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field">
+                <label data-fr="Nombre d'adultes" data-ar="عدد البالغين">Nombre d'adultes</label>
+                <input class="input" type="number" min="1" value="2" dir="ltr" required />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Nombre d'enfants" data-ar="عدد الأطفال">Nombre d'enfants</label>
+                <input class="input" type="number" min="0" value="0" dir="ltr" data-role="children-count" />
+              </div>
+              <div class="field" data-role="children-ages-field" style="display:none;">
+                <label data-fr="Âges des enfants" data-ar="أعمار الأطفال">Âges des enfants</label>
+                <input class="input" type="text" data-role="children-ages" data-ph-fr="Ex. 5 ans, 8 ans" data-ph-ar="مثال: 5 سنوات، 8 سنوات" placeholder="Ex. 5 ans, 8 ans" />
               </div>
             </div>
             <div class="field-row">

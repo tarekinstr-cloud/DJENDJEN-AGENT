@@ -203,6 +203,25 @@
     sync();
   });
 
+  /* ---------- Children count → toggle "children ages" field ---------- */
+  document.querySelectorAll('[data-role="children-count"]').forEach(function (input) {
+    function sync() {
+      var n = parseInt(input.value, 10) || 0;
+      var form = input.closest(".request-form");
+      var field = form.querySelector('[data-role="children-ages-field"]');
+      var ages = form.querySelector('[data-role="children-ages"]');
+      if (field) field.style.display = n > 0 ? "" : "none";
+      if (ages && n <= 0) {
+        ages.value = "";
+        var f = ages.closest(".field");
+        if (f) f.classList.remove("field--error");
+      }
+    }
+    input.addEventListener("input", sync);
+    input.addEventListener("change", sync);
+    sync();
+  });
+
   /* ---------- "Demander des infos" buttons → prefill the voyage form ---------- */
   document.querySelectorAll("[data-trip-request]").forEach(function (btn) {
     btn.addEventListener("click", function () {
