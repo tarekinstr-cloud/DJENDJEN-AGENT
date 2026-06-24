@@ -136,4 +136,18 @@
       });
     });
   }
+
+  /* ---------- 5. Hero slideshow (auto, fade, no controls) ---------- */
+  var slideshow = document.querySelector(".hero-slideshow");
+  if (slideshow) {
+    var slides = slideshow.querySelectorAll(".hero-slide");
+    if (slides.length > 1) {
+      var current = 0;
+      setInterval(function () {
+        slides[current].classList.remove("is-active");
+        current = (current + 1) % slides.length;
+        slides[current].classList.add("is-active");
+      }, 4000);
+    }
+  }
 })();

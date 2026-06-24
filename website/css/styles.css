@@ -188,9 +188,18 @@ h1, h2, h3 {
 }
 .hero__media::before {
   content: "🕋"; position: absolute; inset-block-start: var(--sp-8); inset-inline-end: var(--sp-8);
-  font-size: 3rem; opacity: .9;
+  font-size: 3rem; opacity: .9; z-index: 2;
 }
-.hero__media-caption { font-family: var(--font-heading); font-size: 1.4rem; line-height: 1.3; }
+.hero__media-caption { position: relative; z-index: 2; font-family: var(--font-heading); font-size: 1.4rem; line-height: 1.3; }
+
+/* Hero slideshow */
+.hero-slideshow { position: absolute; inset: 0; z-index: 0; }
+.hero-slide {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: 0; transition: opacity 1s ease;
+}
+.hero-slide.is-active { opacity: 1; }
+.hero__media-overlay { position: absolute; inset: 0; z-index: 1; background: rgba(10, 72, 101, .4); }
 
 /* =====================================================================
    Package cards
