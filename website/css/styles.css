@@ -280,6 +280,8 @@ h1, h2, h3 {
 
 /* Destinations (voyages page) */
 .dest-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gutter); align-items: start; }
+.dest-card .card__media { aspect-ratio: auto; height: 200px; }
+.dest-card__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .dest-details { margin-block-start: var(--sp-4); border-block-start: 1px solid var(--line); padding-block-start: var(--sp-4); }
 .dest-details summary {
   cursor: pointer; list-style: none; display: flex; align-items: center;
