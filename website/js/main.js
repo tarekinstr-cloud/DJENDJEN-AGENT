@@ -137,13 +137,13 @@
     });
   }
 
-  /* ---------- 5. Hero slideshow (auto + arrows + dots) ---------- */
-  var slideshow = document.querySelector(".hero-slideshow");
-  if (slideshow) {
-    var slides = slideshow.querySelectorAll(".hero-slide");
-    var dotsWrap = document.querySelector(".hero-dots");
-    var arrowPrev = document.querySelector(".hero-arrow--prev");
-    var arrowNext = document.querySelector(".hero-arrow--next");
+  /* ---------- 5. Hero slider (auto + arrows + dots) ---------- */
+  var slider = document.querySelector(".hero-slider");
+  if (slider) {
+    var slides = slider.querySelectorAll(".hero-slides img");
+    var dotsWrap = slider.querySelector(".hero-dots");
+    var arrowPrev = slider.querySelector(".hero-prev");
+    var arrowNext = slider.querySelector(".hero-next");
     var current = 0;
     var timer = null;
     var dots = [];

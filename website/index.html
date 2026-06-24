@@ -67,39 +67,32 @@
 
   <main>
     <!-- ===================== HERO ===================== -->
-    <section class="hero hero--full">
-      <div class="hero-slideshow" aria-hidden="true">
-        <img class="hero-slide is-active" src="https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?w=1200" alt="" loading="eager" />
-        <img class="hero-slide" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200" alt="" loading="lazy" />
-        <img class="hero-slide" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200" alt="" loading="lazy" />
-        <img class="hero-slide" src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200" alt="" loading="lazy" />
-        <img class="hero-slide" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200" alt="" loading="lazy" />
-        <img class="hero-slide" src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200" alt="" loading="lazy" />
-        <img class="hero-slide" src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1200" alt="" loading="lazy" />
-        <img class="hero-slide" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200" alt="" loading="lazy" />
-      </div>
-      <div class="hero__overlay" aria-hidden="true"></div>
-
-      <div class="hero__caption">
-        <div class="container">
-          <p class="eyebrow" data-fr="Agence de voyage · Jijel, Algérie" data-ar="وكالة أسفار · جيجل، الجزائر">Agence de voyage · Jijel, Algérie</p>
-          <h1 class="hero__title">
-            <span data-fr="Commencez le voyage" data-ar="رحلتك إلى">Commencez le voyage</span>
-            <span class="accent" data-fr="vers les Lieux Saints" data-ar="البيت العتيق">vers les Lieux Saints</span>
-          </h1>
-          <p class="hero__lede" data-fr="Nous vous accompagnons dans le voyage le plus précieux de votre vie, avec soin à chaque étape." data-ar="نرافقك في أهمّ رحلة في حياتك، بعناية في كل خطوة.">
-            Nous vous accompagnons dans le voyage le plus précieux de votre vie, avec soin à chaque étape.
-          </p>
-          <div class="hero__cta">
-            <button class="btn btn--primary btn--lg" data-open-modal data-fr="Réserver une place" data-ar="احجز مكانك">Réserver une place</button>
-            <a class="btn btn--secondary btn--lg" href="#packages" data-fr="Voir les offres" data-ar="تصفّح العروض">Voir les offres</a>
-          </div>
-        </div>
+    <section class="hero-slider">
+      <div class="hero-slides" aria-hidden="true">
+        <img class="is-active" src="https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?w=1200" alt="" loading="eager" />
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200" alt="" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200" alt="" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200" alt="" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200" alt="" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200" alt="" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1200" alt="" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200" alt="" loading="lazy" />
       </div>
 
-      <button type="button" class="hero-arrow hero-arrow--prev" aria-label="Précédent">‹</button>
-      <button type="button" class="hero-arrow hero-arrow--next" aria-label="Suivant">›</button>
-      <div class="hero-dots" role="tablist" aria-label="Slides"></div>
+      <div class="hero-content">
+        <h1 class="hero__title">
+          <span data-fr="Commencez le voyage" data-ar="رحلتك إلى">Commencez le voyage</span>
+          <span class="accent" data-fr="vers les Lieux Saints" data-ar="البيت العتيق">vers les Lieux Saints</span>
+        </h1>
+        <p class="hero__lede" data-fr="Nous vous accompagnons dans le voyage le plus précieux de votre vie, avec soin à chaque étape." data-ar="نرافقك في أهمّ رحلة في حياتك، بعناية في كل خطوة.">
+          Nous vous accompagnons dans le voyage le plus précieux de votre vie, avec soin à chaque étape.
+        </p>
+        <a href="#request" class="btn-primary" data-fr="Réserver une place" data-ar="احجز مكانك">Réserver une place</a>
+      </div>
+
+      <button type="button" class="hero-prev" aria-label="Précédent">&#8249;</button>
+      <button type="button" class="hero-next" aria-label="Suivant">&#8250;</button>
+      <div class="hero-dots"></div>
     </section>
 
     <!-- ===================== PACKAGES ===================== -->
