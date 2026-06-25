@@ -167,6 +167,9 @@ h1, h2, h3 {
   object-fit: cover; object-position: center 30%;
   opacity: 0; transition: opacity 1s ease; filter: brightness(1.05) contrast(1.05);
 }
+.hero-slides img[src*="hotel"] { object-position: center 20%; }
+.hero-slides img[src*="airport"] { object-position: center 60%; }
+.hero-slides img[src*="kaaba"] { object-position: center 40%; }
 .hero-slides img.is-active { opacity: 1; }
 .hero-slider::after {
   content: ""; position: absolute; inset: 0; z-index: 1;
