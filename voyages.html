@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Voyages, billets, hôtels &amp; visas — Djen-Djen Travel | الرحلات</title>
+  <meta name="description" content="Voyages organisés, billets d'avion, réservation d'hôtels et demandes de visa avec Djen-Djen Travel à Jijel. Envoyez votre demande sur WhatsApp." />
+  <meta name="description:ar" content="رحلات منظّمة، تذاكر طيران، حجز فنادق وطلبات تأشيرة مع وكالة جن جن للسياحة بجيجل. ابعث طلبك على واتساب." />
+  <meta name="theme-color" content="#1488C2" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Voyages — Djen-Djen Travel | الرحلات" />
+  <meta property="og:locale" content="fr_DZ" />
+  <meta property="og:locale:alternate" content="ar_DZ" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html" aria-label="Djen-Djen Travel">
+        <img class="nav__logo" src="logo.png" alt="Djen-Djen Travel" width="44" height="44" />
+        <span class="nav__brand-text">
+          <span class="nav__brand-name" data-fr="Djen-Djen Travel" data-ar="جن جن للسياحة">Djen-Djen Travel</span>
+          <span class="nav__brand-sub" data-fr="Omra &amp; Voyages · depuis 2017" data-ar="عمرة ورحلات · منذ 2017">Omra &amp; Voyages · depuis 2017</span>
+        </span>
+      </a>
+      <nav aria-label="Principale">
+        <ul class="nav__links">
+          <li><a href="umrah.html" data-fr="Omra" data-ar="العمرة">Omra</a></li>
+          <li><a href="voyages.html" data-fr="Voyages" data-ar="الرحلات">Voyages</a></li>
+          <li><a href="#req=billets" data-fr="Billets" data-ar="تذاكر السفر">Billets</a></li>
+          <li><a href="#req=hotels" data-fr="Hôtels" data-ar="الفنادق">Hôtels</a></li>
+          <li><a href="#req=visas" data-fr="Visas" data-ar="التأشيرات">Visas</a></li>
+          <li><a href="apropos.html" data-fr="À propos" data-ar="من نحن">À propos</a></li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <div class="lang-switch" role="group" aria-label="Language / اللغة">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="ar" aria-pressed="false">ع</button>
+        </div>
+        <a class="btn btn--urgent btn--book" href="#request" data-fr="Réserver" data-ar="احجز الآن">Réserver</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-slider">
+      <div class="hero-slides" aria-hidden="true">
+        <img class="is-active" src="https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?w=1200" alt="" loading="eager" />
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200" alt="" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200" alt="" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200" alt="" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200" alt="" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200" alt="" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1200" alt="" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200" alt="" loading="lazy" />
+      </div>
+
+      <div class="hero-content">
+        <h1 class="hero__title">
+          <span data-fr="Voyagez l'esprit tranquille" data-ar="سافر وأنت مرتاح البال">Voyagez l'esprit tranquille</span>
+        </h1>
+        <p class="hero__lede" data-fr="Voyages organisés. Billets d'avion. Hôtels et visas." data-ar="رحلات منظّمة. تذاكر الطيارة. فنادق وتأشيرات">
+          Voyages organisés. Billets d'avion. Hôtels et visas.
+        </p>
+        <a href="#request" class="btn-primary" data-fr="Envoyer ma demande" data-ar="ابعث طلبك">Envoyer ma demande</a>
+      </div>
+
+      <button type="button" class="hero-prev" aria-label="Précédent">&#8249;</button>
+      <button type="button" class="hero-next" aria-label="Suivant">&#8250;</button>
+      <div class="hero-dots"></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-fr="Nos services" data-ar="خدماتنا">Nos services</p>
+          <h2 data-fr="Tout pour votre voyage" data-ar="كلش لرحلتك">Tout pour votre voyage</h2>
+        </div>
+        <div class="grid-cards">
+          <article class="card"><div class="card__body">
+            <h3 class="card__title" data-fr="Voyages organisés" data-ar="رحلات منظّمة">Voyages organisés</h3>
+            <p class="card__desc" data-fr="Des séjours préparés avec soin vers vos destinations préférées." data-ar="عطل محضّرة بعناية نحو الوجهات لي تحبّها.">Des séjours préparés avec soin vers vos destinations préférées.</p>
+          </div></article>
+          <article class="card"><div class="card__body">
+            <h3 class="card__title" data-fr="Billets d'avion" data-ar="تذاكر السفر">Billets d'avion</h3>
+            <p class="card__desc" data-fr="Les meilleurs tarifs vers toutes les destinations, aller simple ou aller-retour." data-ar="أحسن الأسعار نحو كامل الوجهات، ذهاب وْلا ذهاب وإياب.">Les meilleurs tarifs vers toutes les destinations, aller simple ou aller-retour.</p>
+          </div></article>
+          <article class="card"><div class="card__body">
+            <h3 class="card__title" data-fr="Hôtels" data-ar="الفنادق">Hôtels</h3>
+            <p class="card__desc" data-fr="Réservation d'hôtels partout, au meilleur rapport qualité-prix." data-ar="حجز فنادق في كل بلاصة، بأحسن جودة وثمن.">Réservation d'hôtels partout, au meilleur rapport qualité-prix.</p>
+          </div></article>
+          <article class="card"><div class="card__body">
+            <h3 class="card__title" data-fr="Visas" data-ar="التأشيرات">Visas</h3>
+            <p class="card__desc" data-fr="On vous accompagne dans votre dossier de visa, étape par étape." data-ar="نرافقوك في ملف التأشيرة، خطوة بخطوة.">On vous accompagne dans votre dossier de visa, étape par étape.</p>
+          </div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINATIONS -->
+    <section class="section" id="destinations">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-fr="Nos destinations" data-ar="وجهاتنا">Nos destinations</p>
+          <h2 data-fr="Des séjours organisés, clés en main" data-ar="رحلات منظّمة، جاهزة بالكامل">Des séjours organisés, clés en main</h2>
+          <p data-fr="Choisissez une destination, consultez les tarifs détaillés, puis demandez vos informations." data-ar="اختر وجهتك، اطّلع على الأسعار التفصيلية، ثم اطلب معلوماتك.">Choisissez une destination, consultez les tarifs détaillés, puis demandez vos informations.</p>
+        </div>
+
+        <div class="dest-grid">
+
+          <!-- 1. Charm el-Cheikh -->
+          <article class="card dest-card">
+            <div class="card__media"><img class="dest-card__img" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Charm el-Cheikh" loading="lazy" onerror="this.remove()" /><span class="card__badge">🇪🇬 <span data-fr="Charm el-Cheikh" data-ar="شرم الشيخ">Charm el-Cheikh</span></span></div>
+            <div class="card__body">
+              <h3 class="card__title" data-fr="Charm el-Cheikh" data-ar="شرم الشيخ">Charm el-Cheikh</h3>
+              <div class="card__meta"><span data-fr="9 ou 10 nuits · Charm + Le Caire" data-ar="9 أو 10 ليالٍ · شرم + القاهرة">9 ou 10 nuits · Charm + Le Caire</span></div>
+              <p class="card__desc" data-fr="Vol charter direct depuis Alger · juillet–septembre 2026. Vol + visa + hôtel + All Inclusive + transferts + assistance 24/24." data-ar="طيران شارتر مباشر من الجزائر · جويلية–سبتمبر 2026. طيران + تأشيرة + فندق + All Inclusive + تنقّلات + مساعدة 24/24.">Vol charter direct depuis Alger · juillet–septembre 2026. Vol + visa + hôtel + All Inclusive + transferts + assistance 24/24.</p>
+              <div class="card__foot">
+                <div class="card__price"><small data-fr="À partir de" data-ar="يبدأ من">À partir de</small><strong><bdi>218 000</bdi> <span class="cur">DZD</span></strong></div>
+                <button type="button" class="btn btn--primary" data-trip-request data-dest-fr="Charm el-Cheikh" data-dest-ar="شرم الشيخ" data-fr="Demander des infos" data-ar="اطلب معلومات">Demander des infos</button>
+              </div>
+              <details class="dest-details">
+                <summary data-fr="Voir tous les tarifs" data-ar="عرض كل الأسعار">Voir tous les tarifs</summary>
+                <div class="dest-details__body">
+                  <p class="dest-sub" data-fr="9 nuits — hôtels disponibles" data-ar="9 ليالٍ — الفنادق المتاحة">9 nuits — hôtels disponibles</p>
+                  <ul class="info-list">
+                    <li data-fr="Verginia 4★ — <bdi>218 000</bdi> DZD" data-ar="Verginia 4★ — <bdi>218 000</bdi> دج">Verginia 4★ — <bdi>218 000</bdi> DZD</li>
+                    <li data-fr="Rehana Aqua Park 4★ — <bdi>246 000</bdi> DZD" data-ar="Rehana Aqua Park 4★ — <bdi>246 000</bdi> دج">Rehana Aqua Park 4★ — <bdi>246 000</bdi> DZD</li>
+                    <li data-fr="Rehana Royal 5★ — <bdi>291 000</bdi> DZD" data-ar="Rehana Royal 5★ — <bdi>291 000</bdi> دج">Rehana Royal 5★ — <bdi>291 000</bdi> DZD</li>
+                    <li data-fr="Cleopatra Luxury 5★ — <bdi>305 000</bdi> DZD" data-ar="Cleopatra Luxury 5★ — <bdi>305 000</bdi> دج">Cleopatra Luxury 5★ — <bdi>305 000</bdi> DZD</li>
+                    <li data-fr="Sea Beach Rotana 5★ — <bdi>316 000</bdi> DZD" data-ar="Sea Beach Rotana 5★ — <bdi>316 000</bdi> دج">Sea Beach Rotana 5★ — <bdi>316 000</bdi> DZD</li>
+                    <li data-fr="Pickalbatros Palace 5★ — <bdi>403 000</bdi> DZD" data-ar="Pickalbatros Palace 5★ — <bdi>403 000</bdi> دج">Pickalbatros Palace 5★ — <bdi>403 000</bdi> DZD</li>
+                    <li data-fr="Sunrise Arabian 5★ — <bdi>426 000</bdi> DZD" data-ar="Sunrise Arabian 5★ — <bdi>426 000</bdi> دج">Sunrise Arabian 5★ — <bdi>426 000</bdi> DZD</li>
+                    <li data-fr="Rixos SSH 5★ — <bdi>593 000</bdi> DZD" data-ar="Rixos SSH 5★ — <bdi>593 000</bdi> دج">Rixos SSH 5★ — <bdi>593 000</bdi> DZD</li>
+                  </ul>
+                  <p class="dest-sub" data-fr="10 nuits — hôtels disponibles" data-ar="10 ليالٍ — الفنادق المتاحة">10 nuits — hôtels disponibles</p>
+                  <ul class="info-list">
+                    <li data-fr="Verginia 4★ — <bdi>226 000</bdi> DZD" data-ar="Verginia 4★ — <bdi>226 000</bdi> دج">Verginia 4★ — <bdi>226 000</bdi> DZD</li>
+                    <li data-fr="Rehana Aqua Park 4★ — <bdi>258 000</bdi> DZD" data-ar="Rehana Aqua Park 4★ — <bdi>258 000</bdi> دج">Rehana Aqua Park 4★ — <bdi>258 000</bdi> DZD</li>
+                    <li data-fr="Rehana Royal 5★ — <bdi>309 000</bdi> DZD" data-ar="Rehana Royal 5★ — <bdi>309 000</bdi> دج">Rehana Royal 5★ — <bdi>309 000</bdi> DZD</li>
+                    <li data-fr="Cleopatra Luxury 5★ — <bdi>338 000</bdi> DZD" data-ar="Cleopatra Luxury 5★ — <bdi>338 000</bdi> دج">Cleopatra Luxury 5★ — <bdi>338 000</bdi> DZD</li>
+                    <li data-fr="Pickalbatros Palace 5★ — <bdi>436 000</bdi> DZD" data-ar="Pickalbatros Palace 5★ — <bdi>436 000</bdi> دج">Pickalbatros Palace 5★ — <bdi>436 000</bdi> DZD</li>
+                    <li data-fr="Sunrise Arabian 5★ — <bdi>459 000</bdi> DZD" data-ar="Sunrise Arabian 5★ — <bdi>459 000</bdi> دج">Sunrise Arabian 5★ — <bdi>459 000</bdi> DZD</li>
+                    <li data-fr="Rixos SSH 5★ — <bdi>643 000</bdi> DZD" data-ar="Rixos SSH 5★ — <bdi>643 000</bdi> دج">Rixos SSH 5★ — <bdi>643 000</bdi> DZD</li>
+                  </ul>
+                  <p class="card__note" data-fr="Charm + Le Caire (6+2 nuits, Egyptair) : de 223 000 à 368 000 DZD." data-ar="شرم + القاهرة (6+2 ليالٍ، Egyptair): من 223 000 إلى 368 000 دج.">Charm + Le Caire (6+2 nuits, Egyptair) : de 223 000 à 368 000 DZD.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- 2. Hurghada + Le Caire -->
+          <article class="card dest-card">
+            <div class="card__media"><img class="dest-card__img" src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=800" alt="Hurghada + Le Caire" loading="lazy" onerror="this.remove()" /><span class="card__badge">🇪🇬 <span data-fr="Hurghada + Le Caire" data-ar="الغردقة + القاهرة">Hurghada + Le Caire</span></span></div>
+            <div class="card__body">
+              <h3 class="card__title" data-fr="Hurghada + Le Caire" data-ar="الغردقة + القاهرة">Hurghada + Le Caire</h3>
+              <div class="card__meta"><span data-fr="8 ou 9 nuits" data-ar="8 أو 9 ليالٍ">8 ou 9 nuits</span></div>
+              <p class="card__desc" data-fr="Air Algérie direct depuis Alger. Vol + visa + hôtel + All Inclusive + excursions (Pyramides &amp; Louxor) + guide + entrée au Grand Musée égyptien offerte." data-ar="طيران Air Algérie مباشر من الجزائر. طيران + تأشيرة + فندق + All Inclusive + جولات (الأهرامات والأقصر) + مرشد + دخول المتحف المصري الكبير مجاناً.">Air Algérie direct depuis Alger. Vol + visa + hôtel + All Inclusive + excursions (Pyramides &amp; Louxor) + guide + entrée au Grand Musée égyptien offerte.</p>
+              <div class="card__foot">
+                <div class="card__price"><small data-fr="À partir de (triple)" data-ar="يبدأ من (ثلاثية)">À partir de (triple)</small><strong><bdi>215 000</bdi> <span class="cur">DZD</span></strong></div>
+                <button type="button" class="btn btn--primary" data-trip-request data-dest-fr="Hurghada + Le Caire" data-dest-ar="الغردقة + القاهرة" data-fr="Demander des infos" data-ar="اطلب معلومات">Demander des infos</button>
+              </div>
+              <details class="dest-details">
+                <summary data-fr="Voir tous les tarifs" data-ar="عرض كل الأسعار">Voir tous les tarifs</summary>
+                <div class="dest-details__body">
+                  <p class="dest-sub" data-fr="8 nuits (2 Caire + 5 Hurghada + 1 Caire) — 16 juillet" data-ar="8 ليالٍ (2 قاهرة + 5 غردقة + 1 قاهرة) — 16 جويلية">8 nuits (2 Caire + 5 Hurghada + 1 Caire) — 16 juillet</p>
+                  <ul class="info-list">
+                    <li data-fr="Double <bdi>220 000</bdi> · Triple <bdi>215 000</bdi> · Single <bdi>295 000</bdi> DZD" data-ar="ثنائية <bdi>220 000</bdi> · ثلاثية <bdi>215 000</bdi> · مفردة <bdi>295 000</bdi> دج">Double <bdi>220 000</bdi> · Triple <bdi>215 000</bdi> · Single <bdi>295 000</bdi> DZD</li>
+                  </ul>
+                  <p class="dest-sub" data-fr="8 nuits (6 Hurghada + 2 Caire) — 9 &amp; 29 août" data-ar="8 ليالٍ (6 غردقة + 2 قاهرة) — 9 و29 أوت">8 nuits (6 Hurghada + 2 Caire) — 9 &amp; 29 août</p>
+                  <ul class="info-list">
+                    <li data-fr="Double <bdi>220 000</bdi> · Triple <bdi>215 000</bdi> · Single <bdi>295 000</bdi> DZD" data-ar="ثنائية <bdi>220 000</bdi> · ثلاثية <bdi>215 000</bdi> · مفردة <bdi>295 000</bdi> دج">Double <bdi>220 000</bdi> · Triple <bdi>215 000</bdi> · Single <bdi>295 000</bdi> DZD</li>
+                  </ul>
+                  <p class="dest-sub" data-fr="9 nuits (7 Hurghada + 2 Caire) — 2/15/22 août" data-ar="9 ليالٍ (7 غردقة + 2 قاهرة) — 2/15/22 أوت">9 nuits (7 Hurghada + 2 Caire) — 2/15/22 août</p>
+                  <ul class="info-list">
+                    <li data-fr="Double <bdi>230 000</bdi> · Triple <bdi>225 000</bdi> · Single <bdi>300 000</bdi> DZD" data-ar="ثنائية <bdi>230 000</bdi> · ثلاثية <bdi>225 000</bdi> · مفردة <bdi>300 000</bdi> دج">Double <bdi>230 000</bdi> · Triple <bdi>225 000</bdi> · Single <bdi>300 000</bdi> DZD</li>
+                  </ul>
+                  <p class="dest-sub" data-fr="Enfants" data-ar="الأطفال">Enfants</p>
+                  <ul class="info-list">
+                    <li data-fr="1er enfant (2–12 ans) <bdi>125 000</bdi> · 2e enfant (2–12 ans) <bdi>180 000</bdi> · Bébé <bdi>30 000</bdi> DZD" data-ar="طفل أول (2–12 سنة) <bdi>125 000</bdi> · طفل ثانٍ (2–12 سنة) <bdi>180 000</bdi> · رضيع <bdi>30 000</bdi> دج">1er enfant (2–12 ans) <bdi>125 000</bdi> · 2e enfant (2–12 ans) <bdi>180 000</bdi> · Bébé <bdi>30 000</bdi> DZD</li>
+                  </ul>
+                  <p class="card__note" data-fr="Hôtel au Caire : Pyramisa Cairo Suites 5★." data-ar="فندق القاهرة: Pyramisa Cairo Suites 5★.">Hôtel au Caire : Pyramisa Cairo Suites 5★.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- 3. Istanbul -->
+          <article class="card dest-card">
+            <div class="card__media"><img class="dest-card__img" src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800" alt="Istanbul" loading="lazy" onerror="this.remove()" /><span class="card__badge">🇹🇷 <span data-fr="Istanbul" data-ar="إسطنبول">Istanbul</span></span></div>
+            <div class="card__body">
+              <h3 class="card__title" data-fr="Istanbul" data-ar="إسطنبول">Istanbul</h3>
+              <div class="card__meta"><span data-fr="7 jours" data-ar="7 أيام">7 jours</span></div>
+              <p class="card__desc" data-fr="Turkish Airlines direct depuis Constantine. Hôtel River 3★. Vol + visa + hôtel + petit-déjeuner + excursions + guide algérien." data-ar="طيران Turkish Airlines مباشر من قسنطينة. فندق River 3★. طيران + تأشيرة + فندق + فطور + جولات + مرشد جزائري.">Turkish Airlines direct depuis Constantine. Hôtel River 3★. Vol + visa + hôtel + petit-déjeuner + excursions + guide algérien.</p>
+              <div class="card__foot">
+                <div class="card__price"><small data-fr="À partir de (double)" data-ar="يبدأ من (ثنائية)">À partir de (double)</small><strong><bdi>129 000</bdi> <span class="cur">DZD</span></strong></div>
+                <button type="button" class="btn btn--primary" data-trip-request data-dest-fr="Istanbul" data-dest-ar="إسطنبول" data-fr="Demander des infos" data-ar="اطلب معلومات">Demander des infos</button>
+              </div>
+              <details class="dest-details">
+                <summary data-fr="Voir tous les tarifs" data-ar="عرض كل الأسعار">Voir tous les tarifs</summary>
+                <div class="dest-details__body">
+                  <p class="dest-sub" data-fr="Tarifs" data-ar="الأسعار">Tarifs</p>
+                  <ul class="info-list">
+                    <li data-fr="Double <bdi>129 000</bdi> · Single <bdi>170 000</bdi> DZD" data-ar="ثنائية <bdi>129 000</bdi> · مفردة <bdi>170 000</bdi> دج">Double <bdi>129 000</bdi> · Single <bdi>170 000</bdi> DZD</li>
+                    <li data-fr="Enfant 6–12 ans <bdi>105 000</bdi> · 2–5 ans <bdi>80 000</bdi> · Bébé <bdi>25 000</bdi> DZD" data-ar="طفل 6–12 سنة <bdi>105 000</bdi> · 2–5 سنوات <bdi>80 000</bdi> · رضيع <bdi>25 000</bdi> دج">Enfant 6–12 ans <bdi>105 000</bdi> · 2–5 ans <bdi>80 000</bdi> · Bébé <bdi>25 000</bdi> DZD</li>
+                  </ul>
+                  <p class="dest-sub" data-fr="Dates (juin 2026)" data-ar="التواريخ (جوان 2026)">Dates (juin 2026)</p>
+                  <ul class="info-list">
+                    <li data-fr="4–11 / 11–18 / 18–25 juin · 25 juin–2 juillet" data-ar="4–11 / 11–18 / 18–25 جوان · 25 جوان–2 جويلية">4–11 / 11–18 / 18–25 juin · 25 juin–2 juillet</li>
+                  </ul>
+                  <p class="card__note" data-fr="Programme + : Istanbul + Antalya 10 jours (été/automne — détails au contact)." data-ar="برنامج إضافي: إسطنبول + أنطاليا 10 أيام (صيف/خريف — التفاصيل عند التواصل).">Programme + : Istanbul + Antalya 10 jours (été/automne — détails au contact).</p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- 4. Bakou -->
+          <article class="card dest-card">
+            <div class="card__media"><img class="dest-card__img" src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800" alt="Bakou" loading="lazy" onerror="this.remove()" /><span class="card__badge">🇦🇿 <span data-fr="Bakou" data-ar="باكو">Bakou</span></span></div>
+            <div class="card__body">
+              <h3 class="card__title" data-fr="Bakou — Azerbaïdjan" data-ar="باكو — أذربيجان">Bakou — Azerbaïdjan</h3>
+              <div class="card__meta"><span data-fr="8 jours" data-ar="8 أيام">8 jours</span></div>
+              <p class="card__desc" data-fr="Turkish Airlines via Istanbul. Vol + visa + hôtel + petit-déjeuner + excursions + guide algérien + transferts." data-ar="طيران Turkish Airlines عبر إسطنبول. طيران + تأشيرة + فندق + فطور + جولات + مرشد جزائري + تنقّلات.">Turkish Airlines via Istanbul. Vol + visa + hôtel + petit-déjeuner + excursions + guide algérien + transferts.</p>
+              <div class="card__foot">
+                <div class="card__price"><small data-fr="À partir de (triple)" data-ar="يبدأ من (ثلاثية)">À partir de (triple)</small><strong><bdi>245 000</bdi> <span class="cur">DZD</span></strong></div>
+                <button type="button" class="btn btn--primary" data-trip-request data-dest-fr="Bakou — Azerbaïdjan" data-dest-ar="باكو — أذربيجان" data-fr="Demander des infos" data-ar="اطلب معلومات">Demander des infos</button>
+              </div>
+              <details class="dest-details">
+                <summary data-fr="Voir tous les tarifs" data-ar="عرض كل الأسعار">Voir tous les tarifs</summary>
+                <div class="dest-details__body">
+                  <p class="dest-sub" data-fr="Tarifs" data-ar="الأسعار">Tarifs</p>
+                  <ul class="info-list">
+                    <li data-fr="Double <bdi>249 900</bdi> · Triple <bdi>245 000</bdi> · Single <bdi>311 000</bdi> DZD" data-ar="ثنائية <bdi>249 900</bdi> · ثلاثية <bdi>245 000</bdi> · مفردة <bdi>311 000</bdi> دج">Double <bdi>249 900</bdi> · Triple <bdi>245 000</bdi> · Single <bdi>311 000</bdi> DZD</li>
+                    <li data-fr="Enfant −5 ans <bdi>129 000</bdi> · −12 ans <bdi>213 000</bdi> · Bébé <bdi>35 000</bdi> DZD" data-ar="طفل أقل من 5 سنوات <bdi>129 000</bdi> · أقل من 12 سنة <bdi>213 000</bdi> · رضيع <bdi>35 000</bdi> دج">Enfant −5 ans <bdi>129 000</bdi> · −12 ans <bdi>213 000</bdi> · Bébé <bdi>35 000</bdi> DZD</li>
+                  </ul>
+                  <p class="card__note" data-fr="Départs chaque semaine du 3 juillet au 10 septembre 2026." data-ar="انطلاق كل أسبوع من 3 جويلية إلى 10 سبتمبر 2026.">Départs chaque semaine du 3 juillet au 10 septembre 2026.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- 5. Malaisie + Vietnam -->
+          <article class="card dest-card">
+            <div class="card__media"><img class="dest-card__img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Malaisie + Vietnam" loading="lazy" onerror="this.remove()" /><span class="card__badge">🇲🇾🇻🇳 <span data-fr="Malaisie + Vietnam" data-ar="ماليزيا + فيتنام">Malaisie + Vietnam</span></span></div>
+            <div class="card__body">
+              <h3 class="card__title" data-fr="Malaisie + Vietnam" data-ar="ماليزيا + فيتنام">Malaisie + Vietnam</h3>
+              <div class="card__meta"><span data-fr="14 nuits" data-ar="14 ليلة">14 nuits</span></div>
+              <p class="card__desc" data-fr="Qatar Airways via Doha depuis Alger. Vol + visa + hôtels + petit-déjeuner + excursions + transferts internes + assistance." data-ar="طيران Qatar Airways عبر الدوحة من الجزائر. طيران + تأشيرة + فنادق + فطور + جولات + تنقّلات داخلية + مساعدة.">Qatar Airways via Doha depuis Alger. Vol + visa + hôtels + petit-déjeuner + excursions + transferts internes + assistance.</p>
+              <div class="card__foot">
+                <div class="card__price"><small data-fr="À partir de (double/triple)" data-ar="يبدأ من (ثنائية/ثلاثية)">À partir de (double/triple)</small><strong><bdi>469 000</bdi> <span class="cur">DZD</span></strong></div>
+                <button type="button" class="btn btn--primary" data-trip-request data-dest-fr="Malaisie + Vietnam" data-dest-ar="ماليزيا + فيتنام" data-fr="Demander des infos" data-ar="اطلب معلومات">Demander des infos</button>
+              </div>
+              <details class="dest-details">
+                <summary data-fr="Voir tous les tarifs" data-ar="عرض كل الأسعار">Voir tous les tarifs</summary>
+                <div class="dest-details__body">
+                  <p class="dest-sub" data-fr="Itinéraire (14 nuits)" data-ar="البرنامج (14 ليلة)">Itinéraire (14 nuits)</p>
+                  <ul class="info-list">
+                    <li data-fr="3 Kuala Lumpur + 5 Phu Quoc + 2 Hanoi + 1 croisière" data-ar="3 كوالالمبور + 5 فو كووك + 2 هانوي + 1 كروز">3 Kuala Lumpur + 5 Phu Quoc + 2 Hanoi + 1 croisière</li>
+                  </ul>
+                  <p class="dest-sub" data-fr="Tarifs" data-ar="الأسعار">Tarifs</p>
+                  <ul class="info-list">
+                    <li data-fr="Single <bdi>599 000</bdi> · Double <bdi>469 000</bdi> · Triple <bdi>469 000</bdi> DZD" data-ar="مفردة <bdi>599 000</bdi> · ثنائية <bdi>469 000</bdi> · ثلاثية <bdi>469 000</bdi> دج">Single <bdi>599 000</bdi> · Double <bdi>469 000</bdi> · Triple <bdi>469 000</bdi> DZD</li>
+                    <li data-fr="Enfant avec lit <bdi>449 000</bdi> · sans lit <bdi>354 000</bdi> · Bébé <bdi>48 000</bdi> DZD" data-ar="طفل مع سرير <bdi>449 000</bdi> · بدون سرير <bdi>354 000</bdi> · رضيع <bdi>48 000</bdi> دج">Enfant avec lit <bdi>449 000</bdi> · sans lit <bdi>354 000</bdi> · Bébé <bdi>48 000</bdi> DZD</li>
+                  </ul>
+                  <p class="dest-sub" data-fr="Dates" data-ar="التواريخ">Dates</p>
+                  <ul class="info-list">
+                    <li data-fr="7 / 14 / 21 août 2026" data-ar="7 / 14 / 21 أوت 2026">7 / 14 / 21 août 2026</li>
+                  </ul>
+                  <p class="card__note" data-fr="Hôtels 5★ : Renaissance (Kuala Lumpur) · Best Western Premier (Phu Quoc) · Proverb Hotel (Hanoi) · Aqua Luxury Cruise." data-ar="فنادق 5★: Renaissance (كوالالمبور) · Best Western Premier (فو كووك) · Proverb Hotel (هانوي) · Aqua Luxury Cruise.">Hôtels 5★ : Renaissance (Kuala Lumpur) · Best Western Premier (Phu Quoc) · Proverb Hotel (Hanoi) · Aqua Luxury Cruise.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- REQUEST FORMS -->
+    <section class="section" id="request" style="background: var(--bg-tint);">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-fr="Votre demande" data-ar="طلبك">Votre demande</p>
+          <h2 data-fr="Envoyez votre demande sur WhatsApp" data-ar="ابعث طلبك على واتساب">Envoyez votre demande sur WhatsApp</h2>
+          <p data-fr="Choisissez un service, remplissez le formulaire et envoyez-le directement sur WhatsApp." data-ar="اختار الخدمة، عمّر الفورمة، وابعثها مباشرة على واتساب.">Choisissez un service, remplissez le formulaire et envoyez-le directement sur WhatsApp.</p>
+        </div>
+
+        <div class="forms__tabs" role="tablist" aria-label="Services">
+          <button class="forms__tab" role="tab" data-tab="voyages" aria-selected="true"  data-fr="Voyages" data-ar="الرحلات">Voyages</button>
+          <button class="forms__tab" role="tab" data-tab="billets" aria-selected="false" data-fr="Billets" data-ar="تذاكر السفر">Billets</button>
+          <button class="forms__tab" role="tab" data-tab="hotels"  aria-selected="false" data-fr="Hôtels"  data-ar="الفنادق">Hôtels</button>
+          <button class="forms__tab" role="tab" data-tab="visas"   aria-selected="false" data-fr="Visas"   data-ar="التأشيرات">Visas</button>
+        </div>
+
+        <!-- Voyages -->
+        <div class="forms__panel is-active" data-panel="voyages">
+          <form class="form-card request-form" novalidate
+                data-wa-title-fr="Bonjour, je souhaite réserver un voyage :"
+                data-wa-title-ar="السلام عليكم، حاب نحجز رحلة:">
+            <h3 data-fr="Demande de voyage" data-ar="طلب رحلة">Demande de voyage</h3>
+            <div class="field">
+              <label data-fr="Destination" data-ar="الوجهة">Destination</label>
+              <input class="input" type="text" required data-role="trip-destination" data-ph-fr="Ex. Istanbul" data-ph-ar="مثال: إسطنبول" placeholder="Ex. Istanbul" />
+              <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Date" data-ar="التاريخ">Date</label>
+                <input class="input" type="date" dir="ltr" required />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field">
+                <label data-fr="Type de chambre" data-ar="نوع الغرفة">Type de chambre</label>
+                <select class="input" required>
+                  <option value="" data-fr="— Choisir —" data-ar="— اختر —">— Choisir —</option>
+                  <option data-fr="Simple" data-ar="مفردة">Simple</option>
+                  <option data-fr="Double" data-ar="ثنائية">Double</option>
+                  <option data-fr="Triple" data-ar="ثلاثية">Triple</option>
+                </select>
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Nombre de chambres" data-ar="عدد الغرف">Nombre de chambres</label>
+                <input class="input" type="number" min="1" value="1" dir="ltr" required />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field">
+                <label data-fr="Nombre d'adultes" data-ar="عدد البالغين">Nombre d'adultes</label>
+                <input class="input" type="number" min="1" value="2" dir="ltr" required />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Nombre d'enfants" data-ar="عدد الأطفال">Nombre d'enfants</label>
+                <input class="input" type="number" min="0" value="0" dir="ltr" data-role="children-count" />
+              </div>
+              <div class="field" data-role="children-ages-field" style="display:none;">
+                <label data-fr="Âges des enfants" data-ar="أعمار الأطفال">Âges des enfants</label>
+                <input class="input" type="text" data-role="children-ages" data-ph-fr="Ex. 5 ans, 8 ans" data-ph-ar="مثال: 5 سنوات، 8 سنوات" placeholder="Ex. 5 ans, 8 ans" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Nom complet" data-ar="الاسم الكامل">Nom complet</label>
+                <input class="input" type="text" required placeholder="Ahmed Benali" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field">
+                <label data-fr="Téléphone" data-ar="رقم الهاتف">Téléphone</label>
+                <input class="input" type="tel" dir="ltr" required placeholder="0661 00 00 00" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="wa-actions">
+              <div class="wa-actions__btns">
+                <button type="button" class="btn btn--whatsapp wa-send" data-send="whatsapp"><span class="wa-icon">💬</span> <span data-fr="Envoyer sur WhatsApp" data-ar="أرسل عبر واتساب">Envoyer sur WhatsApp</span></button>
+                <button type="button" class="btn btn--messenger wa-send" data-send="messenger"><span class="wa-icon">💬</span> <span data-fr="Envoyer sur Messenger" data-ar="أرسل عبر ماسنجر">Envoyer sur Messenger</span></button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Billets -->
+        <div class="forms__panel" data-panel="billets">
+          <form class="form-card request-form" novalidate
+                data-wa-title-fr="Bonjour, je souhaite réserver un billet :"
+                data-wa-title-ar="السلام عليكم، حاب نحجز تذكرة سفر:">
+            <h3 data-fr="Billet d'avion" data-ar="تذكرة سفر">Billet d'avion</h3>
+            <div class="field">
+              <label data-fr="Destination du voyage" data-ar="وجهة الرحلة">Destination du voyage</label>
+              <select class="input" data-role="trip-scope" required>
+                <option value="" data-fr="— Choisir —" data-ar="— اختر —">— Choisir —</option>
+                <option value="domestic" data-fr="Domestique (national)" data-ar="داخلية">Domestique (national)</option>
+                <option value="international" data-fr="Internationale" data-ar="دولية">Internationale</option>
+              </select>
+              <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Nom complet" data-ar="الاسم الكامل">Nom complet</label>
+                <input class="input" type="text" required placeholder="Ahmed Benali" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field">
+                <label data-fr="Téléphone" data-ar="رقم الهاتف">Téléphone</label>
+                <input class="input" type="tel" dir="ltr" required placeholder="0661 00 00 00" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Type de voyage" data-ar="نوع الرحلة">Type de voyage</label>
+                <select class="input" data-role="trip-type" required>
+                  <option value="roundtrip" data-fr="Aller-retour" data-ar="ذهاب وإياب">Aller-retour</option>
+                  <option value="oneway" data-fr="Aller simple" data-ar="ذهاب فقط">Aller simple</option>
+                </select>
+              </div>
+              <div class="field">
+                <label data-fr="Classe" data-ar="الدرجة">Classe</label>
+                <select class="input" required>
+                  <option value="" data-fr="— Choisir —" data-ar="— اختر —">— Choisir —</option>
+                  <option data-fr="Économique" data-ar="اقتصادية">Économique</option>
+                  <option data-fr="Affaires" data-ar="رجال أعمال">Affaires</option>
+                </select>
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="field">
+              <label data-fr="Compagnie préférée (optionnel)" data-ar="الشركة المفضّلة (اختياري)">Compagnie préférée (optionnel)</label>
+              <input class="input" type="text" data-ph-fr="Ex. Air Algérie" data-ph-ar="مثال: الخطوط الجوية الجزائرية" placeholder="Ex. Air Algérie" />
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Ville de départ" data-ar="مدينة المغادرة">Ville de départ</label>
+                <input class="input" type="text" required data-ph-fr="Ex. Alger" data-ph-ar="مثال: الجزائر" placeholder="Ex. Alger" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field">
+                <label data-fr="Date de départ" data-ar="تاريخ المغادرة">Date de départ</label>
+                <input class="input" type="date" dir="ltr" required />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Ville d'arrivée" data-ar="مدينة الوصول">Ville d'arrivée</label>
+                <input class="input" type="text" required data-ph-fr="Ex. Paris" data-ph-ar="مثال: باريس" placeholder="Ex. Paris" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field" data-role="return-date-field">
+                <label data-fr="Date de retour" data-ar="تاريخ العودة">Date de retour</label>
+                <input class="input" type="date" dir="ltr" data-role="return-date" required />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="travelers" data-travelers>
+              <span class="travelers__label" data-fr="Voyageurs" data-ar="المسافرون">Voyageurs</span>
+              <div class="travelers__list" data-travelers-list>
+                <div class="traveler-row" data-traveler-row>
+                  <input class="input" type="text" data-traveler-name required aria-label="Nom du voyageur" data-ph-fr="Nom du voyageur" data-ph-ar="اسم المسافر" placeholder="Nom du voyageur" />
+                  <input class="input" type="number" min="0" dir="ltr" data-traveler-age aria-label="Âge" data-ph-fr="Âge" data-ph-ar="العمر" placeholder="Âge" />
+                  <input class="input traveler-passport" type="text" dir="ltr" data-traveler-passport aria-label="N° passeport" data-ph-fr="N° passeport" data-ph-ar="رقم الجواز" placeholder="N° passeport" />
+                  <button type="button" class="traveler-remove" data-remove-traveler aria-label="Supprimer">✕</button>
+                </div>
+              </div>
+              <button type="button" class="btn-add-traveler" data-add-traveler>＋ <span data-fr="Ajouter un voyageur" data-ar="إضافة مسافر">Ajouter un voyageur</span></button>
+              <p class="travelers__error" data-travelers-error data-fr="Ajoutez au moins un voyageur." data-ar="أضف مسافراً واحداً على الأقل.">Ajoutez au moins un voyageur.</p>
+            </div>
+            <div class="field">
+              <label data-fr="Note (optionnel)" data-ar="ملاحظة (اختياري)">Note (optionnel)</label>
+              <textarea class="input" rows="3" data-ph-fr="Bagages, préférences de siège, escales…" data-ph-ar="الأمتعة، تفضيلات المقعد، التوقّفات…" placeholder="Bagages, préférences de siège, escales…"></textarea>
+            </div>
+            <div class="wa-actions">
+              <div class="wa-actions__btns">
+                <button type="button" class="btn btn--whatsapp wa-send" data-send="whatsapp"><span class="wa-icon">💬</span> <span data-fr="Envoyer sur WhatsApp" data-ar="أرسل عبر واتساب">Envoyer sur WhatsApp</span></button>
+                <button type="button" class="btn btn--messenger wa-send" data-send="messenger"><span class="wa-icon">💬</span> <span data-fr="Envoyer sur Messenger" data-ar="أرسل عبر ماسنجر">Envoyer sur Messenger</span></button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Hôtels -->
+        <div class="forms__panel" data-panel="hotels">
+          <form class="form-card request-form" novalidate
+                data-wa-title-fr="Bonjour, je souhaite réserver un hôtel :"
+                data-wa-title-ar="السلام عليكم، حاب نحجز فندق:">
+            <h3 data-fr="Réservation d'hôtel" data-ar="حجز فندق">Réservation d'hôtel</h3>
+            <div class="field">
+              <label data-fr="Destination" data-ar="الوجهة">Destination</label>
+              <input class="input" type="text" required data-ph-fr="Ex. La Mecque" data-ph-ar="مثال: مكة" placeholder="Ex. La Mecque" />
+              <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Date d'entrée" data-ar="تاريخ الدخول">Date d'entrée</label>
+                <input class="input" type="date" dir="ltr" required />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field">
+                <label data-fr="Date de sortie" data-ar="تاريخ الخروج">Date de sortie</label>
+                <input class="input" type="date" dir="ltr" required />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Nombre d'adultes" data-ar="عدد البالغين">Nombre d'adultes</label>
+                <input class="input" type="number" min="1" dir="ltr" required placeholder="2" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field">
+                <label data-fr="Nombre d'enfants" data-ar="عدد الأطفال">Nombre d'enfants</label>
+                <input class="input" type="number" min="0" dir="ltr" placeholder="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Type de chambre" data-ar="نوع الغرفة">Type de chambre</label>
+                <select class="input" required>
+                  <option value="" data-fr="— Choisir —" data-ar="— اختر —">— Choisir —</option>
+                  <option data-fr="Simple" data-ar="مفردة">Simple</option>
+                  <option data-fr="Double" data-ar="مزدوجة">Double</option>
+                  <option data-fr="Familiale" data-ar="عائلية">Familiale</option>
+                </select>
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field">
+                <label data-fr="Nombre de chambres" data-ar="عدد الغرف">Nombre de chambres</label>
+                <input class="input" type="number" min="1" dir="ltr" required placeholder="1" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Nom complet" data-ar="الاسم الكامل">Nom complet</label>
+                <input class="input" type="text" required placeholder="Ahmed Benali" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field">
+                <label data-fr="Téléphone" data-ar="رقم الهاتف">Téléphone</label>
+                <input class="input" type="tel" dir="ltr" required placeholder="0661 00 00 00" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="wa-actions">
+              <div class="wa-actions__btns">
+                <button type="button" class="btn btn--whatsapp wa-send" data-send="whatsapp"><span class="wa-icon">💬</span> <span data-fr="Envoyer sur WhatsApp" data-ar="أرسل عبر واتساب">Envoyer sur WhatsApp</span></button>
+                <button type="button" class="btn btn--messenger wa-send" data-send="messenger"><span class="wa-icon">💬</span> <span data-fr="Envoyer sur Messenger" data-ar="أرسل عبر ماسنجر">Envoyer sur Messenger</span></button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Visas -->
+        <div class="forms__panel" data-panel="visas">
+          <form class="form-card request-form" novalidate
+                data-wa-title-fr="Bonjour, je souhaite une demande de visa :"
+                data-wa-title-ar="السلام عليكم، حاب نطلب تأشيرة:">
+            <h3 data-fr="Demande de visa" data-ar="طلب تأشيرة">Demande de visa</h3>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Type de visa" data-ar="نوع التأشيرة">Type de visa</label>
+                <select class="input" required>
+                  <option value="" data-fr="— Choisir —" data-ar="— اختر —">— Choisir —</option>
+                  <option data-fr="Tourisme" data-ar="سياحية">Tourisme</option>
+                  <option data-fr="Affaires" data-ar="أعمال">Affaires</option>
+                  <option data-fr="Études" data-ar="دراسة">Études</option>
+                  <option data-fr="Soins médicaux" data-ar="علاج">Soins médicaux</option>
+                  <option data-fr="Visite familiale" data-ar="زيارة عائلية">Visite familiale</option>
+                </select>
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field">
+                <label data-fr="Pays de destination" data-ar="بلد الوجهة">Pays de destination</label>
+                <input class="input" type="text" required data-ph-fr="Ex. France" data-ph-ar="مثال: فرنسا" placeholder="Ex. France" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="field">
+              <label data-fr="Nom complet" data-ar="الاسم الكامل">Nom complet</label>
+              <input class="input" type="text" required placeholder="Ahmed Benali" />
+              <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label data-fr="Numéro de passeport" data-ar="رقم جواز السفر">Numéro de passeport</label>
+                <input class="input" type="text" dir="ltr" required placeholder="12AB34567" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+              <div class="field">
+                <label data-fr="Téléphone" data-ar="رقم الهاتف">Téléphone</label>
+                <input class="input" type="tel" dir="ltr" required placeholder="0661 00 00 00" />
+                <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
+              </div>
+            </div>
+            <div class="wa-actions">
+              <div class="wa-actions__btns">
+                <button type="button" class="btn btn--whatsapp wa-send" data-send="whatsapp"><span class="wa-icon">💬</span> <span data-fr="Envoyer sur WhatsApp" data-ar="أرسل عبر واتساب">Envoyer sur WhatsApp</span></button>
+                <button type="button" class="btn btn--messenger wa-send" data-send="messenger"><span class="wa-icon">💬</span> <span data-fr="Envoyer sur Messenger" data-ar="أرسل عبر ماسنجر">Envoyer sur Messenger</span></button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <img class="footer__logo" src="logo.png" alt="Djen-Djen Travel" width="48" height="48" />
+            <span class="footer__name" data-fr="Djen-Djen Travel" data-ar="جن جن للسياحة والأسفار">Djen-Djen Travel</span>
+          </div>
+          <p data-fr="Agence de tourisme à Jijel depuis 2017. Avec vous, avec soin, à chaque étape." data-ar="وكالة سياحة بجيجل منذ 2017. معك، وبعناية، في كل خطوة.">Agence de tourisme à Jijel depuis 2017. Avec vous, avec soin, à chaque étape.</p>
+        </div>
+        <div>
+          <h4 data-fr="Contact" data-ar="اتصل بنا">Contact</h4>
+          <ul class="footer__contact">
+            <li><span class="ico">📞</span> <a href="tel:+213661417571"><bdi>0661 41 75 71</bdi></a> <span class="footer__tag" data-fr="(Renseignements)" data-ar="(للاستفسار)">(للاستفسار)</span></li>
+            <li><span class="ico">📞</span> <a href="tel:+213673098932"><bdi>0673 09 89 32</bdi></a></li>
+            <li><span class="ico">☎️</span> <a href="tel:+213030547293"><bdi>030 54 72 93</bdi></a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-fr="Adresse" data-ar="العنوان">Adresse</h4>
+          <ul>
+            <li data-fr="Rue Larbi Ben M'hidi (السيرك)" data-ar="شارع العربي بن مهيدي (السيرك)">Rue Larbi Ben M'hidi (السيرك)</li>
+            <li data-fr="Jijel, Algérie" data-ar="جيجل، الجزائر">Jijel, Algérie</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-fr="© 2026 Djen-Djen Travel. Tous droits réservés." data-ar="© 2026 جن جن للسياحة والأسفار. جميع الحقوق محفوظة.">© 2026 Djen-Djen Travel. Tous droits réservés.</span>
+        <span data-fr="Omra · Voyages · Billets · Hôtels · Visas" data-ar="عمرة · رحلات · تذاكر · فنادق · تأشيرات">Omra · Voyages · Billets · Hôtels · Visas</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>
