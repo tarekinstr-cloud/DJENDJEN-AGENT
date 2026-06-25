@@ -141,6 +141,7 @@
   var slider = document.querySelector(".hero-slider");
   if (slider) {
     var slides = slider.querySelectorAll(".hero-slides img");
+    var texts = slider.querySelectorAll(".hero-text");
     var dotsWrap = slider.querySelector(".hero-dots");
     var arrowPrev = slider.querySelector(".hero-prev");
     var arrowNext = slider.querySelector(".hero-next");
@@ -162,6 +163,7 @@
 
     function render() {
       slides.forEach(function (s, i) { s.classList.toggle("is-active", i === current); });
+      texts.forEach(function (t, i) { t.classList.toggle("is-active", i === current); });
       dots.forEach(function (d, i) { d.classList.toggle("is-active", i === current); });
     }
     function go(i) { current = (i + slides.length) % slides.length; render(); }
