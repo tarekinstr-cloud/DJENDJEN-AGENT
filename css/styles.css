@@ -366,6 +366,9 @@ img.flag { display: block; border-radius: 3px; box-shadow: 0 0 0 1px rgba(10,72,
 .visa-docs { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--sp-2); }
 .visa-docs li { position: relative; padding-inline-start: var(--sp-6); color: var(--ink-soft); font-size: .95rem; }
 .visa-docs li::before { content: "✅"; position: absolute; inset-inline-start: 0; }
+.visa-conds { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--sp-2); }
+.visa-conds li { position: relative; padding-inline-start: var(--sp-5); color: var(--ink-soft); font-size: .9rem; line-height: 1.6; }
+.visa-conds li::before { content: "•"; position: absolute; inset-inline-start: 0; color: var(--gold-600); font-weight: 700; }
 .visa-row__body .btn { justify-self: start; }
 
 .warning-banner {

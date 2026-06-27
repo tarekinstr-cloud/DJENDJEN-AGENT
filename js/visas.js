@@ -11,12 +11,47 @@
 
   function lang() { return document.documentElement.getAttribute("lang") === "ar" ? "ar" : "fr"; }
 
-  // Required documents (indicative) — shown for every visa
+  // Required documents (indicative) — default list when a visa has no override
   var DOCS = [
     ["Passeport valide (+6 mois)", "جواز سفر ساري المفعول (+6 أشهر)"],
     ["2 photos d'identité récentes", "صورتان شمسيتان حديثتان"],
     ["Réservation vol + hôtel", "حجز الطيران والفندق"],
     ["Relevé bancaire récent", "كشف حساب بنكي حديث"]
+  ];
+
+  // --- Per-country document & condition sets ---
+  var UAE_DOCS = [
+    ["Scan complet du passeport", "سكان جواز كامل"],
+    ["Photo récente, fond blanc", "صورة حديثة خلفية بيضاء"],
+    ["Acte de mariage (pour les couples)", "عقد زواج (للزوجين)"],
+    ["Acte de naissance (pour les enfants)", "شهادة ميلاد (للأطفال)"],
+    ["Billet d'avion aller-retour (source Amadeus)", "تذكرة طيران ذهاب إياب (source Amadeus)"],
+    ["Réservation d'hôtel provisoire", "حجز فندق مؤقت"],
+    ["Couverture complète du passeport (full passport cover)", "غلاف جواز كامل (full passport cover)"]
+  ];
+  var UAE_COND = [
+    ["Passeport valide au moins 6 mois au-delà de la durée du visa", "جواز السفر يجب أن يكون صالحاً 6 أشهر على الأقل فوق مدة الفيزا"],
+    ["L'octroi ou le refus du visa relève du gouvernement de Dubaï", "قرار منح أو رفض الفيزا من صلاحية حكومة دبي"],
+    ["Aucun remboursement en cas de refus du visa", "لا استرجاع في حالة رفض الفيزا"],
+    ["Amende de 50 AED par jour en cas de dépassement de la durée du visa", "غرامة 50 AED يومياً عند تجاوز مدة الفيزا"],
+    ["La date de voyage doit être au moins 15 jours après la date de demande", "تاريخ السفر يجب أن يكون بعد 15 يوم على الأقل من تاريخ الطلب"],
+    ["Fournir des billets d'avion authentiques et des réservations d'hôtel valides", "تقديم تذاكر طيران أصلية وحجوزات فندقية صالحة"]
+  ];
+
+  var JO_DOCS = [
+    ["Passeport valide", "جواز سفر ساري المفعول"]
+  ];
+  var JO_COND = [
+    ["Quitter le pays avant l'expiration du visa, sous peine d'une amende de 100 000 à 2 000 000 dinars", "يجب مغادرة البلاد قبل انتهاء الفيزا وإلا غرامة من 100,000 إلى 2,000,000 دينار"]
+  ];
+
+  var TR_EVISA_DOCS = [
+    ["Scan du passeport", "سكان جواز"],
+    ["Scan d'un visa Schengen / UK / Irlande / USA valide, ou d'un titre de séjour", "سكان فيزا شنغن أو UK أو إيرلاندا أو USA سارية المفعول أو تصريح إقامة"]
+  ];
+  var TR_EVISA_COND = [
+    ["Réservé aux 35–50 ans uniquement", "للأعمار بين 35 و50 سنة فقط"],
+    ["Le visa Schengen / UK / Irlande / USA doit être valide", "فيزا شنغن/UK/إيرلاندا/USA يجب أن تكون سارية المفعول"]
   ];
 
   // [type_fr, type_ar, price, delai_fr, delai_ar]
@@ -29,17 +64,17 @@
         [["Passeport", "جواز سفر"], ["Photo d'identité", "صورة"]]]
     ]},
     { f: "🇯🇴", fr: "Jordanie", ar: "الأردن", v: [
-      ["Visa 1 mois / 3 mois", "فيزا 1شهر/3أشهر", "1 500", "24 h", "24 ساعة"]
+      ["Visa 1 mois / 3 mois", "فيزا 1شهر/3أشهر", "1 500", "24 h", "24 ساعة", JO_DOCS, JO_COND]
     ]},
     { f: "🇦🇪", fr: "Émirats", ar: "الإمارات", v: [
-      ["Dubaï 1 mois, entrée unique", "دبي 1شهر دخول واحد", "24 500", "7–10 jours", "7-10 أيام"],
-      ["Dubaï 2 mois, entrée unique", "دبي 2شهر دخول واحد", "41 000", "7–10 jours", "7-10 أيام"],
-      ["Dubaï 1 mois, entrées multiples", "دبي 1شهر دخولات متعددة", "40 000", "7–10 jours", "7-10 أيام"],
-      ["Dubaï 2 mois, entrées multiples", "دبي 2شهر دخولات متعددة", "60 000", "7–10 jours", "7-10 أيام"],
-      ["Prolongation visa 30 jours", "تمديد فيزا 30 يوم", "75 000", "7–10 jours", "7-10 أيام"]
+      ["Dubaï 1 mois, entrée unique", "دبي 1شهر دخول واحد", "24 500", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
+      ["Dubaï 2 mois, entrée unique", "دبي 2شهر دخول واحد", "41 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
+      ["Dubaï 1 mois, entrées multiples", "دبي 1شهر دخولات متعددة", "40 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
+      ["Dubaï 2 mois, entrées multiples", "دبي 2شهر دخولات متعددة", "60 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
+      ["Prolongation visa 30 jours", "تمديد فيزا 30 يوم", "75 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND]
     ]},
     { f: "🇹🇷", fr: "Turquie", ar: "تركيا", v: [
-      ["Visa électronique", "فيزا إلكترونية", "17 000", "24 h", "24 ساعة"],
+      ["Visa électronique", "فيزا إلكترونية", "17 000", "24 h", "24 ساعة", TR_EVISA_DOCS, TR_EVISA_COND],
       ["Visa sticker", "فيزا ملصق", "3 000", "selon le RDV", "حسب الموعد"]
     ]},
     { f: "🇹🇭", fr: "Thaïlande", ar: "تايلاند", v: [
@@ -151,6 +186,17 @@
       var docs = v[5] || DOCS;            // per-visa override, else default list
       docs.forEach(function (doc) { ul.appendChild(bil(el("li"), doc[0], doc[1])); });
       body.appendChild(ul);
+
+      // Conditions (only when provided for this visa)
+      var conds = v[6];
+      if (conds && conds.length) {
+        var condH = el("p", "visa-docs-h");
+        bil(condH, "Conditions :", "الشروط:");
+        body.appendChild(condH);
+        var cul = el("ul", "visa-conds");
+        conds.forEach(function (cd) { cul.appendChild(bil(el("li"), cd[0], cd[1])); });
+        body.appendChild(cul);
+      }
 
       var a = el("a", "btn btn--whatsapp");
       a.href = WA; a.target = "_blank"; a.rel = "noopener";
