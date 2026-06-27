@@ -313,23 +313,73 @@ h1, h2, h3 {
   .price-tables { grid-template-columns: 1fr; }
 }
 
-/* Visas page */
-.visa-card .card__body { display: flex; flex-direction: column; gap: var(--sp-3); }
-.visa-card__head { display: flex; align-items: center; gap: var(--sp-3); }
-.visa-flag { font-size: 1.9rem; line-height: 1; }
-.visa-card .card__title { font-size: 1.25rem; }
-.visa-type { margin: 0; color: var(--ink-soft); font-size: .95rem; min-height: 2.6em; }
-.visa-meta {
-  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3);
-  padding-block: var(--sp-3); border-block: 1px solid var(--line);
+/* Visas page — sidebar + accordion */
+.visas-layout { display: grid; grid-template-columns: 280px 1fr; gap: var(--sp-8); align-items: start; }
+
+.visa-sidebar {
+  display: grid; gap: var(--sp-1); position: sticky; top: 88px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-lg); padding: var(--sp-3); box-shadow: var(--shadow-sm);
 }
-.visa-price { font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; color: var(--blue-900); white-space: nowrap; }
-.visa-price .cur { font-family: var(--font-text); font-size: .85rem; color: var(--ink-soft); }
-.visa-time { font-size: .85rem; color: var(--ink-soft); white-space: nowrap; }
+.visa-country {
+  display: flex; align-items: center; gap: var(--sp-3); width: 100%;
+  text-align: start; border: 0; background: transparent; cursor: pointer;
+  font: inherit; font-weight: 600; color: var(--ink);
+  padding: var(--sp-3) var(--sp-4); border-radius: var(--r-md);
+  transition: background .15s, color .15s;
+}
+.visa-country .flag { font-size: 1.35rem; line-height: 1; }
+.visa-country:hover { background: var(--blue-50); color: var(--blue-700); }
+.visa-country.is-active { background: var(--blue-500); color: #fff; }
+.visa-country:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+.visa-panel { min-width: 0; }
+.visa-panel__section { display: none; }
+.visa-panel__section.is-active { display: block; }
+.visa-panel__title {
+  font-family: var(--font-heading); font-size: 1.8rem; color: var(--blue-900);
+  margin: 0 0 var(--sp-6); display: flex; align-items: center; gap: var(--sp-3);
+}
+.visa-panel__title .flag { font-size: 1.6rem; }
+
+.visa-row {
+  border: 1px solid var(--line); border-radius: var(--r-md);
+  margin-block-end: var(--sp-3); background: var(--surface); overflow: hidden;
+}
+.visa-row > summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center;
+  justify-content: space-between; gap: var(--sp-4); padding: var(--sp-4) var(--sp-6);
+  font-weight: 700; color: var(--ink);
+}
+.visa-row > summary::-webkit-details-marker { display: none; }
+.visa-row > summary::after { content: "▾"; color: var(--blue-500); transition: transform .2s; margin-inline-start: var(--sp-2); }
+.visa-row[open] > summary { background: var(--blue-50); }
+.visa-row[open] > summary::after { transform: rotate(180deg); }
+.visa-row > summary:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.visa-row__type { flex: 1; }
+.visa-row__price { font-family: var(--font-heading); font-size: 1.3rem; color: var(--blue-700); white-space: nowrap; }
+
+.visa-row__body { padding: 0 var(--sp-6) var(--sp-6); display: grid; gap: var(--sp-4); }
+.visa-row__meta { margin: 0; color: var(--ink-soft); font-size: .95rem; }
+.visa-docs-h { margin: 0; font-weight: 700; color: var(--ink); font-size: .9rem; }
+.visa-docs { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--sp-2); }
+.visa-docs li { position: relative; padding-inline-start: var(--sp-5); color: var(--ink-soft); font-size: .95rem; }
+.visa-docs li::before { content: "✓"; position: absolute; inset-inline-start: 0; color: var(--blue-500); font-weight: 700; }
+.visa-row__body .btn { justify-self: start; }
+
 .warning-banner {
   margin-block-start: var(--sp-12); text-align: center; font-weight: 600;
   background: var(--gold-200); border: 1px solid var(--gold-400); color: var(--gold-800);
   border-radius: var(--r-md); padding: var(--sp-4) var(--sp-6);
+}
+
+@media (max-width: 860px) {
+  .visas-layout { grid-template-columns: 1fr; gap: var(--sp-6); }
+  .visa-sidebar {
+    position: static; grid-auto-flow: column; grid-auto-columns: max-content;
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+  }
+  .visa-country { white-space: nowrap; }
 }
 
 /* Destinations (voyages page) */
