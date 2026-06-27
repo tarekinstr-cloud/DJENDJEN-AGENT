@@ -54,6 +54,20 @@
     ["Le visa Schengen / UK / Irlande / USA doit être valide", "فيزا شنغن/UK/إيرلاندا/USA يجب أن تكون سارية المفعول"]
   ];
 
+  var LB_DOCS = [
+    ["Passeport", "جواز سفر"],
+    ["Acte de naissance", "شهادة ميلاد"],
+    ["2 photos d'identité", "صورتان شمسيتان"],
+    ["Attestation de travail ou registre de commerce", "شهادة عمل أو سجل تجاري"],
+    ["3 fiches de paie", "3 كشوف راتب"],
+    ["Relevé bancaire en devise étrangère", "كشف بنكي بالعملة الأجنبية"],
+    ["Réservation d'hôtel et billet d'avion", "حجز فندق وتذكرة طيران"]
+  ];
+  var LB_COND = [
+    ["Le dossier doit être envoyé à l'agence", "يجب إرسال الملف للوكالة"],
+    ["La durée de séjour ne doit pas dépasser la durée du visa", "مدة الإقامة لا تتجاوز مدة الفيزا"]
+  ];
+
   // [type_fr, type_ar, price, delai_fr, delai_ar]
   var COUNTRIES = [
     { f: "🇪🇬", fr: "Égypte", ar: "مصر", v: [
@@ -111,11 +125,14 @@
     ]},
     { f: "🇨🇦", fr: "Canada", ar: "كندا", v: [
       ["Visa touristique", "فيزا سياحية", "50 000", "variable", "متغيرة"]
+    ]},
+    { f: "🇱🇧", fr: "Liban", ar: "لبنان", v: [
+      ["Visa sticker", "فيزا ملصق", "20 000", "5–10 jours", "5-10 أيام", LB_DOCS, LB_COND]
     ]}
   ];
 
   // ISO codes (same order as COUNTRIES) for flagcdn.com images
-  var CODES = ["eg", "qa", "jo", "ae", "tr", "th", "sg", "id", "az", "om", "am", "sa", "cn", "kr", "ru", "ca"];
+  var CODES = ["eg", "qa", "jo", "ae", "tr", "th", "sg", "id", "az", "om", "am", "sa", "cn", "kr", "ru", "ca", "lb"];
 
   var sidebar = document.getElementById("visaSidebar");
   var panel = document.getElementById("visaPanel");
