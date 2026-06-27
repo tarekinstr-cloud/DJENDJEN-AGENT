@@ -313,6 +313,25 @@ h1, h2, h3 {
   .price-tables { grid-template-columns: 1fr; }
 }
 
+/* Visas page */
+.visa-card .card__body { display: flex; flex-direction: column; gap: var(--sp-3); }
+.visa-card__head { display: flex; align-items: center; gap: var(--sp-3); }
+.visa-flag { font-size: 1.9rem; line-height: 1; }
+.visa-card .card__title { font-size: 1.25rem; }
+.visa-type { margin: 0; color: var(--ink-soft); font-size: .95rem; min-height: 2.6em; }
+.visa-meta {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3);
+  padding-block: var(--sp-3); border-block: 1px solid var(--line);
+}
+.visa-price { font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; color: var(--blue-900); white-space: nowrap; }
+.visa-price .cur { font-family: var(--font-text); font-size: .85rem; color: var(--ink-soft); }
+.visa-time { font-size: .85rem; color: var(--ink-soft); white-space: nowrap; }
+.warning-banner {
+  margin-block-start: var(--sp-12); text-align: center; font-weight: 600;
+  background: var(--gold-200); border: 1px solid var(--gold-400); color: var(--gold-800);
+  border-radius: var(--r-md); padding: var(--sp-4) var(--sp-6);
+}
+
 /* Destinations (voyages page) */
 .dest-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gutter); align-items: start; }
 .dest-card .card__media { aspect-ratio: auto; height: 200px; }
