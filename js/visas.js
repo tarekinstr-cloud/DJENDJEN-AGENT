@@ -79,6 +79,9 @@
     ]}
   ];
 
+  // ISO codes (same order as COUNTRIES) for flagcdn.com images
+  var CODES = ["eg", "qa", "jo", "ae", "tr", "th", "sg", "id", "az", "om", "am", "sa", "cn", "kr", "ru", "ca"];
+
   var sidebar = document.getElementById("visaSidebar");
   var panel = document.getElementById("visaPanel");
   if (!sidebar || !panel) return;
@@ -91,14 +94,20 @@
     e.textContent = (lang() === "ar" ? ar : fr);
     return e;
   }
-  function flag(ch) { var s = el("span", "flag"); s.textContent = ch; s.setAttribute("aria-hidden", "true"); return s; }
+  function flag(code, dim) {
+    var im = el("img", "flag");
+    im.src = "https://flagcdn.com/" + dim + "/" + code + ".png";
+    im.alt = "flag";
+    im.loading = "lazy";
+    return im;
+  }
 
   COUNTRIES.forEach(function (c, i) {
     // --- Sidebar button ---
     var btn = el("button", "visa-country" + (i === 0 ? " is-active" : ""));
     btn.type = "button";
     btn.setAttribute("data-idx", i);
-    btn.appendChild(flag(c.f));
+    btn.appendChild(flag(CODES[i], "24x18"));
     btn.appendChild(bil(el("span"), c.fr, c.ar));
     btn.addEventListener("click", function () { select(i); });
     sidebar.appendChild(btn);
@@ -108,7 +117,7 @@
     sec.setAttribute("data-idx", i);
 
     var title = el("h2", "visa-panel__title");
-    title.appendChild(flag(c.f));
+    title.appendChild(flag(CODES[i], "48x36"));
     title.appendChild(bil(el("span"), c.fr, c.ar));
     sec.appendChild(title);
 

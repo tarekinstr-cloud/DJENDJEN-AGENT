@@ -328,7 +328,8 @@ h1, h2, h3 {
   padding: var(--sp-3) var(--sp-4); border-radius: var(--r-md);
   transition: background .15s, color .15s;
 }
-.visa-country .flag { font-size: 1.35rem; line-height: 1; }
+img.flag { display: block; border-radius: 3px; box-shadow: 0 0 0 1px rgba(10,72,101,.08); }
+.visa-country .flag { width: 24px; height: 18px; }
 .visa-country:hover { background: var(--blue-50); color: var(--blue-700); }
 .visa-country.is-active { background: var(--blue-500); color: #fff; }
 .visa-country:focus-visible { outline: none; box-shadow: var(--focus-ring); }
@@ -340,7 +341,7 @@ h1, h2, h3 {
   font-family: var(--font-heading); font-size: 1.8rem; color: var(--blue-900);
   margin: 0 0 var(--sp-6); display: flex; align-items: center; gap: var(--sp-3);
 }
-.visa-panel__title .flag { font-size: 1.6rem; }
+.visa-panel__title .flag { width: 36px; height: 27px; }
 
 .visa-row {
   border: 1px solid var(--line); border-radius: var(--r-md);
