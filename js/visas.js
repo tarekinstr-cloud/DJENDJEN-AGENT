@@ -25,7 +25,8 @@
       ["Lettre de garantie", "خطاب ضمان", "4 500", "3 jours", "3 أيام"]
     ]},
     { f: "🇶🇦", fr: "Qatar", ar: "قطر", v: [
-      ["Visa 1 mois", "فيزا 1 شهر", "9 000", "2 jours", "يومان"]
+      ["Visa 1 mois", "فيزا 1 شهر", "9 000", "2 jours", "يومان",
+        [["Passeport", "جواز سفر"], ["Photo d'identité", "صورة"]]]
     ]},
     { f: "🇯🇴", fr: "Jordanie", ar: "الأردن", v: [
       ["Visa 1 mois / 3 mois", "فيزا 1شهر/3أشهر", "1 500", "24 h", "24 ساعة"]
@@ -138,7 +139,8 @@
       body.appendChild(docsH);
 
       var ul = el("ul", "visa-docs");
-      DOCS.forEach(function (doc) { ul.appendChild(bil(el("li"), doc[0], doc[1])); });
+      var docs = v[5] || DOCS;            // per-visa override, else default list
+      docs.forEach(function (doc) { ul.appendChild(bil(el("li"), doc[0], doc[1])); });
       body.appendChild(ul);
 
       var a = el("a", "btn btn--whatsapp");
