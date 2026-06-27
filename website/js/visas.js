@@ -179,7 +179,10 @@
       ["Dubaï 2 mois, entrée unique", "دبي 2شهر دخول واحد", "41 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
       ["Dubaï 1 mois, entrées multiples", "دبي 1شهر دخولات متعددة", "40 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
       ["Dubaï 2 mois, entrées multiples", "دبي 2شهر دخولات متعددة", "60 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
-      ["Prolongation visa 30 jours", "تمديد فيزا 30 يوم", "75 000", "7–10 jours", "7-10 أيام", VISA_COPY_DOCS, UAE_COND]
+      ["Prolongation visa 30 jours", "تمديد فيزا 30 يوم", "75 000", "7–10 jours", "7-10 أيام", VISA_COPY_DOCS, UAE_COND],
+      ["Dubaï 60 jours, entrée unique", "دبي 60 يوم دخول واحد", "40 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
+      ["Dubaï 60 jours, entrées multiples", "دبي 60 يوم دخولات متعددة", "58 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
+      ["Dubaï 30 jours, enfants de moins de 12 ans", "دبي 30 يوم للأطفال أقل من 12", "12 500", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND]
     ]},
     { f: "🇹🇷", fr: "Turquie", ar: "تركيا", v: [
       ["Visa électronique", "فيزا إلكترونية", "17 000", "24 h", "24 ساعة", TR_EVISA_DOCS, TR_EVISA_COND],
