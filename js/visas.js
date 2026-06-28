@@ -290,7 +290,7 @@
     { f: "🇷🇺", fr: "Russie", ar: "روسيا", v: [
       ["Visa 1 mois", "فيزا 1 شهر", "64 000", "15 jours", "15 يوم", RU_DOCS]
     ]},
-    { f: "🇨🇦", fr: "Canada", ar: "كندا", v: [
+    { f: "🇨🇦", fr: "Canada", ar: "كندا", note: ["Visa d'études", "تأشيرة دراسة"], v: [
       ["Admission", "قبول", "20 000", "variable", "متغيرة", CA_ADM_DOCS],
       ["CAQ", "CAQ", "10 000", "variable", "متغيرة", CA_CAQ_DOCS],
       ["Permis d'étude", "تصريح دراسة", "20 000", "variable", "متغيرة", CA_PERMIS_DOCS]
@@ -366,6 +366,12 @@
     title.appendChild(flag(CODES[i], "48x36"));
     title.appendChild(bil(el("span"), c.fr, c.ar));
     sec.appendChild(title);
+
+    if (c.note) {
+      var note = el("p", "visa-panel__note");
+      bil(note, c.note[0], c.note[1]);
+      sec.appendChild(note);
+    }
 
     c.v.forEach(function (v, j) {
       var row = el("details", "visa-row");

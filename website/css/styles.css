@@ -342,6 +342,11 @@ img.flag { display: block; border-radius: 3px; box-shadow: 0 0 0 1px rgba(10,72,
   margin: 0 0 var(--sp-6); display: flex; align-items: center; gap: var(--sp-3);
 }
 .visa-panel__title .flag { width: 36px; height: 27px; }
+.visa-panel__note {
+  display: inline-block; margin: calc(var(--sp-4) * -1) 0 var(--sp-6);
+  background: var(--gold-200); color: var(--gold-800); border: 1px solid var(--gold-400);
+  font-weight: 700; font-size: .82rem; padding: var(--sp-1) var(--sp-3); border-radius: var(--r-pill);
+}
 
 .visa-row {
   border: 1px solid var(--line); border-radius: var(--r-md);
