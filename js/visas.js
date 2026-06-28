@@ -181,6 +181,53 @@
   var ET_DOCS = [["Scan du passeport", "سكان جواز"], ["Photo fond blanc", "صورة خلفية بيضاء"], ["Date de voyage", "تاريخ السفر"]];
   var MG_DOCS = [["Scan du passeport", "سكان جواز"], ["Photo fond blanc", "صورة خلفية بيضاء"], ["Date de voyage", "تاريخ السفر"]];
 
+  var TH_DOCS = [
+    ["Scan du passeport", "سكان جواز السفر"],
+    ["Photo d'identité", "صورة شمسية"],
+    ["Justificatif de résidence en français", "وثيقة إقامة بالفرنسية"],
+    ["Billet confirmé", "تذكرة مؤكدة"],
+    ["Relevé bancaire (2000 €)", "كشف حساب بنكي 2000 يورو"]
+  ];
+  var SG_DOCS = [
+    ["Scan du passeport (imprimé)", "سكان جواز السفر (مطبوع)"],
+    ["Photo d'identité (par photographe)", "صورة شمسية من مصور"],
+    ["Réservation d'hôtel provisoire", "حجز فندق مؤقت"],
+    ["Billet télex", "بيليه تيليكس"],
+    ["Registre de commerce ou attestation de travail", "RC أو شهادة عمل"]
+  ];
+  var RU_DOCS = [
+    ["Passeport", "جواز السفر"],
+    ["Photo d'identité", "صورة شمسية"],
+    ["Acte de naissance", "عقد الميلاد"],
+    ["Attestation originale + copie", "الشهادة الأصلية + نسخة"]
+  ];
+  var CA_ADM_DOCS = [
+    ["Passeport", "جواز السفر"],
+    ["Photo", "صورة"],
+    ["Acte de naissance", "عقد الميلاد"],
+    ["Attestation originale + copie", "الشهادة الأصلية + نسخة"]
+  ];
+  var CA_CAQ_DOCS = [
+    ["Passeport", "جواز السفر"],
+    ["Photo", "صورة"],
+    ["Lettre d'admission", "وثيقة القبول"]
+  ];
+  var CA_PERMIS_DOCS = [
+    ["Passeport", "جواز السفر"],
+    ["Photo", "صورة"],
+    ["Acte de naissance", "عقد الميلاد"],
+    ["Fiche familiale", "الفيش العائلي"],
+    ["Lettre d'admission", "وثيقة القبول"],
+    ["CAQ", "CAQ"],
+    ["Dossier du garant", "ملف الكفيل"]
+  ];
+  var AM_DOCS = [
+    ["Scan du passeport", "سكان جواز السفر"],
+    ["Photo d'identité récente", "صورة شمسية حديثة"],
+    ["Billet aller-retour (optionnel)", "تذكرة ذهاب وإياب (اختياري)"],
+    ["Réservation d'hôtel", "حجز فندق"]
+  ];
+
   // [type_fr, type_ar, price, delai_fr, delai_ar, docs?, conditions?]
   var COUNTRIES = [
     { f: "🇪🇬", fr: "Égypte", ar: "مصر", v: [
@@ -209,10 +256,10 @@
       ["Visa sticker", "فيزا ملصق", "3 000", "selon le RDV", "حسب الموعد", TR_STICKER_DOCS]
     ]},
     { f: "🇹🇭", fr: "Thaïlande", ar: "تايلاند", v: [
-      ["e-Visa 1 mois", "إي-فيزا 1شهر", "18 000", "30 jours", "30 يوم"]
+      ["e-Visa 1 mois", "إي-فيزا 1شهر", "18 000", "20–25 jours ouvrables", "20-25 يوم عمل", TH_DOCS]
     ]},
     { f: "🇸🇬", fr: "Singapour", ar: "سنغافورة", v: [
-      ["Visa 1 mois", "فيزا 1 شهر", "30 000", "15 jours", "15 يوم"]
+      ["Visa 1 mois", "فيزا 1 شهر", "30 000", "10–15 jours ouvrables", "10-15 يوم عمل", SG_DOCS]
     ]},
     { f: "🇮🇩", fr: "Indonésie", ar: "إندونيسيا", v: [
       ["Visa sticker 60 jours", "فيزا ملصق 60 يوم", "24 000", "12 jours", "12 يوم", ID_DOCS1, NOREFUND],
@@ -228,7 +275,7 @@
       ["Prolongation e-Visa 30 jours", "تمديد إي-فيزا 30 يوم", "25 000", "5 jours", "5 أيام", VISA_COPY_DOCS, OM_EXT_COND]
     ]},
     { f: "🇦🇲", fr: "Arménie", ar: "أرمينيا", v: [
-      ["Visa 21 jours / 3 mois", "فيزا 21يوم/3أشهر", "5 000", "5–10 jours", "5-10 أيام"]
+      ["Visa 21 jours / 3 mois", "فيزا 21يوم/3أشهر", "5 000", "5–7 jours ouvrables", "5-7 أيام عمل", AM_DOCS]
     ]},
     { f: "🇸🇦", fr: "Arabie Saoudite", ar: "السعودية", v: [
       ["Visa touristique 90 jours", "فيزا سياحية 90 يوم", "33 000", "selon le RDV", "حسب الموعد", SA_DOCS, SA_COND]
@@ -241,10 +288,12 @@
       ["Visa sticker", "فيزا ملصق", "12 000", "5 jours", "5 أيام"]
     ]},
     { f: "🇷🇺", fr: "Russie", ar: "روسيا", v: [
-      ["Visa 1 mois", "فيزا 1 شهر", "64 000", "15 jours", "15 يوم"]
+      ["Visa 1 mois", "فيزا 1 شهر", "64 000", "15 jours", "15 يوم", RU_DOCS]
     ]},
     { f: "🇨🇦", fr: "Canada", ar: "كندا", v: [
-      ["Visa touristique", "فيزا سياحية", "50 000", "variable", "متغيرة"]
+      ["Admission", "قبول", "50 000", "variable", "متغيرة", CA_ADM_DOCS],
+      ["CAQ", "CAQ", "50 000", "variable", "متغيرة", CA_CAQ_DOCS],
+      ["Permis d'étude", "تصريح دراسة", "50 000", "variable", "متغيرة", CA_PERMIS_DOCS]
     ]},
     { f: "🇱🇧", fr: "Liban", ar: "لبنان", v: [
       ["Visa sticker", "فيزا ملصق", "20 000", "5–10 jours", "5-10 أيام", LB_DOCS, LB_COND]
