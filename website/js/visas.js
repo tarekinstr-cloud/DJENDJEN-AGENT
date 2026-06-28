@@ -41,6 +41,10 @@
     ["Date de voyage au moins 15 jours après la demande", "تاريخ السفر بعد 15 يوم من الطلب"],
     ["Billets et réservations authentiques", "تذاكر وحجوزات أصلية"]
   ];
+  var AE_CANCEL_COND = [
+    ["Annulation uniquement avant l'entrée dans le pays", "الإلغاء قبل دخول البلاد فقط"],
+    ["Aucun remboursement après l'entrée", "لا استرجاع بعد الدخول"]
+  ];
 
   var JO_DOCS = [
     ["Passeport valide", "جواز سفر ساري المفعول"]
@@ -184,8 +188,8 @@
       ["Dubaï 1 mois, entrées multiples", "دبي 1شهر دخولات متعددة", "40 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
       ["Dubaï 2 mois, entrées multiples", "دبي 2شهر دخولات متعددة", "60 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
       ["Prolongation visa 30 jours", "تمديد فيزا 30 يوم", "75 000", "7–10 jours", "7-10 أيام", VISA_COPY_DOCS, UAE_COND],
-      ["Dubaï 60 jours, entrée unique", "دبي 60 يوم دخول واحد", "40 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
-      ["Dubaï 60 jours, entrées multiples", "دبي 60 يوم دخولات متعددة", "58 000", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND],
+      ["Dubaï 30 jours Express", "دبي 30 يوم Express", "25 000", "3–5 jours", "3-5 أيام", UAE_DOCS, UAE_COND],
+      ["Annulation visa Dubaï avant l'entrée", "إلغاء فيزا دبي قبل الدخول", "12 000", "7–10 jours", "7-10 أيام", VISA_COPY_DOCS, AE_CANCEL_COND],
       ["Dubaï 30 jours, enfants de moins de 12 ans", "دبي 30 يوم للأطفال أقل من 12", "12 500", "7–10 jours", "7-10 أيام", UAE_DOCS, UAE_COND]
     ]},
     { f: "🇹🇷", fr: "Turquie", ar: "تركيا", v: [
