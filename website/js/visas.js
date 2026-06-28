@@ -441,11 +441,32 @@
   var vCountry = document.getElementById("visaCountryInput");
   var vType = document.getElementById("visaTypeInput");
   var vWaLink = document.getElementById("visaWaLink");
+  var vFile = document.getElementById("visaDocs");
+  var vFileName = document.getElementById("visaDocsName");
+
+  function resetFileName() {
+    if (!vFileName) return;
+    vFileName.setAttribute("data-fr", "Aucun fichier sélectionné");
+    vFileName.setAttribute("data-ar", "لم يتم اختيار ملف");
+    vFileName.textContent = lang() === "ar" ? "لم يتم اختيار ملف" : "Aucun fichier sélectionné";
+  }
+  if (vFile && vFileName) {
+    vFile.addEventListener("change", function () {
+      var n = vFile.files ? vFile.files.length : 0;
+      if (!n) { resetFileName(); return; }
+      var fr = n + " fichier(s) sélectionné(s)";
+      var ar = n + " ملف/ملفات مختارة";
+      vFileName.setAttribute("data-fr", fr);
+      vFileName.setAttribute("data-ar", ar);
+      vFileName.textContent = lang() === "ar" ? ar : fr;
+    });
+  }
 
   function openVisaModal(c, v) {
     if (!modal) return;
     var ar = lang() === "ar";
     if (vForm) { vForm.reset(); vForm.hidden = false; }
+    resetFileName();
     if (vSuccess) vSuccess.hidden = true;
     if (vError) vError.hidden = true;
     if (vCountry) vCountry.value = c.ar + " / " + c.fr;

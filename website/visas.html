@@ -126,7 +126,11 @@
         </div>
         <div class="field">
           <label data-fr="Joindre les documents (PDF, images)" data-ar="رفع الوثائق (PDF أو صور)">رفع الوثائق (PDF أو صور)</label>
-          <input class="input visa-file" type="file" name="الوثائق" accept="application/pdf,image/*" multiple />
+          <div class="file-field">
+            <label class="file-btn" for="visaDocs" data-fr="Choisir les fichiers" data-ar="اختر الملفات">اختر الملفات</label>
+            <span class="file-name" id="visaDocsName" data-fr="Aucun fichier sélectionné" data-ar="لم يتم اختيار ملف">لم يتم اختيار ملف</span>
+            <input class="visa-file-input" id="visaDocs" type="file" name="الوثائق" accept="application/pdf,image/*" multiple />
+          </div>
         </div>
         <div class="field">
           <label data-fr="Remarques (optionnel)" data-ar="ملاحظات (اختياري)">ملاحظات (اختياري)</label>
