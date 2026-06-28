@@ -101,6 +101,8 @@
     ["Aucun remboursement", "لا استرجاع"],
     ["Amende de 100 QAR par jour", "غرامة 100 ريال قطري يومياً"]
   ];
+  var QA_RES_DOCS = [["Passeport", "جواز سفر"], ["Photo fond blanc", "صورة خلفية بيضاء"]];
+  var QA_RES_COND = [["Paiement de 1 650 QAR à l'agent après la visite médicale", "يتم دفع 1,650 ريال قطري للوكيل بعد اجتياز الفحص الطبي"]];
 
   var EG_DOCS = [
     ["Scan du passeport (valide 6 mois)", "سكان جواز (صالح 6 أشهر)"],
@@ -169,7 +171,9 @@
       ["Lettre de garantie", "خطاب ضمان", "4 500", "3 jours", "3 أيام", EG_DOCS, EG_COND]
     ]},
     { f: "🇶🇦", fr: "Qatar", ar: "قطر", v: [
-      ["Visa 1 mois", "فيزا 1 شهر", "9 000", "2–4 jours", "2-4 أيام", QA_DOCS, QA_COND]
+      ["Visa 1 mois", "فيزا 1 شهر", "9 000", "2–4 jours", "2-4 أيام", QA_DOCS, QA_COND],
+      ["Résidence Qatar — professions supérieures (hommes)", "إقامة قطر - مهن عليا (رجال)", "95 000", "selon le RDV", "حسب الموعد", QA_RES_DOCS, QA_RES_COND],
+      ["Résidence Qatar — professions supérieures (femmes)", "إقامة قطر - مهن عليا (نساء)", "140 000", "selon le RDV", "حسب الموعد", QA_RES_DOCS, QA_RES_COND]
     ]},
     { f: "🇯🇴", fr: "Jordanie", ar: "الأردن", v: [
       ["Visa 1 mois / 3 mois", "فيزا 1شهر/3أشهر", "1 500", "24 h", "24 ساعة", JO_DOCS, JO_COND]
