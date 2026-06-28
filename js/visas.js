@@ -291,9 +291,9 @@
       ["Visa 1 mois", "فيزا 1 شهر", "64 000", "15 jours", "15 يوم", RU_DOCS]
     ]},
     { f: "🇨🇦", fr: "Canada", ar: "كندا", v: [
-      ["Admission", "قبول", "50 000", "variable", "متغيرة", CA_ADM_DOCS],
-      ["CAQ", "CAQ", "50 000", "variable", "متغيرة", CA_CAQ_DOCS],
-      ["Permis d'étude", "تصريح دراسة", "50 000", "variable", "متغيرة", CA_PERMIS_DOCS]
+      ["Admission", "قبول", "20 000", "variable", "متغيرة", CA_ADM_DOCS],
+      ["CAQ", "CAQ", "10 000", "variable", "متغيرة", CA_CAQ_DOCS],
+      ["Permis d'étude", "تصريح دراسة", "20 000", "variable", "متغيرة", CA_PERMIS_DOCS]
     ]},
     { f: "🇱🇧", fr: "Liban", ar: "لبنان", v: [
       ["Visa sticker", "فيزا ملصق", "20 000", "5–10 jours", "5-10 أيام", LB_DOCS, LB_COND]
