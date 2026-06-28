@@ -415,11 +415,12 @@
         body.appendChild(cul);
       }
 
-      var a = el("a", "btn btn--whatsapp");
-      a.href = WA; a.target = "_blank"; a.rel = "noopener";
+      var a = el("button", "btn btn--whatsapp");
+      a.type = "button";
       var ic = el("span", "wa-icon"); ic.textContent = "💬"; a.appendChild(ic);
       a.appendChild(document.createTextNode(" "));
       a.appendChild(bil(el("span"), "Demander sur WhatsApp", "اطلب عبر واتساب"));
+      a.addEventListener("click", function () { openVisaModal(c, v); });
       body.appendChild(a);
 
       row.appendChild(body);
@@ -428,6 +429,87 @@
 
     panel.appendChild(sec);
   });
+
+  /* ---------- Visa application modal ---------- */
+  var BOOK_WA = "213656281747"; // booking WhatsApp for the post-submit redirect
+  var modal = document.getElementById("visaModal");
+  var vForm = document.getElementById("visaForm");
+  var vPicked = document.getElementById("visaPicked");
+  var vSuccess = document.getElementById("visaSuccess");
+  var vError = document.getElementById("visaError");
+  var vSubmit = document.getElementById("visaSubmitBtn");
+  var vCountry = document.getElementById("visaCountryInput");
+  var vType = document.getElementById("visaTypeInput");
+  var vWaLink = document.getElementById("visaWaLink");
+
+  function openVisaModal(c, v) {
+    if (!modal) return;
+    var ar = lang() === "ar";
+    if (vForm) { vForm.reset(); vForm.hidden = false; }
+    if (vSuccess) vSuccess.hidden = true;
+    if (vError) vError.hidden = true;
+    if (vCountry) vCountry.value = c.ar + " / " + c.fr;
+    if (vType) vType.value = v[1] + " / " + v[0];
+    if (vPicked) {
+      vPicked.setAttribute("data-fr", "Pays : " + c.fr + " — Type : " + v[0]);
+      vPicked.setAttribute("data-ar", "الدولة: " + c.ar + " — النوع: " + v[1]);
+      vPicked.textContent = ar ? ("الدولة: " + c.ar + " — النوع: " + v[1]) : ("Pays : " + c.fr + " — Type : " + v[0]);
+    }
+    modal.setAttribute("data-c-ar", c.ar);
+    modal.setAttribute("data-t-ar", v[1]);
+    modal.hidden = false;
+    modal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    var first = vForm && vForm.querySelector("input");
+    if (first) first.focus();
+  }
+  function closeVisaModal() {
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    modal.hidden = true;
+    document.body.style.overflow = "";
+  }
+  // expose for the row buttons (closure within IIFE — assigned to outer name)
+  window.openVisaModal = openVisaModal;
+
+  if (modal) {
+    modal.querySelectorAll("[data-visa-close]").forEach(function (b) {
+      b.addEventListener("click", closeVisaModal);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) closeVisaModal();
+    });
+  }
+
+  if (vForm) {
+    vForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!vForm.checkValidity()) { vForm.reportValidity(); return; }
+      if (vError) vError.hidden = true;
+      var ar = lang() === "ar";
+      var orig = vSubmit ? vSubmit.innerHTML : "";
+      if (vSubmit) { vSubmit.disabled = true; vSubmit.textContent = ar ? "جارٍ الإرسال…" : "Envoi…"; }
+
+      var fd = new FormData(vForm);
+      fetch(vForm.action, { method: "POST", body: fd, headers: { "Accept": "application/json" } })
+        .then(function (res) {
+          if (!res.ok) throw new Error("bad response");
+          var cAr = modal.getAttribute("data-c-ar") || "";
+          var tAr = modal.getAttribute("data-t-ar") || "";
+          var nm = (fd.get("الاسم الكامل") || "").toString();
+          var ph = (fd.get("رقم الهاتف") || "").toString();
+          var msg = "السلام عليكم، طلب تأشيرة:\n• الدولة: " + cAr + "\n• نوع التأشيرة: " + tAr +
+                    "\n• الاسم: " + nm + "\n• الهاتف: " + ph;
+          var url = "https://wa.me/" + BOOK_WA + "?text=" + encodeURIComponent(msg);
+          if (vWaLink) vWaLink.href = url;
+          if (vForm) vForm.hidden = true;
+          if (vSuccess) vSuccess.hidden = false;
+          window.open(url, "_blank", "noopener");
+        })
+        .catch(function () { if (vError) vError.hidden = false; })
+        .then(function () { if (vSubmit) { vSubmit.disabled = false; vSubmit.innerHTML = orig; } });
+    });
+  }
 
   function select(idx) {
     sidebar.querySelectorAll(".visa-country").forEach(function (b) {

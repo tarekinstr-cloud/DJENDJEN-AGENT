@@ -382,6 +382,19 @@ img.flag { display: block; border-radius: 3px; box-shadow: 0 0 0 1px rgba(10,72,
   border-radius: var(--r-md); padding: var(--sp-4) var(--sp-6);
 }
 
+/* Visa application modal/form */
+.modal__dialog--lg { max-width: 640px; max-height: 90vh; overflow-y: auto; }
+.visa-picked {
+  background: var(--blue-50); color: var(--blue-700); border: 1px solid var(--blue-200);
+  border-radius: var(--r-md); padding: var(--sp-3) var(--sp-4); font-weight: 700;
+  margin: 0 0 var(--sp-6);
+}
+.visa-form .input[type="file"] { padding: var(--sp-3); line-height: 1.4; }
+.visa-error { color: var(--red-700); font-weight: 600; margin: var(--sp-3) 0 0; }
+.visa-success { text-align: center; }
+.visa-success h3 { margin: 0 0 var(--sp-3); }
+.visa-success p { color: var(--ink-soft); margin: 0 0 var(--sp-6); }
+
 @media (max-width: 860px) {
   .visas-layout { grid-template-columns: 1fr; gap: var(--sp-6); }
   .visa-sidebar {

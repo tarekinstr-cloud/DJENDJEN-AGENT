@@ -71,6 +71,83 @@
     </section>
   </main>
 
+  <!-- VISA APPLICATION MODAL -->
+  <div class="modal" id="visaModal" role="dialog" aria-modal="true" aria-labelledby="visaModalTitle" hidden>
+    <div class="modal__overlay" data-visa-close></div>
+    <div class="modal__dialog modal__dialog--lg">
+      <button class="modal__close" data-visa-close aria-label="Fermer">✕</button>
+      <h3 id="visaModalTitle" data-fr="Demande de visa" data-ar="طلب تأشيرة">طلب تأشيرة</h3>
+      <p class="visa-picked" id="visaPicked"></p>
+
+      <form id="visaForm" class="visa-form" action="https://formspree.io/f/xaqgjkly" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="طلب تأشيرة - Djen-Djen Travel" />
+        <input type="hidden" name="الدولة" id="visaCountryInput" />
+        <input type="hidden" name="نوع التأشيرة" id="visaTypeInput" />
+
+        <div class="field-row">
+          <div class="field">
+            <label data-fr="Nom complet" data-ar="الاسم الكامل">الاسم الكامل</label>
+            <input class="input" type="text" name="الاسم الكامل" required />
+          </div>
+          <div class="field">
+            <label data-fr="Téléphone" data-ar="رقم الهاتف">رقم الهاتف</label>
+            <input class="input" type="tel" dir="ltr" name="رقم الهاتف" placeholder="0661 00 00 00" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label data-fr="E-mail (optionnel)" data-ar="البريد الإلكتروني (اختياري)">البريد الإلكتروني (اختياري)</label>
+            <input class="input" type="email" dir="ltr" name="البريد الإلكتروني" />
+          </div>
+          <div class="field">
+            <label data-fr="Date de naissance" data-ar="تاريخ الميلاد">تاريخ الميلاد</label>
+            <input class="input" type="date" dir="ltr" name="تاريخ الميلاد" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label data-fr="N° de passeport" data-ar="رقم جواز السفر">رقم جواز السفر</label>
+            <input class="input" type="text" dir="ltr" name="رقم جواز السفر" required />
+          </div>
+          <div class="field">
+            <label data-fr="Date d'expiration du passeport" data-ar="تاريخ انتهاء الجواز">تاريخ انتهاء الجواز</label>
+            <input class="input" type="date" dir="ltr" name="تاريخ انتهاء الجواز" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label data-fr="Nombre de voyageurs" data-ar="عدد المسافرين">عدد المسافرين</label>
+            <input class="input" type="number" dir="ltr" min="1" value="1" name="عدد المسافرين" required />
+          </div>
+          <div class="field">
+            <label data-fr="Date de voyage souhaitée" data-ar="تاريخ السفر المرغوب">تاريخ السفر المرغوب</label>
+            <input class="input" type="date" dir="ltr" name="تاريخ السفر المرغوب" required />
+          </div>
+        </div>
+        <div class="field">
+          <label data-fr="Joindre les documents (PDF, images)" data-ar="رفع الوثائق (PDF أو صور)">رفع الوثائق (PDF أو صور)</label>
+          <input class="input visa-file" type="file" name="الوثائق" accept="application/pdf,image/*" multiple />
+        </div>
+        <div class="field">
+          <label data-fr="Remarques (optionnel)" data-ar="ملاحظات (اختياري)">ملاحظات (اختياري)</label>
+          <textarea class="input" rows="3" name="ملاحظات"></textarea>
+        </div>
+
+        <div class="wa-actions">
+          <button type="submit" class="btn btn--primary btn--block" id="visaSubmitBtn" data-fr="Envoyer la demande" data-ar="إرسال الطلب">إرسال الطلب</button>
+        </div>
+        <p class="visa-error" id="visaError" hidden data-fr="Une erreur s'est produite. Veuillez réessayer." data-ar="حدث خطأ. يرجى المحاولة مرة أخرى.">حدث خطأ. يرجى المحاولة مرة أخرى.</p>
+      </form>
+
+      <div class="visa-success" id="visaSuccess" hidden>
+        <div class="modal__icon" aria-hidden="true">✅</div>
+        <h3 data-fr="Demande envoyée !" data-ar="تم إرسال طلبك بنجاح!">تم إرسال طلبك بنجاح!</h3>
+        <p data-fr="Notre équipe vous contactera bientôt. Continuez sur WhatsApp pour finaliser." data-ar="سيتواصل معك فريقنا قريباً. تابع عبر واتساب لإتمام طلبك.">سيتواصل معك فريقنا قريباً. تابع عبر واتساب لإتمام طلبك.</p>
+        <a class="btn btn--whatsapp btn--block" id="visaWaLink" target="_blank" rel="noopener"><span class="wa-icon">💬</span> <span data-fr="Continuer sur WhatsApp" data-ar="متابعة عبر واتساب">متابعة عبر واتساب</span></a>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
