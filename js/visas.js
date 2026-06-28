@@ -250,29 +250,29 @@
       ["Visa sticker", "فيزا ملصق", "20 000", "5–10 jours", "5-10 أيام", LB_DOCS, LB_COND]
     ]},
     { f: "🇹🇿", fr: "Tanzanie", ar: "تنزانيا", v: [
-      ["e-Visa Zanzibar 30 jours", "إي-فيزا زنجبار 30 يوم", "14 000", "7–15 jours", "7-15 يوم", TZ_DOCS, NOREFUND]
+      ["e-Visa Zanzibar 30 jours", "إي-فيزا زنجبار 30 يوم", "16 000", "7–15 jours", "7-15 يوم", TZ_DOCS, NOREFUND]
     ]},
     { f: "🇧🇩", fr: "Bangladesh", ar: "بنغلاديش", v: [
-      ["Visa d'affaires sticker 30 jours", "فيزا تجارية ملصق 30 يوم", "5 000", "15–20 jours", "15-20 يوم", BD_DOCS, BD_COND]
+      ["Visa d'affaires sticker 30 jours", "فيزا تجارية ملصق 30 يوم", "7 000", "15–20 jours", "15-20 يوم", BD_DOCS, BD_COND]
     ]},
     { f: "🇯🇵", fr: "Japon", ar: "اليابان", v: [
       ["Visa touristique sticker", "فيزا سياحية ملصق", "3 000", "10 jours", "10 أيام", JP_DOCS, JP_COND]
     ]},
     { f: "🇻🇳", fr: "Vietnam", ar: "فيتنام", v: [
-      ["e-Visa 30 jours, entrée unique", "إي-فيزا 30 يوم دخول واحد", "10 000", "7–10 jours", "7-10 أيام", VN_DOCS, NOREFUND],
-      ["e-Visa 90 jours, entrées multiples", "إي-فيزا 90 يوم متعدد", "20 000", "7–10 jours", "7-10 أيام", VN_DOCS, NOREFUND]
+      ["e-Visa 30 jours, entrée unique", "إي-فيزا 30 يوم دخول واحد", "12 000", "7–10 jours", "7-10 أيام", VN_DOCS, NOREFUND],
+      ["e-Visa 90 jours, entrées multiples", "إي-فيزا 90 يوم متعدد", "23 000", "7–10 jours", "7-10 أيام", VN_DOCS, NOREFUND]
     ]},
     { f: "🇺🇿", fr: "Ouzbékistan", ar: "أوزبكستان", v: [
-      ["e-Visa 30 jours", "إي-فيزا 30 يوم", "8 000", "3–5 jours", "3-5 أيام", UZ_DOCS, NOREFUND]
+      ["e-Visa 30 jours", "إي-فيزا 30 يوم", "10 000", "3–5 jours", "3-5 أيام", UZ_DOCS, NOREFUND]
     ]},
     { f: "🇪🇹", fr: "Éthiopie", ar: "إثيوبيا", v: [
-      ["e-Visa 30 jours, entrée unique", "إي-فيزا 30 يوم دخول واحد", "19 000", "5 jours", "5 أيام", ET_DOCS, NOREFUND]
+      ["e-Visa 30 jours, entrée unique", "إي-فيزا 30 يوم دخول واحد", "22 000", "5 jours", "5 أيام", ET_DOCS, NOREFUND]
     ]},
     { f: "🇲🇬", fr: "Madagascar", ar: "مدغشقر", v: [
-      ["e-Visa 15 jours", "إي-فيزا 15 يوم", "10 000", "5 jours", "5 أيام", MG_DOCS, NOREFUND],
-      ["e-Visa 30 jours", "إي-فيزا 30 يوم", "13 500", "5 jours", "5 أيام", MG_DOCS, NOREFUND],
-      ["e-Visa 60 jours", "إي-فيزا 60 يوم", "15 000", "5 jours", "5 أيام", MG_DOCS, NOREFUND],
-      ["e-Visa 90 jours", "إي-فيزا 90 يوم", "18 500", "5 jours", "5 أيام", MG_DOCS, NOREFUND]
+      ["e-Visa 15 jours", "إي-فيزا 15 يوم", "12 000", "5 jours", "5 أيام", MG_DOCS, NOREFUND],
+      ["e-Visa 30 jours", "إي-فيزا 30 يوم", "15 500", "5 jours", "5 أيام", MG_DOCS, NOREFUND],
+      ["e-Visa 60 jours", "إي-فيزا 60 يوم", "17 000", "5 jours", "5 أيام", MG_DOCS, NOREFUND],
+      ["e-Visa 90 jours", "إي-فيزا 90 يوم", "20 500", "5 jours", "5 أيام", MG_DOCS, NOREFUND]
     ]}
   ];
 
