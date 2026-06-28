@@ -61,6 +61,18 @@
     ["Réservé aux 35–50 ans uniquement", "للأعمار بين 35 و50 سنة فقط"],
     ["Le visa Schengen / UK / Irlande / USA doit être valide", "فيزا شنغن/UK/إيرلاندا/USA يجب أن تكون سارية المفعول"]
   ];
+  var TR_STICKER_DOCS = [
+    ["Passeport", "جواز سفر"],
+    ["Photo biométrique 5×5 cm", "صورة بيومترية 5×5 سم"],
+    ["Acte de naissance", "شهادة ميلاد"],
+    ["Attestation de travail ou registre de commerce", "شهادة عمل أو سجل تجاري"],
+    ["3 fiches de paie", "3 كشوف راتب"],
+    ["Affiliation CNAS", "انتساب CNAS"],
+    ["Relevé bancaire ou postal des 6 derniers mois", "كشف بنكي أو بريدي 6 أشهر الأخيرة"],
+    ["Réservation d'hôtel (agence)", "حجز فندق (الوكالة)"],
+    ["Réservation de billet (agence)", "حجز تذكرة (الوكالة)"],
+    ["Formulaire (agence)", "استمارة (الوكالة)"]
+  ];
 
   var LB_DOCS = [
     ["Passeport", "جواز سفر"],
@@ -194,7 +206,7 @@
     ]},
     { f: "🇹🇷", fr: "Turquie", ar: "تركيا", v: [
       ["Visa électronique", "فيزا إلكترونية", "17 000", "24 h", "24 ساعة", TR_EVISA_DOCS, TR_EVISA_COND],
-      ["Visa sticker", "فيزا ملصق", "3 000", "selon le RDV", "حسب الموعد"]
+      ["Visa sticker", "فيزا ملصق", "3 000", "selon le RDV", "حسب الموعد", TR_STICKER_DOCS]
     ]},
     { f: "🇹🇭", fr: "Thaïlande", ar: "تايلاند", v: [
       ["e-Visa 1 mois", "إي-فيزا 1شهر", "18 000", "30 jours", "30 يوم"]
