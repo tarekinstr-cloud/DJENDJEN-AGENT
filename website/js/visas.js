@@ -503,6 +503,15 @@
   }
 
   if (vForm) {
+    function showError(detail) {
+      if (!vError) return;
+      var base = lang() === "ar" ? "تعذّر إرسال الطلب" : "Échec de l'envoi";
+      vError.removeAttribute("data-fr");
+      vError.removeAttribute("data-ar");
+      vError.textContent = detail ? (base + " — " + detail) : base;
+      vError.hidden = false;
+    }
+
     vForm.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!vForm.checkValidity()) { vForm.reportValidity(); return; }
@@ -511,23 +520,54 @@
       var orig = vSubmit ? vSubmit.innerHTML : "";
       if (vSubmit) { vSubmit.disabled = true; vSubmit.textContent = ar ? "جارٍ الإرسال…" : "Envoi…"; }
 
-      var fd = new FormData(vForm);
-      fetch(vForm.action, { method: "POST", body: fd, headers: { "Accept": "application/json" } })
+      // Build a TEXT-ONLY payload (Formspree free plan rejects file attachments
+      // via AJAX). The file input is skipped; documents are collected on WhatsApp.
+      var payload = {};
+      Array.prototype.forEach.call(vForm.elements, function (elm) {
+        if (!elm.name) return;
+        if (elm.type === "file" || elm.type === "submit" || elm.type === "button") return;
+        payload[elm.name] = elm.value;
+      });
+
+      var nm = payload["الاسم الكامل"] || "";
+      var ph = payload["رقم الهاتف"] || "";
+      var cAr = (modal && modal.getAttribute("data-c-ar")) || "";
+      var tAr = (modal && modal.getAttribute("data-t-ar")) || "";
+
+      fetch(vForm.action, {
+        method: "POST",
+        headers: { "Accept": "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
         .then(function (res) {
-          if (!res.ok) throw new Error("bad response");
-          var cAr = modal.getAttribute("data-c-ar") || "";
-          var tAr = modal.getAttribute("data-t-ar") || "";
-          var nm = (fd.get("الاسم الكامل") || "").toString();
-          var ph = (fd.get("رقم الهاتف") || "").toString();
-          var msg = "السلام عليكم، طلب تأشيرة:\n• الدولة: " + cAr + "\n• نوع التأشيرة: " + tAr +
-                    "\n• الاسم: " + nm + "\n• الهاتف: " + ph;
-          var url = "https://wa.me/" + BOOK_WA + "?text=" + encodeURIComponent(msg);
-          if (vWaLink) vWaLink.href = url;
-          if (vForm) vForm.hidden = true;
-          if (vSuccess) vSuccess.hidden = false;
-          window.open(url, "_blank", "noopener");
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            return { ok: res.ok, status: res.status, data: data };
+          });
         })
-        .catch(function () { if (vError) vError.hidden = false; })
+        .then(function (r) {
+          if (r.ok) {
+            var msg = "السلام عليكم، طلب تأشيرة:\n• الدولة: " + cAr + "\n• نوع التأشيرة: " + tAr +
+                      "\n• الاسم: " + nm + "\n• الهاتف: " + ph;
+            var url = "https://wa.me/" + BOOK_WA + "?text=" + encodeURIComponent(msg);
+            if (vWaLink) vWaLink.href = url;
+            if (vForm) vForm.hidden = true;
+            if (vSuccess) vSuccess.hidden = false;
+            window.open(url, "_blank", "noopener");
+          } else {
+            var detail = "";
+            if (r.data && r.data.errors && r.data.errors.length) {
+              detail = r.data.errors.map(function (x) { return x.message || x.field; }).join(" • ");
+            } else if (r.data && r.data.error) {
+              detail = r.data.error;
+            } else {
+              detail = "HTTP " + r.status;
+            }
+            showError(detail);
+          }
+        })
+        .catch(function (err) {
+          showError((err && err.message) ? err.message : (lang() === "ar" ? "تحقّق من اتصال الإنترنت" : "Vérifiez la connexion"));
+        })
         .then(function () { if (vSubmit) { vSubmit.disabled = false; vSubmit.innerHTML = orig; } });
     });
   }
