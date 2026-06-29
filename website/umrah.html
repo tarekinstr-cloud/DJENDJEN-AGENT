@@ -46,7 +46,7 @@
           <button type="button" data-lang="fr" aria-pressed="true">FR</button>
           <button type="button" data-lang="ar" aria-pressed="false">ع</button>
         </div>
-        <a class="btn btn--urgent btn--book" href="#request" data-fr="Réserver" data-ar="احجز الآن">Réserver</a>
+        <a class="btn btn--urgent btn--book" href="#" data-booking data-subject-fr="Réservation Omra" data-subject-ar="طلب حجز عمرة" data-fr="Réserver" data-ar="احجز الآن">Réserver</a>
         <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
       </div>
     </div>
@@ -200,86 +200,6 @@
       </div>
     </section>
 
-    <!-- REQUEST FORM (Omra) — classical Arabic -->
-    <section class="section" id="request">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow" data-fr="Votre demande" data-ar="طلبك">Votre demande</p>
-          <h2 data-fr="Réservez votre Omra sur WhatsApp" data-ar="احجز عمرتك عبر واتساب">Réservez votre Omra sur WhatsApp</h2>
-          <p data-fr="Remplissez le formulaire et envoyez-le directement sur WhatsApp. Votre message part déjà rempli." data-ar="عمّروا الاستمارة وأرسلوها مباشرة عبر واتساب. تُرسَل الرسالة معبّأة مسبقًا.">Remplissez le formulaire et envoyez-le directement sur WhatsApp. Votre message part déjà rempli.</p>
-        </div>
-
-        <form class="form-card request-form" novalidate
-              data-wa-title-fr="Bonjour, je souhaite réserver le Forfait Omra — Juillet 2026 :"
-              data-wa-title-ar="السلام عليكم، أرغب في حجز باقة العمرة — جويلية 2026 بالتفاصيل الآتية:">
-          <h3 data-fr="Demande d'Omra" data-ar="طلب عمرة">Demande d'Omra</h3>
-          <div class="field-row">
-            <div class="field">
-              <label data-fr="Date de départ" data-ar="تاريخ الانطلاق">Date de départ</label>
-              <select class="input" required>
-                <option value="" data-fr="— Choisir —" data-ar="— اختر —">— Choisir —</option>
-                <option data-fr="7 juillet 2026" data-ar="7 جويلية 2026">7 juillet 2026</option>
-                <option data-fr="13 juillet 2026" data-ar="13 جويلية 2026">13 juillet 2026</option>
-                <option data-fr="28 juillet 2026" data-ar="28 جويلية 2026">28 juillet 2026</option>
-              </select>
-              <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
-            </div>
-            <div class="field">
-              <label data-fr="Hôtel à La Mecque" data-ar="الفندق بمكة">Hôtel à La Mecque</label>
-              <select class="input" required>
-                <option value="" data-fr="— Choisir —" data-ar="— اختر —">— Choisir —</option>
-                <option data-fr="Afaq As-Sad (700 m)" data-ar="آفاق السد (700م)">Afaq As-Sad (700 m)</option>
-                <option data-fr="Infinity (500 m)" data-ar="إنفينيتي (500م)">Infinity (500 m)</option>
-              </select>
-              <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
-            </div>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label data-fr="Type de chambre" data-ar="نوع الغرفة">Type de chambre</label>
-              <select class="input" required>
-                <option value="" data-fr="— Choisir —" data-ar="— اختر —">— Choisir —</option>
-                <option data-fr="Quintuple" data-ar="خماسية">Quintuple</option>
-                <option data-fr="Quadruple" data-ar="رباعية">Quadruple</option>
-                <option data-fr="Triple" data-ar="ثلاثية">Triple</option>
-                <option data-fr="Double" data-ar="ثنائية">Double</option>
-              </select>
-              <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
-            </div>
-            <div class="field">
-              <label data-fr="Demi-pension à La Mecque (option)" data-ar="الإعاشة بمكة (اختياري)">Demi-pension à La Mecque (option)</label>
-              <select class="input">
-                <option value="" data-fr="Sans restauration" data-ar="بدون إعاشة">Sans restauration</option>
-                <option data-fr="Demi-pension (+25 000 / +35 000 selon l'hôtel)" data-ar="نصف إعاشة (+25,000 أو +35,000 حسب الفندق)">Demi-pension (+25 000 / +35 000 selon l'hôtel)</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label data-fr="Nom complet" data-ar="الاسم الكامل">Nom complet</label>
-            <input class="input" type="text" required data-ph-fr="Ex. Ahmed Benali" data-ph-ar="مثال: أحمد بن علي" placeholder="Ex. Ahmed Benali" />
-            <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label data-fr="Nombre de personnes" data-ar="عدد الأشخاص">Nombre de personnes</label>
-              <input class="input" type="number" min="1" dir="ltr" required placeholder="2" />
-              <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
-            </div>
-            <div class="field">
-              <label data-fr="Téléphone" data-ar="رقم الهاتف">Téléphone</label>
-              <input class="input" type="tel" dir="ltr" required placeholder="0661 00 00 00" />
-              <p class="field__error" data-fr="Champ obligatoire." data-ar="هذا الحقل إلزامي.">Champ obligatoire.</p>
-            </div>
-          </div>
-          <div class="wa-actions">
-            <div class="wa-actions__btns">
-              <button type="button" class="btn btn--whatsapp wa-send" data-send="whatsapp"><span class="wa-icon">💬</span> <span data-fr="Envoyer sur WhatsApp" data-ar="أرسل عبر واتساب">Envoyer sur WhatsApp</span></button>
-              <button type="button" class="btn btn--messenger wa-send" data-send="messenger"><span class="wa-icon">💬</span> <span data-fr="Envoyer sur Messenger" data-ar="أرسل عبر ماسنجر">Envoyer sur Messenger</span></button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
   </main>
 
   <!-- FOOTER -->
@@ -317,7 +237,6 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/forms.js"></script>
   <script src="js/booking.js"></script>
 </body>
 </html>

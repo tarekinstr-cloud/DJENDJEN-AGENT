@@ -35,9 +35,9 @@
         <ul class="nav__links">
           <li><a href="umrah.html" data-fr="Omra" data-ar="العمرة">Omra</a></li>
           <li><a href="voyages.html" data-fr="Voyages" data-ar="الرحلات">Voyages</a></li>
-          <li><a href="index.html#req=billets" data-fr="Billets" data-ar="تذاكر السفر">Billets</a></li>
-          <li><a href="index.html#req=hotels" data-fr="Hôtels" data-ar="الفنادق">Hôtels</a></li>
-          <li><a href="index.html#req=visas" data-fr="Visas" data-ar="التأشيرات">Visas</a></li>
+          <li><a href="#" data-booking data-subject-fr="Billets d'avion" data-subject-ar="طلب تذكرة سفر" data-fr="Billets" data-ar="تذاكر السفر">Billets</a></li>
+          <li><a href="#" data-booking data-subject-fr="Réservation d'hôtel" data-subject-ar="طلب حجز فندق" data-fr="Hôtels" data-ar="الفنادق">Hôtels</a></li>
+          <li><a href="visas.html" data-fr="Visas" data-ar="التأشيرات">Visas</a></li>
           <li><a href="apropos.html" data-fr="À propos" data-ar="من نحن">À propos</a></li>
         </ul>
       </nav>
@@ -46,7 +46,7 @@
           <button type="button" data-lang="fr" aria-pressed="true">FR</button>
           <button type="button" data-lang="ar" aria-pressed="false">ع</button>
         </div>
-        <a class="btn btn--urgent btn--book" href="index.html#request" data-fr="Réserver" data-ar="احجز الآن">Réserver</a>
+        <a class="btn btn--urgent btn--book" href="#" data-booking data-subject-fr="Demande de réservation" data-subject-ar="طلب حجز" data-fr="Réserver" data-ar="احجز الآن">Réserver</a>
         <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
       </div>
     </div>
@@ -127,7 +127,7 @@
               <label data-fr="Adresse" data-ar="العنوان">Adresse</label>
               <p style="margin:0;" data-fr="Rue Larbi Ben M'hidi (السيرك), Jijel, Algérie" data-ar="شارع العربي بن مهيدي (السيرك)، جيجل، الجزائر">Rue Larbi Ben M'hidi (السيرك), Jijel, Algérie</p>
             </div>
-            <a class="btn btn--primary btn--block" href="index.html#request" data-fr="Envoyer une demande" data-ar="ابعث طلب">Envoyer une demande</a>
+            <a class="btn btn--primary btn--block" href="#" data-booking data-subject-fr="Demande de réservation" data-subject-ar="طلب حجز" data-fr="Envoyer une demande" data-ar="ابعث طلب">Envoyer une demande</a>
           </div>
 
           <div class="form-card" style="display:flex; align-items:center; justify-content:center; text-align:center; background:linear-gradient(150deg, var(--blue-300), var(--blue-700)); color:#fff; min-height:280px;">
@@ -177,6 +177,6 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/forms.js"></script>
+  <script src="js/booking.js"></script>
 </body>
 </html>
