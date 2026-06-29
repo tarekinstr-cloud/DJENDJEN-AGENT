@@ -10,9 +10,6 @@
 (function () {
   "use strict";
 
-  var triggers = document.querySelectorAll("[data-booking]");
-  if (!triggers.length) return;
-
   var FORMSPREE = "https://formspree.io/f/xaqgjkly";
   var BOOK_WA = "213656281747";
   function lang() { return document.documentElement.getAttribute("lang") === "ar" ? "ar" : "fr"; }
@@ -160,15 +157,18 @@
       .then(function () { if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = orig; } });
   });
 
-  triggers.forEach(function (t) {
-    t.addEventListener("click", function (e) {
-      e.preventDefault();
-      var sFr = t.getAttribute("data-subject-fr") || t.getAttribute("data-subject") || "Demande de réservation";
-      var sAr = t.getAttribute("data-subject-ar") || sFr;
-      var destFr = t.getAttribute("data-dest-fr"), destAr = t.getAttribute("data-dest-ar");
-      if (destFr) sFr += " — " + destFr;
-      if (destAr) sAr += " — " + destAr;
-      openModal(sFr, sAr);
-    });
+  // Event delegation: catches every [data-booking] element — including the
+  // hero slideshow CTA and anything injected after load — regardless of the
+  // order in which scripts run. Robust against re-rendered DOM.
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-booking]");
+    if (!t) return;
+    e.preventDefault();
+    var sFr = t.getAttribute("data-subject-fr") || t.getAttribute("data-subject") || "Demande de réservation";
+    var sAr = t.getAttribute("data-subject-ar") || sFr;
+    var destFr = t.getAttribute("data-dest-fr"), destAr = t.getAttribute("data-dest-ar");
+    if (destFr) sFr += " — " + destFr;
+    if (destAr) sAr += " — " + destAr;
+    openModal(sFr, sAr);
   });
 })();
