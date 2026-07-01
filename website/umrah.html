@@ -18,6 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/umrah.css" />
 </head>
 <body>
 
@@ -53,26 +54,25 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <p class="eyebrow" data-fr="Omra · La Mecque &amp; Médine" data-ar="العمرة · مكة والمدينة">Omra · La Mecque &amp; Médine</p>
-          <h1 class="hero__title">
-            <span data-fr="La Omra," data-ar="العمرة،">La Omra,</span>
-            <span class="accent" data-fr="en toute sérénité" data-ar="في طمأنينة">en toute sérénité</span>
-          </h1>
-          <p class="hero__lede" data-fr="Nous vous accompagnons dans le voyage le plus précieux de votre vie, avec soin à chaque étape — du visa au retour." data-ar="نرافقكم في أنفس رحلة في حياتكم، بعناية في كل خطوة — من التأشيرة إلى العودة.">
-            Nous vous accompagnons dans le voyage le plus précieux de votre vie, avec soin à chaque étape — du visa au retour.
-          </p>
-          <div class="hero__cta">
-            <a class="btn btn--primary btn--lg" href="#request" data-booking data-subject-fr="Réservation Omra" data-subject-ar="طلب حجز عمرة" data-fr="Demander ma Omra" data-ar="اطلب عمرتك">Demander ma Omra</a>
-            <a class="btn btn--secondary btn--lg" href="#packages" data-fr="Voir les forfaits" data-ar="شاهد الباقات">Voir les forfaits</a>
-          </div>
+    <!-- HERO — cinematic -->
+    <section class="omra-hero">
+      <div class="omra-hero__bg" aria-hidden="true"></div>
+      <div class="omra-kaaba" aria-hidden="true"></div>
+      <div class="omra-hero__overlay" aria-hidden="true"></div>
+      <div class="container omra-hero__inner">
+        <p class="omra-hero__eyebrow" data-fr="Omra · La Mecque &amp; Médine" data-ar="العمرة · مكة والمدينة">Omra · La Mecque &amp; Médine</p>
+        <h1 class="omra-hero__title">
+          <span data-fr="La Omra," data-ar="العمرة،">La Omra,</span>
+          <span class="omra-hero__accent" data-fr="en toute sérénité" data-ar="في طمأنينة">en toute sérénité</span>
+        </h1>
+        <p class="omra-hero__lede" data-fr="Nous vous accompagnons dans le voyage le plus précieux de votre vie, avec soin à chaque étape — du visa au retour." data-ar="نرافقكم في أنفس رحلة في حياتكم، بعناية في كل خطوة — من التأشيرة إلى العودة.">
+          Nous vous accompagnons dans le voyage le plus précieux de votre vie, avec soin à chaque étape — du visa au retour.
+        </p>
+        <div class="omra-hero__cta">
+          <a class="btn btn--premium btn--lg" href="#request" data-booking data-subject-fr="Réservation Omra" data-subject-ar="طلب حجز عمرة" data-fr="Demander ma Omra" data-ar="اطلب عمرتك">Demander ma Omra</a>
+          <a class="omra-btn-ghost" href="#packages" data-fr="Voir les forfaits" data-ar="شاهد الباقات">Voir les forfaits</a>
         </div>
-        <div class="hero__media" aria-hidden="true">
-          <p class="hero__media-caption" data-fr="« Répondre à l'appel, le cœur apaisé. »" data-ar="«تلبية النداء، والقلب مطمئن.»">« Répondre à l'appel, le cœur apaisé. »</p>
-        </div>
+        <p class="omra-hero__caption" data-fr="« Répondre à l'appel, le cœur apaisé. »" data-ar="«تلبية النداء، والقلب مطمئن.»">« Répondre à l'appel, le cœur apaisé. »</p>
       </div>
     </section>
 
@@ -83,46 +83,67 @@
           <p class="eyebrow" data-fr="Ce qui est inclus" data-ar="ما تتضمّنه الباقة">Ce qui est inclus</p>
           <h2 data-fr="Un accompagnement complet" data-ar="مرافقة كاملة">Un accompagnement complet</h2>
         </div>
-        <div class="grid-cards">
-          <article class="card"><div class="card__body">
-            <h3 class="card__title" data-fr="Vol direct &amp; transferts" data-ar="رحلة مباشرة وتنقّلات">Vol direct &amp; transferts</h3>
-            <p class="card__desc" data-fr="Vol direct depuis l'aéroport de Constantine, et déplacements entre l'aéroport, les hôtels et les Lieux Saints." data-ar="رحلة مباشرة من مطار قسنطينة، والتنقّلات بين المطار والفنادق والحرمين الشريفين.">Vol direct depuis l'aéroport de Constantine, et déplacements entre l'aéroport, les hôtels et les Lieux Saints.</p>
-          </div></article>
-          <article class="card"><div class="card__body">
-            <h3 class="card__title" data-fr="Hôtels proches du Haram" data-ar="فنادق قريبة من الحرم">Hôtels proches du Haram</h3>
-            <p class="card__desc" data-fr="Hôtels 4★ à quelques pas des sanctuaires, pour prier sans fatigue." data-ar="فنادق 4★ على بُعد خطوات من الحرمين، لأداء الصلاة بلا عناء.">Hôtels 4★ à quelques pas des sanctuaires, pour prier sans fatigue.</p>
-          </div></article>
-          <article class="card"><div class="card__body">
-            <h3 class="card__title" data-fr="Accompagnateur dédié" data-ar="مرافق مختصّ">Accompagnateur dédié</h3>
-            <p class="card__desc" data-fr="Un guide expérimenté à vos côtés pour les rites et l'assistance sur place." data-ar="مرشد ذو خبرة بجانبكم لأداء المناسك والمساعدة في عين المكان.">Un guide expérimenté à vos côtés pour les rites et l'assistance sur place.</p>
-          </div></article>
+        <div class="omra-features">
+          <article class="omra-feature">
+            <div class="omra-feature__icon" aria-hidden="true">✈️</div>
+            <h3 data-fr="Vol direct &amp; transferts" data-ar="رحلة مباشرة وتنقّلات">Vol direct &amp; transferts</h3>
+            <p data-fr="Vol direct depuis l'aéroport de Constantine, et déplacements entre l'aéroport, les hôtels et les Lieux Saints." data-ar="رحلة مباشرة من مطار قسنطينة، والتنقّلات بين المطار والفنادق والحرمين الشريفين.">Vol direct depuis l'aéroport de Constantine, et déplacements entre l'aéroport, les hôtels et les Lieux Saints.</p>
+          </article>
+          <article class="omra-feature">
+            <div class="omra-feature__icon" aria-hidden="true">🕋</div>
+            <h3 data-fr="Hôtels proches du Haram" data-ar="فنادق قريبة من الحرم">Hôtels proches du Haram</h3>
+            <p data-fr="Hôtels 4★ à quelques pas des sanctuaires, pour prier sans fatigue." data-ar="فنادق 4★ على بُعد خطوات من الحرمين، لأداء الصلاة بلا عناء.">Hôtels 4★ à quelques pas des sanctuaires, pour prier sans fatigue.</p>
+          </article>
+          <article class="omra-feature">
+            <div class="omra-feature__icon" aria-hidden="true">🧭</div>
+            <h3 data-fr="Accompagnateur dédié" data-ar="مرافق مختصّ">Accompagnateur dédié</h3>
+            <p data-fr="Un guide expérimenté à vos côtés pour les rites et l'assistance sur place." data-ar="مرشد ذو خبرة بجانبكم لأداء المناسك والمساعدة في عين المكان.">Un guide expérimenté à vos côtés pour les rites et l'assistance sur place.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- PACKAGES -->
+    <!-- PACKAGES — premium card -->
     <section class="section" id="packages" style="background: var(--bg-tint);">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow" data-fr="Notre forfait Omra" data-ar="باقة العمرة">Notre forfait Omra</p>
           <h2 data-fr="Forfait Omra — Juillet 2026" data-ar="باقة العمرة — جويلية 2026">Forfait Omra — Juillet 2026</h2>
         </div>
-        <div class="grid-cards grid-cards--one">
-          <article class="card">
-            <div class="card__media"><span class="placeholder-icon" aria-hidden="true">🕋</span><span class="card__badge" data-fr="Juillet 2026" data-ar="جويلية 2026">Juillet 2026</span></div>
-            <div class="card__body">
-              <h3 class="card__title" data-fr="Forfait Omra — Juillet 2026" data-ar="باقة العمرة — جويلية 2026">Forfait Omra — Juillet 2026</h3>
-              <div class="card__meta">
-                <span data-fr="Vol direct depuis Constantine" data-ar="رحلة مباشرة من قسنطينة">Vol direct depuis Constantine</span>
-              </div>
-              <p class="card__desc" data-fr="Trois départs : 7, 13 et 28 juillet 2026. Hôtels à 500–700 m du Haram à La Mecque, et hôtels du groupe Al-Zahra à Médine." data-ar="ثلاثة انطلاقات: 7 و13 و28 جويلية 2026. فنادق على بُعد 500–700 م من الحرم بمكة، وفنادق مجموعة الزهراء بالمدينة المنورة.">Trois départs : 7, 13 et 28 juillet 2026. Hôtels à 500–700 m du Haram à La Mecque, et hôtels du groupe Al-Zahra à Médine.</p>
-              <div class="card__foot">
-                <div class="card__price"><small data-fr="À partir de — par pers. (chambre quintuple, hors repas)" data-ar="يبدأ من — للشخص (غرفة خماسية، ما عدا الوجبات)">À partir de — par pers. (chambre quintuple, hors repas)</small><strong><bdi>210 000</bdi> <span class="cur">DZD</span></strong></div>
-                <a class="btn btn--primary" href="#request" data-booking data-subject-fr="Réservation Omra" data-subject-ar="طلب حجز عمرة" data-fr="Réserver" data-ar="احجز">Réserver</a>
-              </div>
+
+        <article class="omra-pkg">
+          <div class="omra-pkg__header">
+            <span class="omra-pkg__badge" data-fr="Juillet 2026" data-ar="جويلية 2026">Juillet 2026</span>
+            <h3 class="omra-pkg__title" data-fr="Forfait Omra — Juillet 2026" data-ar="باقة العمرة — جويلية 2026">Forfait Omra — Juillet 2026</h3>
+          </div>
+          <div class="omra-pkg__body">
+            <div class="omra-pkg__price">
+              <small data-fr="À partir de — par pers. (chambre quintuple, hors repas)" data-ar="يبدأ من — للشخص (غرفة خماسية، ما عدا الوجبات)">À partir de — par pers. (chambre quintuple, hors repas)</small>
+              <div class="omra-pkg__amount"><bdi>210 000</bdi> <span class="cur">DZD</span></div>
             </div>
-          </article>
-        </div>
+
+            <p class="omra-tl-label" data-fr="Trois départs — juillet 2026" data-ar="ثلاثة انطلاقات — جويلية 2026">Trois départs — juillet 2026</p>
+            <div class="omra-timeline" aria-hidden="true">
+              <div class="omra-tl-node"><div class="omra-tl-dot"><bdi>7</bdi></div><span data-fr="juillet" data-ar="جويلية">juillet</span></div>
+              <div class="omra-tl-line"></div>
+              <div class="omra-tl-node"><div class="omra-tl-dot"><bdi>13</bdi></div><span data-fr="juillet" data-ar="جويلية">juillet</span></div>
+              <div class="omra-tl-line"></div>
+              <div class="omra-tl-node"><div class="omra-tl-dot"><bdi>28</bdi></div><span data-fr="juillet" data-ar="جويلية">juillet</span></div>
+            </div>
+
+            <div class="omra-pkg__chips">
+              <span class="omra-chip"><span aria-hidden="true">✈️</span> <span data-fr="Vol direct depuis Constantine" data-ar="رحلة مباشرة من قسنطينة">Vol direct depuis Constantine</span></span>
+              <span class="omra-chip"><span aria-hidden="true">🕋</span> <span data-fr="500–700 m du Haram (La Mecque)" data-ar="500–700 م من الحرم (مكة)">500–700 m du Haram (La Mecque)</span></span>
+              <span class="omra-chip"><span aria-hidden="true">🕌</span> <span data-fr="Hôtels Al-Zahra (Médine)" data-ar="فنادق الزهراء (المدينة)">Hôtels Al-Zahra (Médine)</span></span>
+            </div>
+
+            <p class="omra-pkg__desc" data-fr="Trois départs : 7, 13 et 28 juillet 2026. Hôtels à 500–700 m du Haram à La Mecque, et hôtels du groupe Al-Zahra à Médine." data-ar="ثلاثة انطلاقات: 7 و13 و28 جويلية 2026. فنادق على بُعد 500–700 م من الحرم بمكة، وفنادق مجموعة الزهراء بالمدينة المنورة.">Trois départs : 7, 13 et 28 juillet 2026. Hôtels à 500–700 m du Haram à La Mecque, et hôtels du groupe Al-Zahra à Médine.</p>
+
+            <div class="omra-pkg__cta">
+              <a class="btn btn--urgent btn--lg" href="#request" data-booking data-subject-fr="Réservation Omra" data-subject-ar="طلب حجز عمرة" data-fr="Réserver" data-ar="احجز">Réserver</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -134,68 +155,78 @@
           <h2 data-fr="Hôtels, options et restauration" data-ar="الفنادق والخيارات والإطعام">Hôtels, options et restauration</h2>
         </div>
 
-        <div class="grid-cards">
-          <article class="card"><div class="card__body">
-            <h3 class="card__title" data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</h3>
-            <p class="card__desc" data-fr="À 700 m du Haram, à La Mecque." data-ar="على بُعد 700 م من الحرم، بمكة المكرمة.">À 700 m du Haram, à La Mecque.</p>
-            <p class="card__note" data-fr="Demi-pension en option : +25 000 DZD / personne." data-ar="نصف إعاشة اختيارية: +25,000 دج للشخص.">Demi-pension en option : +25 000 DZD / personne.</p>
-          </div></article>
+        <div class="omra-hotels">
+          <article class="omra-hotel">
+            <div class="omra-hotel__icon" aria-hidden="true">🏨</div>
+            <div class="omra-hotel__stars" aria-hidden="true">★★★★</div>
+            <h3 data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</h3>
+            <span class="omra-hotel__badge"><span aria-hidden="true">📍</span> <span data-fr="≈ 700 m du Haram" data-ar="≈ 700 م من الحرم">≈ 700 m du Haram</span></span>
+            <p class="omra-hotel__desc" data-fr="À 700 m du Haram, à La Mecque." data-ar="على بُعد 700 م من الحرم، بمكة المكرمة.">À 700 m du Haram, à La Mecque.</p>
+            <p class="omra-hotel__catering"><span aria-hidden="true">🍽️</span> <span data-fr="Demi-pension en option : +25 000 DZD / personne." data-ar="نصف إعاشة اختيارية: +25,000 دج للشخص.">Demi-pension en option : +25 000 DZD / personne.</span></p>
+          </article>
 
-          <article class="card"><div class="card__body">
-            <h3 class="card__title" data-fr="Hôtel Infinity" data-ar="فندق إنفينيتي">Hôtel Infinity</h3>
-            <p class="card__desc" data-fr="À 500 m du Haram, à La Mecque." data-ar="على بُعد 500 م من الحرم، بمكة المكرمة.">À 500 m du Haram, à La Mecque.</p>
-            <p class="card__note" data-fr="Demi-pension en option : +35 000 DZD / personne." data-ar="نصف إعاشة اختيارية: +35,000 دج للشخص.">Demi-pension en option : +35 000 DZD / personne.</p>
-          </div></article>
+          <article class="omra-hotel">
+            <div class="omra-hotel__icon" aria-hidden="true">🏨</div>
+            <div class="omra-hotel__stars" aria-hidden="true">★★★★</div>
+            <h3 data-fr="Hôtel Infinity" data-ar="فندق إنفينيتي">Hôtel Infinity</h3>
+            <span class="omra-hotel__badge"><span aria-hidden="true">📍</span> <span data-fr="≈ 500 m du Haram" data-ar="≈ 500 م من الحرم">≈ 500 m du Haram</span></span>
+            <p class="omra-hotel__desc" data-fr="À 500 m du Haram, à La Mecque." data-ar="على بُعد 500 م من الحرم، بمكة المكرمة.">À 500 m du Haram, à La Mecque.</p>
+            <p class="omra-hotel__catering"><span aria-hidden="true">🍽️</span> <span data-fr="Demi-pension en option : +35 000 DZD / personne." data-ar="نصف إعاشة اختيارية: +35,000 دج للشخص.">Demi-pension en option : +35 000 DZD / personne.</span></p>
+          </article>
 
-          <article class="card"><div class="card__body">
-            <h3 class="card__title" data-fr="Hôtels à Médine" data-ar="فنادق المدينة المنورة">Hôtels à Médine</h3>
-            <p class="card__desc" data-fr="Hôtels du groupe Al-Zahra, pour un séjour paisible près de la Mosquée du Prophète." data-ar="فنادق مجموعة الزهراء، لإقامة هادئة قرب المسجد النبوي الشريف.">Hôtels du groupe Al-Zahra, pour un séjour paisible près de la Mosquée du Prophète.</p>
-          </div></article>
+          <article class="omra-hotel">
+            <div class="omra-hotel__icon" aria-hidden="true">🕌</div>
+            <div class="omra-hotel__stars" aria-hidden="true">★★★★</div>
+            <h3 data-fr="Hôtels à Médine" data-ar="فنادق المدينة المنورة">Hôtels à Médine</h3>
+            <span class="omra-hotel__badge"><span aria-hidden="true">📍</span> <span data-fr="Proche Mosquée du Prophète" data-ar="قرب المسجد النبوي">Proche Mosquée du Prophète</span></span>
+            <p class="omra-hotel__desc" data-fr="Hôtels du groupe Al-Zahra, pour un séjour paisible près de la Mosquée du Prophète." data-ar="فنادق مجموعة الزهراء، لإقامة هادئة قرب المسجد النبوي الشريف.">Hôtels du groupe Al-Zahra, pour un séjour paisible près de la Mosquée du Prophète.</p>
+          </article>
         </div>
 
-        <h3 class="details-subhead" data-fr="Tarifs par personne, selon le type de chambre" data-ar="الأسعار للشخص حسب نوع الغرفة">Tarifs par personne, selon le type de chambre</h3>
-        <div class="price-tables">
-          <table class="price-table">
-            <caption data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</caption>
+        <h3 class="omra-subhead" data-fr="Tarifs par personne, selon le type de chambre" data-ar="الأسعار للشخص حسب نوع الغرفة">Tarifs par personne, selon le type de chambre</h3>
+
+        <div class="omra-compare-wrap">
+          <table class="omra-compare">
             <thead>
               <tr>
-                <th data-fr="Chambre" data-ar="الغرفة">Chambre</th>
-                <th data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</th>
+                <th class="col-room" data-fr="Chambre" data-ar="الغرفة">Chambre</th>
+                <th class="col-afaq"><span data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</span><small data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</small></th>
+                <th class="col-infin"><span data-fr="Hôtel Infinity" data-ar="فندق إنفينيتي">Hôtel Infinity</span><small data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</small></th>
               </tr>
             </thead>
             <tbody>
-              <tr><td data-fr="Quintuple" data-ar="خماسية">Quintuple</td><td><bdi>210 000</bdi> <span class="cur">DZD</span></td></tr>
-              <tr><td data-fr="Quadruple" data-ar="رباعية">Quadruple</td><td><bdi>220 000</bdi> <span class="cur">DZD</span></td></tr>
-              <tr><td data-fr="Triple" data-ar="ثلاثية">Triple</td><td><bdi>230 000</bdi> <span class="cur">DZD</span></td></tr>
-              <tr><td data-fr="Double" data-ar="ثنائية">Double</td><td><bdi>250 000</bdi> <span class="cur">DZD</span></td></tr>
-            </tbody>
-          </table>
-
-          <table class="price-table">
-            <caption data-fr="Hôtel Infinity" data-ar="فندق إنفينيتي">Hôtel Infinity</caption>
-            <thead>
-              <tr>
-                <th data-fr="Chambre" data-ar="الغرفة">Chambre</th>
-                <th data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</th>
+              <tr class="is-best">
+                <td class="cell-room"><span data-fr="Quintuple" data-ar="خماسية">Quintuple</span><span class="omra-best-tag" data-fr="Meilleur prix" data-ar="أفضل سعر">Meilleur prix</span></td>
+                <td class="cell-afaq"><bdi>210 000</bdi> <span class="cur">DZD</span></td>
+                <td class="cell-infin"><bdi>225 000</bdi> <span class="cur">DZD</span></td>
               </tr>
-            </thead>
-            <tbody>
-              <tr><td data-fr="Quintuple" data-ar="خماسية">Quintuple</td><td><bdi>225 000</bdi> <span class="cur">DZD</span></td></tr>
-              <tr><td data-fr="Quadruple" data-ar="رباعية">Quadruple</td><td><bdi>245 000</bdi> <span class="cur">DZD</span></td></tr>
-              <tr><td data-fr="Triple" data-ar="ثلاثية">Triple</td><td><bdi>265 000</bdi> <span class="cur">DZD</span></td></tr>
-              <tr><td data-fr="Double" data-ar="ثنائية">Double</td><td><bdi>315 000</bdi> <span class="cur">DZD</span></td></tr>
+              <tr>
+                <td class="cell-room" data-fr="Quadruple" data-ar="رباعية">Quadruple</td>
+                <td class="cell-afaq"><bdi>220 000</bdi> <span class="cur">DZD</span></td>
+                <td class="cell-infin"><bdi>245 000</bdi> <span class="cur">DZD</span></td>
+              </tr>
+              <tr>
+                <td class="cell-room" data-fr="Triple" data-ar="ثلاثية">Triple</td>
+                <td class="cell-afaq"><bdi>230 000</bdi> <span class="cur">DZD</span></td>
+                <td class="cell-infin"><bdi>265 000</bdi> <span class="cur">DZD</span></td>
+              </tr>
+              <tr>
+                <td class="cell-room" data-fr="Double" data-ar="ثنائية">Double</td>
+                <td class="cell-afaq"><bdi>250 000</bdi> <span class="cur">DZD</span></td>
+                <td class="cell-infin"><bdi>315 000</bdi> <span class="cur">DZD</span></td>
+              </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="meal-note">
+        <div class="omra-info">
           <h3 data-fr="Tarifs enfants &amp; informations" data-ar="أسعار الأطفال ومعلومات">Tarifs enfants &amp; informations</h3>
-          <ul class="info-list">
+          <ul class="omra-info__list">
             <li data-fr="Enfants (2–12 ans) : −25 000 DZD sur le prix." data-ar="الأطفال (2–12 سنة): -25,000 دج من السعر.">Enfants (2–12 ans) : −25 000 DZD sur le prix.</li>
             <li data-fr="Moins de 2 ans : 65 000 DZD (Afaq As-Sad) / 80 000 DZD (Infinity)." data-ar="أقل من سنتين: 65,000 دج (آفاق السد) / 80,000 دج (إنفينيتي).">Moins de 2 ans : 65 000 DZD (Afaq As-Sad) / 80 000 DZD (Infinity).</li>
             <li data-fr="Demi-pension (La Mecque uniquement) : +25 000 / +35 000 DZD selon l'hôtel." data-ar="نصف إعاشة (مكة فقط): +25,000 / +35,000 دج حسب الفندق.">Demi-pension (La Mecque uniquement) : +25 000 / +35 000 DZD selon l'hôtel.</li>
           </ul>
-          <p class="card__note" data-fr="L'hôtel définitif est confirmé à la réservation. Restauration à La Mecque uniquement — non incluse à Médine." data-ar="يُؤكَّد الفندق النهائي عند الحجز. الإطعام في مكة فقط — لا يشمل المدينة المنورة.">L'hôtel définitif est confirmé à la réservation. Restauration à La Mecque uniquement — non incluse à Médine.</p>
+          <p class="omra-info__note" data-fr="L'hôtel définitif est confirmé à la réservation. Restauration à La Mecque uniquement — non incluse à Médine." data-ar="يُؤكَّد الفندق النهائي عند الحجز. الإطعام في مكة فقط — لا يشمل المدينة المنورة.">L'hôtel définitif est confirmé à la réservation. Restauration à La Mecque uniquement — non incluse à Médine.</p>
         </div>
       </div>
     </section>
