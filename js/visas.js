@@ -441,32 +441,25 @@
   var vCountry = document.getElementById("visaCountryInput");
   var vType = document.getElementById("visaTypeInput");
   var vWaLink = document.getElementById("visaWaLink");
-  var vFile = document.getElementById("visaDocs");
-  var vFileName = document.getElementById("visaDocsName");
 
-  function resetFileName() {
-    if (!vFileName) return;
-    vFileName.setAttribute("data-fr", "Aucun fichier sélectionné");
-    vFileName.setAttribute("data-ar", "لم يتم اختيار ملف");
-    vFileName.textContent = lang() === "ar" ? "لم يتم اختيار ملف" : "Aucun fichier sélectionné";
-  }
-  if (vFile && vFileName) {
-    vFile.addEventListener("change", function () {
-      var n = vFile.files ? vFile.files.length : 0;
-      if (!n) { resetFileName(); return; }
-      var fr = n + " fichier(s) sélectionné(s)";
-      var ar = n + " ملف/ملفات مختارة";
-      vFileName.setAttribute("data-fr", fr);
-      vFileName.setAttribute("data-ar", ar);
-      vFileName.textContent = lang() === "ar" ? ar : fr;
-    });
+  // Uploadcare widget — collects the CDN URL of the uploaded document(s).
+  // The widget displays the uploaded files so the user gets a confirmation
+  // before submitting. The URL is sent to Formspree as "رابط الوثائق".
+  var visaUc = null, visaDocsUrl = "";
+  if (window.uploadcare) {
+    try {
+      visaUc = uploadcare.MultipleWidget("#visaDocs");
+      visaUc.onUploadComplete(function (info) { visaDocsUrl = (info && info.cdnUrl) ? info.cdnUrl : ""; });
+      visaUc.onChange(function (val) { if (!val) visaDocsUrl = ""; });
+    } catch (e) { visaUc = null; }
   }
 
   function openVisaModal(c, v) {
     if (!modal) return;
     var ar = lang() === "ar";
     if (vForm) { vForm.reset(); vForm.hidden = false; }
-    resetFileName();
+    visaDocsUrl = "";
+    if (visaUc) { try { visaUc.value(null); } catch (e) {} }
     if (vSuccess) vSuccess.hidden = true;
     if (vError) vError.hidden = true;
     if (vCountry) vCountry.value = c.ar + " / " + c.fr;
@@ -529,6 +522,7 @@
         payload[elm.name] = elm.value;
       });
 
+      if (visaDocsUrl) payload["رابط الوثائق"] = visaDocsUrl;
       var nm = payload["الاسم الكامل"] || "";
       var ph = payload["رقم الهاتف"] || "";
       var cAr = (modal && modal.getAttribute("data-c-ar")) || "";
@@ -547,7 +541,8 @@
         .then(function (r) {
           if (r.ok) {
             var msg = "السلام عليكم، طلب تأشيرة:\n• الدولة: " + cAr + "\n• نوع التأشيرة: " + tAr +
-                      "\n• الاسم: " + nm + "\n• الهاتف: " + ph;
+                      "\n• الاسم: " + nm + "\n• الهاتف: " + ph +
+                      (visaDocsUrl ? "\n• الوثائق: " + visaDocsUrl : "");
             var url = "https://wa.me/" + BOOK_WA + "?text=" + encodeURIComponent(msg);
             if (vWaLink) vWaLink.href = url;
             if (vForm) vForm.hidden = true;

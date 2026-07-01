@@ -125,12 +125,8 @@
           </div>
         </div>
         <div class="field">
-          <label data-fr="Documents (PDF, images) — à envoyer via WhatsApp" data-ar="الوثائق (PDF أو صور) — تُرسَل عبر واتساب">الوثائق (PDF أو صور) — تُرسَل عبر واتساب</label>
-          <div class="file-field">
-            <label class="file-btn" for="visaDocs" data-fr="Choisir les fichiers" data-ar="اختر الملفات">اختر الملفات</label>
-            <span class="file-name" id="visaDocsName" data-fr="Aucun fichier sélectionné" data-ar="لم يتم اختيار ملف">لم يتم اختيار ملف</span>
-            <input class="visa-file-input" id="visaDocs" type="file" name="الوثائق" accept="application/pdf,image/*" multiple />
-          </div>
+          <label data-fr="Documents (passeport, photos, PDF…)" data-ar="الوثائق (جواز السفر، صور، PDF…)">الوثائق (جواز السفر، صور، PDF…)</label>
+          <input type="hidden" role="uploadcare-uploader" id="visaDocs" data-public-key="7f2d6ea226a5ab97ef6e" data-multiple="true" data-multiple-max="10" data-tabs="file camera url" data-locale="fr" />
         </div>
         <div class="field">
           <label data-fr="Remarques (optionnel)" data-ar="ملاحظات (اختياري)">ملاحظات (اختياري)</label>
@@ -186,8 +182,11 @@
     </div>
   </footer>
 
+  <!-- Uploadcare file uploader -->
+  <script>UPLOADCARE_PUBLIC_KEY = "7f2d6ea226a5ab97ef6e";</script>
+  <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8"></script>
   <script src="js/main.js"></script>
   <script src="js/visas.js"></script>
-  <script src="js/booking.js?v=2"></script>
+  <script src="js/booking.js?v=3"></script>
 </body>
 </html>

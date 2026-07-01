@@ -35,6 +35,9 @@
           '<div class="field"><label data-fr="Date de voyage souhaitée" data-ar="تاريخ السفر المرغوب">تاريخ السفر المرغوب</label><input class="input" type="date" dir="ltr" name="تاريخ السفر المرغوب" required /></div>' +
           '<div class="field"><label data-fr="Nombre de voyageurs" data-ar="عدد المسافرين">عدد المسافرين</label><input class="input" type="number" dir="ltr" min="1" value="1" name="عدد المسافرين" required /></div>' +
         '</div>' +
+        '<div class="field"><label data-fr="Documents (passeport, photos…) — optionnel" data-ar="الوثائق (جواز السفر، صور…) — اختياري">الوثائق (جواز السفر، صور…) — اختياري</label>' +
+          '<input type="hidden" role="uploadcare-uploader" id="bkDocs" data-public-key="7f2d6ea226a5ab97ef6e" data-multiple="true" data-multiple-max="10" data-tabs="file camera url" data-locale="fr" />' +
+        '</div>' +
         '<div class="field"><label data-fr="Remarques (optionnel)" data-ar="ملاحظات (اختياري)">ملاحظات (اختياري)</label><textarea class="input" rows="3" name="ملاحظات"></textarea></div>' +
         '<div class="wa-actions"><button type="submit" class="btn btn--primary btn--block" id="bkSubmit" data-fr="Envoyer la demande" data-ar="إرسال الطلب">إرسال الطلب</button></div>' +
         '<p class="visa-error" id="bkError" hidden></p>' +
@@ -73,9 +76,24 @@
   var waLink = modal.querySelector("#bkWa");
   var curSubAr = "", curSubFr = "";
 
+  // Uploadcare widget — collects the CDN URL of the uploaded document(s).
+  // The widget shows the uploaded files (names/thumbnails) so the user sees
+  // a confirmation before submitting. The input carries no `name`, so it is
+  // skipped by the payload loop; we send the URL explicitly as "رابط الوثائق".
+  var bkUc = null, docsUrl = "";
+  if (window.uploadcare) {
+    try {
+      bkUc = uploadcare.MultipleWidget("#bkDocs");
+      bkUc.onUploadComplete(function (info) { docsUrl = (info && info.cdnUrl) ? info.cdnUrl : ""; });
+      bkUc.onChange(function (val) { if (!val) docsUrl = ""; });
+    } catch (e) { bkUc = null; }
+  }
+
   function openModal(sFr, sAr) {
     curSubFr = sFr; curSubAr = sAr;
     form.reset(); form.hidden = false;
+    docsUrl = "";
+    if (bkUc) { try { bkUc.value(null); } catch (e) {} }
     if (successEl) successEl.hidden = true;
     if (errorEl) errorEl.hidden = true;
     if (typeInput) typeInput.value = sAr + " / " + sFr;
@@ -119,6 +137,7 @@
       if (elm.type === "submit" || elm.type === "button" || elm.type === "file") return;
       payload[elm.name] = elm.value;
     });
+    if (docsUrl) payload["رابط الوثائق"] = docsUrl;
     var nm = payload["الاسم الكامل"] || "", ph = payload["رقم الهاتف"] || "";
     var td = payload["تاريخ السفر المرغوب"] || "", tv = payload["عدد المسافرين"] || "";
 
@@ -133,7 +152,8 @@
       .then(function (r) {
         if (r.ok) {
           var msg = "السلام عليكم، " + curSubAr + ":\n• الاسم: " + nm + "\n• الهاتف: " + ph +
-                    "\n• تاريخ السفر: " + td + "\n• عدد المسافرين: " + tv;
+                    "\n• تاريخ السفر: " + td + "\n• عدد المسافرين: " + tv +
+                    (docsUrl ? "\n• الوثائق: " + docsUrl : "");
           var url = "https://wa.me/" + BOOK_WA + "?text=" + encodeURIComponent(msg);
           if (waLink) waLink.href = url;
           form.hidden = true;
