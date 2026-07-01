@@ -8,11 +8,17 @@
 /* ---------- Cinematic hero (real Kaaba photo) ---------- */
 .omra-hero {
   position: relative;
-  min-height: 88vh;
+  min-height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   isolation: isolate;
+  background-color: #0d1b2a;
+  background-image: url("../images/mecca-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .omra-hero__bg {
   position: absolute; inset: 0; z-index: 0;
@@ -20,10 +26,11 @@
   background-image: url("../images/mecca-hero.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 .omra-hero__overlay {
-  position: absolute; inset: 0; z-index: 2;
-  background: linear-gradient(180deg, rgba(13,27,42,.82) 0%, rgba(13,27,42,.5) 45%, rgba(13,27,42,.8) 100%);
+  position: absolute; inset: 0; z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .omra-hero__inner {
