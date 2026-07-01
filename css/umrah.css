@@ -17,7 +17,7 @@
 .omra-hero__bg {
   position: absolute; inset: 0; z-index: 0;
   background-color: #0d1b2a;
-  background-image: url("https://images.unsplash.com/photo-1537944434965-cf4679d1a598?w=1920&q=80");
+  background-image: url("../images/mecca-hero.jpg");
   background-size: cover;
   background-position: center;
 }
