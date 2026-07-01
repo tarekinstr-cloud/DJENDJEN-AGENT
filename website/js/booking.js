@@ -35,6 +35,26 @@
           '<div class="field"><label data-fr="Date de voyage souhaitée" data-ar="تاريخ السفر المرغوب">تاريخ السفر المرغوب</label><input class="input" type="date" dir="ltr" name="تاريخ السفر المرغوب" required /></div>' +
           '<div class="field"><label data-fr="Nombre de voyageurs" data-ar="عدد المسافرين">عدد المسافرين</label><input class="input" type="number" dir="ltr" min="1" value="1" name="عدد المسافرين" required /></div>' +
         '</div>' +
+        '<div class="field-row">' +
+          '<div class="field"><label data-fr="Type de chambre" data-ar="نوعية الغرفة">نوعية الغرفة</label>' +
+            '<select class="input" name="نوعية الغرفة" required>' +
+              '<option value="" disabled selected data-fr="— Choisir —" data-ar="— اختر —">— اختر —</option>' +
+              '<option value="غرفة مفردة" data-fr="Chambre simple" data-ar="غرفة مفردة">غرفة مفردة</option>' +
+              '<option value="غرفة مزدوجة" data-fr="Chambre double" data-ar="غرفة مزدوجة">غرفة مزدوجة</option>' +
+              '<option value="غرفة ثلاثية" data-fr="Chambre triple" data-ar="غرفة ثلاثية">غرفة ثلاثية</option>' +
+              '<option value="غرفة رباعية" data-fr="Chambre quadruple" data-ar="غرفة رباعية">غرفة رباعية</option>' +
+            '</select>' +
+          '</div>' +
+          '<div class="field"><label data-fr="Type de pension" data-ar="نوعية الإعاشة">نوعية الإعاشة</label>' +
+            '<select class="input" name="نوعية الإعاشة" required>' +
+              '<option value="" disabled selected data-fr="— Choisir —" data-ar="— اختر —">— اختر —</option>' +
+              '<option value="بدون إعاشة" data-fr="Sans pension" data-ar="بدون إعاشة">بدون إعاشة</option>' +
+              '<option value="إفطار فقط" data-fr="Petit-déjeuner seul" data-ar="إفطار فقط">إفطار فقط</option>' +
+              '<option value="نصف إعاشة" data-fr="Demi-pension" data-ar="نصف إعاشة">نصف إعاشة</option>' +
+              '<option value="إعاشة كاملة" data-fr="Pension complète" data-ar="إعاشة كاملة">إعاشة كاملة</option>' +
+            '</select>' +
+          '</div>' +
+        '</div>' +
         '<div class="field"><label data-fr="Documents (passeport, photos…) — optionnel" data-ar="الوثائق (جواز السفر، صور…) — اختياري">الوثائق (جواز السفر، صور…) — اختياري</label>' +
           '<input type="hidden" role="uploadcare-uploader" id="bkDocs" data-public-key="7f2d6ea226a5ab97ef6e" data-multiple="true" data-multiple-max="10" data-tabs="file camera url" data-locale="fr" />' +
         '</div>' +
@@ -140,6 +160,7 @@
     if (docsUrl) payload["رابط الوثائق"] = docsUrl;
     var nm = payload["الاسم الكامل"] || "", ph = payload["رقم الهاتف"] || "";
     var td = payload["تاريخ السفر المرغوب"] || "", tv = payload["عدد المسافرين"] || "";
+    var rm = payload["نوعية الغرفة"] || "", pn = payload["نوعية الإعاشة"] || "";
 
     fetch(FORMSPREE, {
       method: "POST",
@@ -153,6 +174,7 @@
         if (r.ok) {
           var msg = "السلام عليكم، " + curSubAr + ":\n• الاسم: " + nm + "\n• الهاتف: " + ph +
                     "\n• تاريخ السفر: " + td + "\n• عدد المسافرين: " + tv +
+                    "\n• نوعية الغرفة: " + rm + "\n• نوعية الإعاشة: " + pn +
                     (docsUrl ? "\n• الوثائق: " + docsUrl : "");
           var url = "https://wa.me/" + BOOK_WA + "?text=" + encodeURIComponent(msg);
           if (waLink) waLink.href = url;
