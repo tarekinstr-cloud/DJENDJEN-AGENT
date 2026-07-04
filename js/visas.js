@@ -310,7 +310,7 @@
     ]},
     { f: "🇨🇳", fr: "Chine", ar: "الصين", v: [
       ["Visa sticker — 1ère demande", "فيزا ملصق - طلب أول", "13 000", "10 jours ouvrables (présence du client le jour du dépôt)", "10 أيام عمل (الزبون يحضر يوم الإيداع)", CN_DOCS1, CN_COND1, CN_EXTRA1],
-      ["Visa sticker — renouvellement", "فيزا ملصق - تجديد", "6 500", "7 jours ouvrables (présence du client le jour du dépôt)", "7 أيام عمل (الزبون يحضر يوم الإيداع)", CN_DOCS2, CN_COND2, CN_EXTRA2]
+      ["Visa sticker — renouvellement", "فيزا ملصق - تجديد", "8 000", "7 jours ouvrables (présence du client le jour du dépôt)", "7 أيام عمل (الزبون يحضر يوم الإيداع)", CN_DOCS2, CN_COND2, CN_EXTRA2]
     ]},
     { f: "🇰🇷", fr: "Corée", ar: "كوريا", v: [
       ["Visa sticker", "فيزا ملصق", "12 000", "5 jours", "5 أيام"]
