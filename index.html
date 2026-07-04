@@ -29,6 +29,7 @@
 
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/index.css?v=1" />
 </head>
 <body>
 
@@ -133,31 +134,71 @@
           </p>
         </div>
 
-        <div class="grid-cards grid-cards--one">
-          <!-- Unique package — Omra Juillet 2026 -->
-          <article class="card">
-            <div class="card__media">
-              <img class="card__img" src="assets/images/kaaba.jpg" alt="Omra" loading="lazy" onerror="this.remove()" />
-              <span class="placeholder-icon" aria-hidden="true">🕋</span>
-              <span class="card__badge" data-fr="Juillet 2026" data-ar="جويلية 2026">Juillet 2026</span>
+        <!-- Unique package — Omra Juillet 2026 -->
+        <article class="home-pkg">
+          <div class="home-pkg__media">
+            <img src="images/mecca-hero.jpg" alt="" loading="lazy" />
+            <span class="home-pkg__badge" data-fr="Juillet 2026" data-ar="جويلية 2026">Juillet 2026</span>
+          </div>
+          <div class="home-pkg__header">
+            <h3 class="home-pkg__title" data-fr="Forfait Omra — Juillet 2026" data-ar="باقة العمرة — جويلية 2026">Forfait Omra — Juillet 2026</h3>
+            <p class="home-pkg__meta" data-fr="Vol direct depuis Constantine" data-ar="رحلة مباشرة من قسنطينة">Vol direct depuis Constantine</p>
+          </div>
+          <div class="home-pkg__body">
+            <div class="home-pkg__price">
+              <small data-fr="À partir de — par pers. (chambre quintuple, hors repas)" data-ar="يبدأ من — للشخص (غرفة خماسية، ما عدا الوجبات)">À partir de — par pers. (chambre quintuple, hors repas)</small>
+              <strong class="home-pkg__amount"><bdi>210 000</bdi> <span class="cur">DZD</span></strong>
             </div>
-            <div class="card__body">
-              <h3 class="card__title" data-fr="Forfait Omra — Juillet 2026" data-ar="باقة العمرة — جويلية 2026">Forfait Omra — Juillet 2026</h3>
-              <div class="card__meta">
-                <span data-fr="Vol direct depuis Constantine" data-ar="رحلة مباشرة من قسنطينة">Vol direct depuis Constantine</span>
-              </div>
-              <p class="card__desc" data-fr="Trois départs : 7, 13 et 28 juillet 2026. Hôtels à 500–700 m du Haram à La Mecque, et hôtels du groupe Al-Zahra à Médine." data-ar="ثلاثة انطلاقات: 7 و13 و28 جويلية 2026. فنادق على بُعد 500–700 م من الحرم بمكة، وفنادق مجموعة الزهراء بالمدينة المنورة.">
-                Trois départs : 7, 13 et 28 juillet 2026. Hôtels à 500–700 m du Haram à La Mecque, et hôtels du groupe Al-Zahra à Médine.
-              </p>
-              <div class="card__foot">
-                <div class="card__price">
-                  <small data-fr="À partir de — par pers. (chambre quintuple, hors repas)" data-ar="يبدأ من — للشخص (غرفة خماسية، ما عدا الوجبات)">À partir de — par pers. (chambre quintuple, hors repas)</small>
-                  <strong><bdi>210 000</bdi> <span class="cur">DZD</span></strong>
-                </div>
-                <a class="btn btn--primary" href="umrah.html" data-fr="Détails &amp; réservation" data-ar="التفاصيل والحجز">Détails &amp; réservation</a>
-              </div>
+
+            <div class="home-pkg__dates">
+              <span class="home-date"><strong><bdi>7</bdi></strong> <span data-fr="juil." data-ar="جويلية">juil.</span></span>
+              <span class="home-date"><strong><bdi>13</bdi></strong> <span data-fr="juil." data-ar="جويلية">juil.</span></span>
+              <span class="home-date"><strong><bdi>28</bdi></strong> <span data-fr="juil." data-ar="جويلية">juil.</span></span>
             </div>
-          </article>
+
+            <div class="home-pkg__hotels">
+              <span class="home-chip"><span aria-hidden="true">🕋</span> <span data-fr="500–700 m du Haram (La Mecque)" data-ar="500–700 م من الحرم (مكة)">500–700 m du Haram (La Mecque)</span></span>
+              <span class="home-chip"><span aria-hidden="true">🕌</span> <span data-fr="Hôtels Al-Zahra (Médine)" data-ar="فنادق الزهراء (المدينة)">Hôtels Al-Zahra (Médine)</span></span>
+            </div>
+
+            <p class="home-pkg__desc" data-fr="Trois départs : 7, 13 et 28 juillet 2026. Hôtels à 500–700 m du Haram à La Mecque, et hôtels du groupe Al-Zahra à Médine." data-ar="ثلاثة انطلاقات: 7 و13 و28 جويلية 2026. فنادق على بُعد 500–700 م من الحرم بمكة، وفنادق مجموعة الزهراء بالمدينة المنورة.">
+              Trois départs : 7, 13 et 28 juillet 2026. Hôtels à 500–700 m du Haram à La Mecque, et hôtels du groupe Al-Zahra à Médine.
+            </p>
+
+            <a class="home-pkg__cta" href="umrah.html" data-fr="Détails &amp; réservation" data-ar="التفاصيل والحجز">Détails &amp; réservation</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="section home-services">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-fr="Nos services" data-ar="خدماتنا">Nos services</p>
+          <h2 data-fr="Tout pour votre voyage" data-ar="كل ما تحتاجه لسفرك">Tout pour votre voyage</h2>
+        </div>
+        <div class="home-services__grid">
+          <a class="home-service" href="visas.html">
+            <span class="home-service__ic" aria-hidden="true">🛂</span>
+            <h3 data-fr="Visas" data-ar="التأشيرات">Visas</h3>
+            <p data-fr="Votre visa dans les meilleurs délais" data-ar="نحضّل فيزاك في أقل وقت">Votre visa dans les meilleurs délais</p>
+          </a>
+          <a class="home-service" href="#" data-booking data-subject-fr="Billets d'avion" data-subject-ar="طلب تذكرة سفر">
+            <span class="home-service__ic" aria-hidden="true">✈️</span>
+            <h3 data-fr="Billets d'avion" data-ar="تذاكر السفر">Billets d'avion</h3>
+            <p data-fr="Les meilleurs prix sur toutes les compagnies" data-ar="أفضل الأسعار على جميع الخطوط">Les meilleurs prix sur toutes les compagnies</p>
+          </a>
+          <a class="home-service" href="#" data-booking data-subject-fr="Réservation d'hôtel" data-subject-ar="طلب حجز فندق">
+            <span class="home-service__ic" aria-hidden="true">🏨</span>
+            <h3 data-fr="Hôtels" data-ar="الفنادق">Hôtels</h3>
+            <p data-fr="Des hôtels sélectionnés avec soin" data-ar="فنادق مختارة بعناية">Des hôtels sélectionnés avec soin</p>
+          </a>
+          <a class="home-service" href="voyages.html">
+            <span class="home-service__ic" aria-hidden="true">🌍</span>
+            <h3 data-fr="Voyages" data-ar="الرحلات السياحية">Voyages</h3>
+            <p data-fr="Des destinations partout dans le monde" data-ar="وجهات حول العالم">Des destinations partout dans le monde</p>
+          </a>
         </div>
       </div>
     </section>
