@@ -227,6 +227,24 @@
     ["Billet aller-retour (optionnel)", "تذكرة ذهاب وإياب (اختياري)"],
     ["Réservation d'hôtel", "حجز فندق"]
   ];
+  var CN_DOCS1 = [
+    ["Scan du passeport", "سكان جواز السفر"],
+    ["Photo Full HD (par photographe)", "صورة Full HD من مصور"],
+    ["Numéro de téléphone", "رقم الهاتف"],
+    ["Attestation de travail ou registre de commerce (RC)", "شهادة عمل أو RC"],
+    ["Relevé bancaire récent (+3000 €) avec cachet de la banque", "كشف بنكي حديث (+3000 يورو) مع ختم البنك"],
+    ["Casier judiciaire récent", "صحيفة سوابق حديثة"]
+  ];
+  var CN_DOCS2 = [
+    ["Scan du passeport", "سكان جواز السفر"],
+    ["Photo Full HD (par photographe)", "صورة Full HD من مصور"],
+    ["Attestation de travail ou registre de commerce (RC)", "شهادة عمل أو RC"],
+    ["Relevé bancaire récent", "كشف بنكي حديث"],
+    ["Casier judiciaire récent", "صحيفة سوابق حديثة"]
+  ];
+  var CN_COND1 = [
+    ["Frais consulaires non inclus — paiement par carte bancaire uniquement", "الرسوم القنصلية غير مشمولة — دفع بالبطاقة البنكية فقط"]
+  ];
 
   // [type_fr, type_ar, price, delai_fr, delai_ar, docs?, conditions?]
   var COUNTRIES = [
@@ -281,8 +299,8 @@
       ["Visa touristique 90 jours", "فيزا سياحية 90 يوم", "33 000", "selon le RDV", "حسب الموعد", SA_DOCS, SA_COND]
     ]},
     { f: "🇨🇳", fr: "Chine", ar: "الصين", v: [
-      ["Visa sticker — 1ère demande", "فيزا ملصق - طلب أول", "13 000", "10 jours", "10 أيام"],
-      ["Visa sticker — renouvellement", "فيزا ملصق - تجديد", "6 500", "10 jours", "10 أيام"]
+      ["Visa sticker — 1ère demande", "فيزا ملصق - طلب أول", "13 000", "10 jours ouvrables (présence du client le jour du dépôt)", "10 أيام عمل (الزبون يحضر يوم الإيداع)", CN_DOCS1, CN_COND1],
+      ["Visa sticker — renouvellement", "فيزا ملصق - تجديد", "6 500", "10 jours", "10 أيام", CN_DOCS2]
     ]},
     { f: "🇰🇷", fr: "Corée", ar: "كوريا", v: [
       ["Visa sticker", "فيزا ملصق", "12 000", "5 jours", "5 أيام"]
