@@ -378,6 +378,14 @@
     p.innerHTML = "<bdi>" + price + "</bdi> " + (lang() === "ar" ? "دج" : "DZD");
     return p;
   }
+  // Real flag image (flagcdn) — renders on every platform, unlike flag emoji
+  // which Windows shows as the country code (EG, QA…).
+  function flag(code, dim, cls) {
+    var im = el("img", cls || "flag");
+    im.src = "https://flagcdn.com/" + dim + "/" + code + ".png";
+    im.alt = ""; im.loading = "lazy";
+    return im;
+  }
 
   /* ---------- Countries grid ---------- */
   var cards = [];
@@ -386,8 +394,7 @@
     card.type = "button";
     card.setAttribute("data-idx", i);
     card.setAttribute("role", "listitem");
-    var fl = el("span", "visa-card__flag"); fl.textContent = c.f; fl.setAttribute("aria-hidden", "true");
-    card.appendChild(fl);
+    card.appendChild(flag(CODES[i], "48x36", "visa-card__flag"));
     card.appendChild(bil(el("span", "visa-card__name"), c.fr, c.ar));
     var n = c.v.length;
     card.appendChild(bil(el("span", "visa-card__count"),
@@ -452,8 +459,7 @@
     details.classList.add("is-shown");
 
     var head = el("div", "visa-detail__head");
-    var fl = el("span", "visa-detail__flag"); fl.textContent = c.f; fl.setAttribute("aria-hidden", "true");
-    head.appendChild(fl);
+    head.appendChild(flag(CODES[idx], "64x48", "visa-detail__flag"));
     head.appendChild(bil(el("h2", "visa-detail__title"), c.fr, c.ar));
     details.appendChild(head);
 
