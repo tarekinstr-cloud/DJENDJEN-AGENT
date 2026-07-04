@@ -81,8 +81,13 @@
 }
 .home-pkg__cta:hover { background: #c62f3b; box-shadow: 0 8px 20px rgba(230,57,70,.35); }
 
-/* ---------- Offers grid (4 service/offer cards) ---------- */
-.home-offers { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-6); }
+/* ---------- Offers grid (service/offer cards) ---------- */
+.home-offers-section { background: #0d1b2a; }
+.home-offers-section .eyebrow { color: var(--blue-300); }
+.home-offers-section .section-head h2 { color: #fff; }
+.home-offers-section .section-head p { color: rgba(255,255,255,.82); }
+
+.home-offers { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-5, 20px); }
 .home-offer {
   display: flex; flex-direction: column;
   background: var(--surface); border-radius: var(--r-lg); overflow: hidden;
@@ -134,9 +139,12 @@
 .home-service p { margin: 0; color: var(--ink-soft); font-size: .95rem; line-height: var(--lh-body); }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
   .home-services__grid { grid-template-columns: repeat(2, 1fr); }
-  .home-offers { grid-template-columns: repeat(2, 1fr); }  /* 2x2 on mobile/tablet */
+  .home-offers { grid-template-columns: repeat(3, 1fr); }   /* 3 across on tablet */
+}
+@media (max-width: 680px) {
+  .home-offers { grid-template-columns: repeat(2, 1fr); }   /* 2 across on mobile */
 }
 @media (max-width: 520px) {
   .home-services__grid { grid-template-columns: 1fr; }
