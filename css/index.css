@@ -97,9 +97,14 @@
 .section--offers p,
 #packages .section-head,
 #packages h2,
-#packages p {
+#packages .section-head p {
   color: #ffffff !important;
 }
+
+/* Card text lives on white cards — keep it readable (not white) */
+#packages .home-offer__title { color: #ffffff !important; }   /* on blue header */
+#packages .home-offer__desc  { color: var(--ink-soft) !important; }
+#packages .home-offer__price { color: #E63946 !important; }
 
 .home-offers { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-5, 20px); }
 .home-offer {
