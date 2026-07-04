@@ -238,9 +238,12 @@
   var CN_DOCS2 = [
     ["Scan du passeport", "سكان جواز السفر"],
     ["Photo Full HD (par photographe)", "صورة Full HD من مصور"],
+    ["Numéro de téléphone", "رقم الهاتف"],
     ["Attestation de travail ou registre de commerce (RC)", "شهادة عمل أو RC"],
-    ["Relevé bancaire récent", "كشف بنكي حديث"],
-    ["Casier judiciaire récent", "صحيفة سوابق حديثة"]
+    ["Copie du visa précédent avec les cachets d'entrée et de sortie", "نسخة الفيزا السابقة مع ختمي الدخول والخروج"]
+  ];
+  var CN_COND2 = [
+    ["Frais consulaires non inclus", "الرسوم القنصلية غير مشمولة"]
   ];
   var CN_COND1 = [
     ["Frais consulaires non inclus — paiement par carte bancaire uniquement", "الرسوم القنصلية غير مشمولة — دفع بالبطاقة البنكية فقط"]
@@ -248,6 +251,9 @@
   var CN_EXTRA1 = [
     ["Pour un mineur ou sans emploi : caution du garant — autorisation des deux parents — passeports et casiers judiciaires des parents — fiche familiale — RC ou attestation de travail du garant — passeport + photo + acte de naissance + casier judiciaire + certificat de scolarité pour le mineur — relevé bancaire du garant", "للقاصر أو العاطل: كفالة الضامن — إذن الأب والأم — جوازات وصحائف سوابق الوالدين — فيش عائلي — RC أو شهادة عمل الضامن — جواز + صورة + عقد ميلاد + صحيفة سوابق + شهادة مدرسية للقاصر — كشف حساب الضامن"],
     ["Remarque : envoyer le dossier un mois avant le voyage pour éviter tout problème", "ملاحظة: يُرسل الملف شهراً قبل السفر لتفادي أي إشكال"]
+  ];
+  var CN_EXTRA2 = [
+    ["Pour un mineur ou sans emploi : caution du garant — autorisation des deux parents — passeports et casiers judiciaires des parents — fiche familiale — RC ou attestation de travail du garant — passeport + photo + acte de naissance + casier judiciaire + certificat de scolarité pour le mineur — relevé bancaire du garant", "للقاصر أو العاطل: كفالة الضامن — إذن الأب والأم — جوازات وصحائف سوابق الوالدين — فيش عائلي — RC أو شهادة عمل الضامن — جواز + صورة + عقد ميلاد + صحيفة سوابق + شهادة مدرسية للقاصر — كشف حساب الضامن"]
   ];
 
   // [type_fr, type_ar, price, delai_fr, delai_ar, docs?, conditions?]
@@ -304,7 +310,7 @@
     ]},
     { f: "🇨🇳", fr: "Chine", ar: "الصين", v: [
       ["Visa sticker — 1ère demande", "فيزا ملصق - طلب أول", "13 000", "10 jours ouvrables (présence du client le jour du dépôt)", "10 أيام عمل (الزبون يحضر يوم الإيداع)", CN_DOCS1, CN_COND1, CN_EXTRA1],
-      ["Visa sticker — renouvellement", "فيزا ملصق - تجديد", "6 500", "10 jours", "10 أيام", CN_DOCS2]
+      ["Visa sticker — renouvellement", "فيزا ملصق - تجديد", "6 500", "7 jours ouvrables (présence du client le jour du dépôt)", "7 أيام عمل (الزبون يحضر يوم الإيداع)", CN_DOCS2, CN_COND2, CN_EXTRA2]
     ]},
     { f: "🇰🇷", fr: "Corée", ar: "كوريا", v: [
       ["Visa sticker", "فيزا ملصق", "12 000", "5 jours", "5 أيام"]
