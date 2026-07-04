@@ -87,6 +87,20 @@
 .home-offers-section .section-head h2 { color: #fff; }
 .home-offers-section .section-head p { color: rgba(255,255,255,.82); }
 
+/* Force dark offers section (overrides any cached/base styles) */
+.section--offers, #packages, .section:has(.grid-cards) {
+  background-color: #0d1b2a !important;
+}
+
+.section--offers .section-head,
+.section--offers h2,
+.section--offers p,
+#packages .section-head,
+#packages h2,
+#packages p {
+  color: #ffffff !important;
+}
+
 .home-offers { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-5, 20px); }
 .home-offer {
   display: flex; flex-direction: column;
