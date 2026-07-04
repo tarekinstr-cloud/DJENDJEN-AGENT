@@ -18,6 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/visas.css?v=1" />
 </head>
 <body>
 
@@ -53,20 +54,27 @@
   </header>
 
   <main>
-    <section class="section">
+    <!-- HERO -->
+    <section class="visa-hero">
+      <div class="visa-hero__inner container">
+        <h1 class="visa-hero__title" data-fr="Visas" data-ar="التأشيرات">Visas</h1>
+        <p class="visa-hero__sub" data-fr="Nous obtenons votre visa, facilement et rapidement." data-ar="نحضّلك فيزاك بسهولة وسرعة">Nous obtenons votre visa, facilement et rapidement.</p>
+        <div class="visa-search">
+          <span class="visa-search__ic" aria-hidden="true">🔍</span>
+          <input id="visaSearch" type="search" class="visa-search__input"
+            data-ph-fr="Rechercher un pays…" data-ph-ar="ابحث عن دولة…"
+            placeholder="Rechercher un pays…" aria-label="Rechercher un pays / ابحث عن دولة" />
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTRIES GRID + DETAILS -->
+    <section class="section visa-section">
       <div class="container">
-        <div class="section-head" style="max-width:680px; margin-inline:auto; text-align:center;">
-          <p class="eyebrow" data-fr="Nos services" data-ar="خدماتنا">Nos services</p>
-          <h1 data-fr="Visas" data-ar="التأشيرات">Visas</h1>
-          <p data-fr="Nous obtenons votre visa, facilement et rapidement." data-ar="نحصّلك فيزاك بسهولة وسرعة">Nous obtenons votre visa, facilement et rapidement.</p>
-        </div>
-
-        <div class="visas-layout">
-          <aside class="visa-sidebar" id="visaSidebar" aria-label="Pays / الدول"></aside>
-          <div class="visa-panel" id="visaPanel"></div>
-        </div>
-
-        <div class="warning-banner" data-fr="⚠️ Prix susceptibles de changer — pour toute information ou réservation, contactez-nous." data-ar="⚠️ الأسعار قابلة للتغيير — للاستفسار والحجز اتصل بنا">⚠️ Prix susceptibles de changer — pour toute information ou réservation, contactez-nous.</div>
+        <div class="visa-grid" id="visaGrid" role="list" aria-label="Pays / الدول"></div>
+        <p class="visa-empty" id="visaEmpty" hidden data-fr="Aucun pays trouvé." data-ar="لا توجد دولة مطابقة.">Aucun pays trouvé.</p>
+        <div class="visa-details" id="visaDetails" aria-live="polite"></div>
+        <div class="visa-banner" data-fr="⚠️ Prix susceptibles de changer — pour toute information ou réservation, contactez-nous." data-ar="⚠️ الأسعار قابلة للتغيير — للاستفسار والحجز اتصل بنا">⚠️ Prix susceptibles de changer — pour toute information ou réservation, contactez-nous.</div>
       </div>
     </section>
   </main>

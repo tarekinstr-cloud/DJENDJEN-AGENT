@@ -356,9 +356,11 @@
   // ISO codes (same order as COUNTRIES) for flagcdn.com images
   var CODES = ["eg", "qa", "jo", "ae", "tr", "th", "sg", "id", "az", "om", "am", "sa", "cn", "kr", "ru", "ca", "lb", "tz", "bd", "jp", "vn", "uz", "et", "mg"];
 
-  var sidebar = document.getElementById("visaSidebar");
-  var panel = document.getElementById("visaPanel");
-  if (!sidebar || !panel) return;
+  var grid = document.getElementById("visaGrid");
+  var details = document.getElementById("visaDetails");
+  var searchInput = document.getElementById("visaSearch");
+  var emptyMsg = document.getElementById("visaEmpty");
+  if (!grid || !details) return;
 
   function el(tag, cls) { var e = document.createElement(tag); if (cls) e.className = cls; return e; }
   // Bilingual text node: keeps data-fr/data-ar so the FR/AR switch updates it
@@ -368,106 +370,138 @@
     e.textContent = (lang() === "ar" ? ar : fr);
     return e;
   }
-  function flag(code, dim) {
-    var im = el("img", "flag");
-    im.src = "https://flagcdn.com/" + dim + "/" + code + ".png";
-    im.alt = "flag";
-    im.loading = "lazy";
-    return im;
+  // Price pill — keeps HTML in data-fr/data-ar so the FR/AR switch keeps the <bdi>
+  function priceEl(price, cls) {
+    var p = el("span", cls || "visa-price-badge");
+    p.setAttribute("data-fr", "<bdi>" + price + "</bdi> DZD");
+    p.setAttribute("data-ar", "<bdi>" + price + "</bdi> دج");
+    p.innerHTML = "<bdi>" + price + "</bdi> " + (lang() === "ar" ? "دج" : "DZD");
+    return p;
   }
 
+  /* ---------- Countries grid ---------- */
+  var cards = [];
   COUNTRIES.forEach(function (c, i) {
-    // --- Sidebar button ---
-    var btn = el("button", "visa-country" + (i === 0 ? " is-active" : ""));
-    btn.type = "button";
-    btn.setAttribute("data-idx", i);
-    btn.appendChild(flag(CODES[i], "24x18"));
-    btn.appendChild(bil(el("span"), c.fr, c.ar));
-    btn.addEventListener("click", function () { select(i); });
-    sidebar.appendChild(btn);
+    var card = el("button", "visa-card");
+    card.type = "button";
+    card.setAttribute("data-idx", i);
+    card.setAttribute("role", "listitem");
+    var fl = el("span", "visa-card__flag"); fl.textContent = c.f; fl.setAttribute("aria-hidden", "true");
+    card.appendChild(fl);
+    card.appendChild(bil(el("span", "visa-card__name"), c.fr, c.ar));
+    var n = c.v.length;
+    card.appendChild(bil(el("span", "visa-card__count"),
+      n + (n > 1 ? " types de visa" : " type de visa"),
+      n + (n > 1 ? " أنواع تأشيرة" : " نوع تأشيرة")));
+    card.addEventListener("click", function () { select(i); });
+    grid.appendChild(card);
+    cards.push(card);
+  });
 
-    // --- Panel section ---
-    var sec = el("div", "visa-panel__section" + (i === 0 ? " is-active" : ""));
-    sec.setAttribute("data-idx", i);
+  function select(idx) {
+    cards.forEach(function (cd, k) {
+      var on = k === idx;
+      cd.classList.toggle("is-active", on);
+      cd.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    renderDetails(idx);
+  }
 
-    var title = el("h2", "visa-panel__title");
-    title.appendChild(flag(CODES[i], "48x36"));
-    title.appendChild(bil(el("span"), c.fr, c.ar));
-    sec.appendChild(title);
+  /* ---------- Details panel ---------- */
+  function docBlock(titleFr, titleAr, list, extraCls) {
+    var frag = document.createDocumentFragment();
+    var h = el("h3", "visa-vbody__h"); bil(h, titleFr, titleAr); frag.appendChild(h);
+    var ul = el("ul", "visa-checklist" + (extraCls ? " " + extraCls : ""));
+    list.forEach(function (d) {
+      var li = el("li", "visa-check");
+      var ic = el("span", "visa-check__ic"); ic.setAttribute("aria-hidden", "true");
+      li.appendChild(ic);
+      li.appendChild(bil(el("span"), d[0], d[1]));
+      ul.appendChild(li);
+    });
+    frag.appendChild(ul);
+    return frag;
+  }
+
+  function buildBody(c, v) {
+    var wrap = el("div", "visa-vbody");
+
+    var top = el("div", "visa-vbody__top");
+    top.appendChild(priceEl(v[2]));
+    var delai = el("span", "visa-delai");
+    delai.appendChild(document.createTextNode("⏱ "));
+    var dl = el("strong"); bil(dl, "Délai : ", "المدة: "); delai.appendChild(dl);
+    delai.appendChild(bil(el("span"), v[3], v[4]));
+    top.appendChild(delai);
+    wrap.appendChild(top);
+
+    wrap.appendChild(docBlock("Documents requis", "الوثائق المطلوبة", v[5] || DOCS));
+    if (v[7] && v[7].length) wrap.appendChild(docBlock("Documents supplémentaires", "وثائق إضافية", v[7], "visa-checklist--extra"));
+    if (v[6] && v[6].length) wrap.appendChild(docBlock("Conditions", "الشروط", v[6], "visa-checklist--cond"));
+
+    var btn = el("button", "btn visa-book-btn"); btn.type = "button";
+    btn.appendChild(bil(el("span"), "Demander un visa", "اطلب تأشيرة"));
+    btn.addEventListener("click", function () { openVisaModal(c, v); });
+    wrap.appendChild(btn);
+    return wrap;
+  }
+
+  function renderDetails(idx) {
+    var c = COUNTRIES[idx];
+    details.innerHTML = "";
+    details.classList.add("is-shown");
+
+    var head = el("div", "visa-detail__head");
+    var fl = el("span", "visa-detail__flag"); fl.textContent = c.f; fl.setAttribute("aria-hidden", "true");
+    head.appendChild(fl);
+    head.appendChild(bil(el("h2", "visa-detail__title"), c.fr, c.ar));
+    details.appendChild(head);
 
     if (c.note) {
-      var note = el("p", "visa-panel__note");
+      var note = el("p", "visa-detail__note");
       bil(note, c.note[0], c.note[1]);
-      sec.appendChild(note);
+      details.appendChild(note);
     }
 
+    var tabs = el("div", "visa-tabs");
+    var body = el("div", "visa-tab-body");
+
     c.v.forEach(function (v, j) {
-      var row = el("details", "visa-row");
-      if (i === 0 && j === 0) row.open = true;
-
-      var sum = el("summary");
-      sum.appendChild(bil(el("span", "visa-row__type"), v[0], v[1]));
-      var price = el("span", "visa-row__price");
-      price.setAttribute("data-fr", "<bdi>" + v[2] + "</bdi> DZD");
-      price.setAttribute("data-ar", "<bdi>" + v[2] + "</bdi> دج");
-      price.innerHTML = "<bdi>" + v[2] + "</bdi> " + (lang() === "ar" ? "دج" : "DZD");
-      sum.appendChild(price);
-      row.appendChild(sum);
-
-      var body = el("div", "visa-row__body");
-
-      var meta = el("p", "visa-row__meta");
-      meta.appendChild(document.createTextNode("⏱ "));
-      var lbl = el("strong"); bil(lbl, "Délai : ", "المدة: ");
-      meta.appendChild(lbl);
-      meta.appendChild(bil(el("span"), v[3], v[4]));
-      body.appendChild(meta);
-
-      var docsH = el("p", "visa-docs-h");
-      bil(docsH, "Documents requis :", "الوثائق المطلوبة:");
-      body.appendChild(docsH);
-
-      var ul = el("ul", "visa-docs");
-      var docs = v[5] || DOCS;            // per-visa override, else default list
-      docs.forEach(function (doc) { ul.appendChild(bil(el("li"), doc[0], doc[1])); });
-      body.appendChild(ul);
-
-      // Extra / supplementary documents (only when provided for this visa)
-      var extra = v[7];
-      if (extra && extra.length) {
-        var exH = el("p", "visa-docs-h");
-        bil(exH, "Documents supplémentaires :", "وثائق إضافية:");
-        body.appendChild(exH);
-        var eul = el("ul", "visa-docs visa-extra");
-        extra.forEach(function (ex) { eul.appendChild(bil(el("li"), ex[0], ex[1])); });
-        body.appendChild(eul);
-      }
-
-      // Conditions (only when provided for this visa)
-      var conds = v[6];
-      if (conds && conds.length) {
-        var condH = el("p", "visa-docs-h");
-        bil(condH, "Conditions :", "الشروط:");
-        body.appendChild(condH);
-        var cul = el("ul", "visa-conds");
-        conds.forEach(function (cd) { cul.appendChild(bil(el("li"), cd[0], cd[1])); });
-        body.appendChild(cul);
-      }
-
-      var a = el("button", "btn btn--whatsapp");
-      a.type = "button";
-      var ic = el("span", "wa-icon"); ic.textContent = "💬"; a.appendChild(ic);
-      a.appendChild(document.createTextNode(" "));
-      a.appendChild(bil(el("span"), "Demander sur WhatsApp", "اطلب عبر واتساب"));
-      a.addEventListener("click", function () { openVisaModal(c, v); });
-      body.appendChild(a);
-
-      row.appendChild(body);
-      sec.appendChild(row);
+      var tab = el("button", "visa-tab" + (j === 0 ? " is-active" : ""));
+      tab.type = "button";
+      tab.appendChild(bil(el("span", "visa-tab__name"), v[0], v[1]));
+      tab.appendChild(priceEl(v[2], "visa-tab__price"));
+      tab.addEventListener("click", function () { selectTab(j); });
+      tabs.appendChild(tab);
     });
 
-    panel.appendChild(sec);
-  });
+    if (c.v.length > 1) details.appendChild(tabs);
+    details.appendChild(body);
+
+    function selectTab(j) {
+      Array.prototype.forEach.call(tabs.children, function (t, k) { t.classList.toggle("is-active", k === j); });
+      body.innerHTML = "";
+      body.appendChild(buildBody(c, c.v[j]));
+    }
+    selectTab(0);
+  }
+
+  /* ---------- Search filter ---------- */
+  if (searchInput) {
+    searchInput.addEventListener("input", function () {
+      var q = this.value.trim().toLowerCase();
+      var shown = 0;
+      cards.forEach(function (cd, i) {
+        var c = COUNTRIES[i];
+        var match = !q || (c.fr + " " + c.ar).toLowerCase().indexOf(q) !== -1;
+        cd.style.display = match ? "" : "none";
+        if (match) shown++;
+      });
+      if (emptyMsg) emptyMsg.hidden = shown !== 0;
+    });
+  }
+
+  select(0);
 
   /* ---------- Visa application modal ---------- */
   var BOOK_WA = "213656281747"; // booking WhatsApp for the post-submit redirect
@@ -603,15 +637,6 @@
           showError((err && err.message) ? err.message : (lang() === "ar" ? "تحقّق من اتصال الإنترنت" : "Vérifiez la connexion"));
         })
         .then(function () { if (vSubmit) { vSubmit.disabled = false; vSubmit.innerHTML = orig; } });
-    });
-  }
-
-  function select(idx) {
-    sidebar.querySelectorAll(".visa-country").forEach(function (b) {
-      b.classList.toggle("is-active", +b.getAttribute("data-idx") === idx);
-    });
-    panel.querySelectorAll(".visa-panel__section").forEach(function (s) {
-      s.classList.toggle("is-active", +s.getAttribute("data-idx") === idx);
     });
   }
 })();
