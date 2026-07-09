@@ -18,6 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/voyages.css?v=1" />
 </head>
 <body>
 
@@ -53,60 +54,20 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero-slider">
-      <div class="hero-slides" aria-hidden="true">
-        <img class="is-active" src="assets/images/kaaba.jpg" alt="" loading="eager" />
-        <img src="assets/images/plane.jpg" alt="" loading="lazy" />
-        <img src="assets/images/hotel.jpg" alt="" loading="lazy" />
-        <img src="assets/images/istanbul.jpg" alt="" loading="lazy" />
-        <img src="assets/images/sharm.jpg" alt="" loading="lazy" />
-        <img src="assets/images/baku.jpg" alt="" loading="lazy" />
-        <img src="assets/images/malaysia.jpg" alt="" loading="lazy" />
-        <img src="assets/images/passport.jpg" alt="" loading="lazy" />
-      </div>
-
-      <div class="hero-content">
-        <div class="hero-texts">
-          <div class="hero-text is-active">
-            <h1 class="hero__title" data-fr="La Omra — le voyage d'une vie" data-ar="العمرة — رحلة العمر">La Omra — le voyage d'une vie</h1>
-            <p class="hero__lede" data-fr="Des forfaits Omra organisés avec soin, au départ de l'Algérie." data-ar="باقات عمرة منظّمة بعناية، انطلاقاً من الجزائر">Des forfaits Omra organisés avec soin, au départ de l'Algérie.</p>
-          </div>
-          <div class="hero-text">
-            <h1 class="hero__title" data-fr="Des billets pour toutes les destinations" data-ar="تذاكر لكل الوجهات">Des billets pour toutes les destinations</h1>
-            <p class="hero__lede" data-fr="Les meilleurs prix, de l'Algérie vers le monde." data-ar="أفضل الأسعار من الجزائر إلى العالم">Les meilleurs prix, de l'Algérie vers le monde.</p>
-          </div>
-          <div class="hero-text">
-            <h1 class="hero__title" data-fr="Des hôtels partout dans le monde" data-ar="فنادق في كل العالم">Des hôtels partout dans le monde</h1>
-            <p class="hero__lede" data-fr="Un séjour confortable, au meilleur rapport qualité-prix." data-ar="إقامة مريحة بأفضل جودة وسعر">Un séjour confortable, au meilleur rapport qualité-prix.</p>
-          </div>
-          <div class="hero-text">
-            <h1 class="hero__title" data-fr="Istanbul vous attend" data-ar="إسطنبول تنتظرك">Istanbul vous attend</h1>
-            <p class="hero__lede" data-fr="7 jours de charme et d'histoire avec Turkish Airlines." data-ar="7 أيام سحر وتاريخ مع Turkish Airlines">7 jours de charme et d'histoire avec Turkish Airlines.</p>
-          </div>
-          <div class="hero-text">
-            <h1 class="hero__title" data-fr="Charm el-Cheikh — vacances de rêve" data-ar="شرم الشيخ — عطلة الأحلام">Charm el-Cheikh — vacances de rêve</h1>
-            <p class="hero__lede" data-fr="9 ou 10 nuits All Inclusive, de juillet à septembre." data-ar="9 أو 10 ليالي All Inclusive من جويلية إلى سبتمبر">9 ou 10 nuits All Inclusive, de juillet à septembre.</p>
-          </div>
-          <div class="hero-text">
-            <h1 class="hero__title" data-fr="Bakou — une destination unique" data-ar="باكو — وجهة مميزة">Bakou — une destination unique</h1>
-            <p class="hero__lede" data-fr="8 jours de découverte avec un guide algérien." data-ar="8 أيام اكتشاف مع مرشد جزائري">8 jours de découverte avec un guide algérien.</p>
-          </div>
-          <div class="hero-text">
-            <h1 class="hero__title" data-fr="Malaisie + Vietnam" data-ar="ماليزيا + فيتنام">Malaisie + Vietnam</h1>
-            <p class="hero__lede" data-fr="14 nuits au cœur de l'Asie du Sud-Est." data-ar="14 ليلة في قلب جنوب شرق آسيا">14 nuits au cœur de l'Asie du Sud-Est.</p>
-          </div>
-          <div class="hero-text">
-            <h1 class="hero__title" data-fr="Votre visa entre de bonnes mains" data-ar="تأشيرتك بين يدينا">Votre visa entre de bonnes mains</h1>
-            <p class="hero__lede" data-fr="Nous gérons votre dossier de visa de A à Z." data-ar="نتكفّل بملف تأشيرتك من الألف إلى الياء">Nous gérons votre dossier de visa de A à Z.</p>
-          </div>
+    <!-- HERO (static image — travel/flights) -->
+    <section class="voy-hero">
+      <div class="voy-hero__overlay" aria-hidden="true"></div>
+      <div class="container voy-hero__inner">
+        <p class="voy-hero__eyebrow" data-fr="Voyages · Billets · Hôtels · Visas" data-ar="رحلات · تذاكر · فنادق · تأشيرات">Voyages · Billets · Hôtels · Visas</p>
+        <h1 class="voy-hero__title">
+          <span data-fr="Des billets pour" data-ar="تذاكر لكل">Des billets pour</span>
+          <span class="accent" data-fr="toutes les destinations" data-ar="الوجهات">toutes les destinations</span>
+        </h1>
+        <p class="voy-hero__lede" data-fr="Les meilleurs prix, de l'Algérie vers le monde." data-ar="أفضل الأسعار من الجزائر إلى العالم">Les meilleurs prix, de l'Algérie vers le monde.</p>
+        <div class="voy-hero__cta">
+          <a href="#request" class="btn-primary" data-booking data-subject-fr="Réservation de voyage" data-subject-ar="طلب حجز رحلة" data-fr="Envoyer ma demande" data-ar="ابعث طلبك">Envoyer ma demande</a>
         </div>
-        <a href="#request" class="btn-primary" data-booking data-subject-fr="Réservation de voyage" data-subject-ar="طلب حجز رحلة" data-fr="Envoyer ma demande" data-ar="ابعث طلبك">Envoyer ma demande</a>
       </div>
-
-      <button type="button" class="hero-prev" aria-label="Précédent">&#8249;</button>
-      <button type="button" class="hero-next" aria-label="Suivant">&#8250;</button>
-      <div class="hero-dots"></div>
     </section>
 
     <!-- SERVICES -->
