@@ -120,6 +120,7 @@
           <article class="card"><div class="card__body">
             <h3 class="card__title" data-fr="Voyages organisés" data-ar="رحلات منظّمة">Voyages organisés</h3>
             <p class="card__desc" data-fr="Des séjours préparés avec soin vers vos destinations préférées." data-ar="عطل محضّرة بعناية نحو الوجهات لي تحبّها.">Des séjours préparés avec soin vers vos destinations préférées.</p>
+            <a class="btn btn--primary" href="#voyages-organises" style="margin-block-start: var(--sp-4);" data-fr="Voir les voyages" data-ar="عرض الرحلات">Voir les voyages</a>
           </div></article>
           <article class="card"><div class="card__body">
             <h3 class="card__title" data-fr="Billets d'avion" data-ar="تذاكر السفر">Billets d'avion</h3>
@@ -137,6 +138,49 @@
       </div>
     </section>
 
+    <!-- VOYAGES ORGANISÉS (listing) -->
+    <section class="section" id="voyages-organises" style="background: var(--bg-tint);">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-fr="Voyages organisés" data-ar="رحلات منظّمة">Voyages organisés</p>
+          <h2 data-fr="Nos voyages organisés" data-ar="رحلاتنا المنظّمة">Nos voyages organisés</h2>
+          <p data-fr="Des séjours clés en main, prêts à réserver." data-ar="عطل جاهزة بالكامل، جاهزة للحجز.">Des séjours clés en main, prêts à réserver.</p>
+        </div>
+
+        <div class="dest-grid">
+
+          <!-- Trip 1: Charm el-Cheikh + Le Caire (reprise de la section Destinations) -->
+          <article class="card dest-card">
+            <div class="card__media"><img class="dest-card__img" src="assets/images/sharm.jpg" alt="Charm el-Cheikh + Le Caire" loading="lazy" onerror="this.remove()" /><span class="card__badge">🇪🇬 <span data-fr="Charm el-Cheikh + Le Caire" data-ar="شرم الشيخ + القاهرة">Charm el-Cheikh + Le Caire</span></span></div>
+            <div class="card__body">
+              <h3 class="card__title" data-fr="Charm el-Cheikh + Le Caire" data-ar="شرم الشيخ + القاهرة">Charm el-Cheikh + Le Caire</h3>
+              <div class="card__meta"><span data-fr="9 ou 10 nuits · Charm + Le Caire" data-ar="9 أو 10 ليالٍ · شرم + القاهرة">9 ou 10 nuits · Charm + Le Caire</span></div>
+              <p class="card__desc" data-fr="Vol charter direct depuis Alger · juillet–septembre 2026. Vol + visa + hôtel + All Inclusive + transferts + assistance 24/24." data-ar="طيران شارتر مباشر من الجزائر · جويلية–سبتمبر 2026. طيران + تأشيرة + فندق + All Inclusive + تنقّلات + مساعدة 24/24.">Vol charter direct depuis Alger · juillet–septembre 2026. Vol + visa + hôtel + All Inclusive + transferts + assistance 24/24.</p>
+              <div class="card__foot">
+                <div class="card__price"><small data-fr="À partir de" data-ar="يبدأ من">À partir de</small><strong><bdi>218 000</bdi> <span class="cur">DZD</span></strong></div>
+                <button type="button" class="btn btn--primary" data-booking data-subject-fr="Réservation de voyage" data-subject-ar="طلب حجز رحلة" data-dest-fr="Charm el-Cheikh + Le Caire" data-dest-ar="شرم الشيخ + القاهرة" data-fr="Demander des infos" data-ar="اطلب معلومات">Demander des infos</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Trip 2: Charm el-Cheikh (forfait complet — page dédiée) -->
+          <article class="card dest-card">
+            <div class="card__media"><img class="dest-card__img" src="assets/images/sharm.jpg" alt="Charm el-Cheikh" loading="lazy" onerror="this.remove()" /><span class="card__badge">🇪🇬 <span data-fr="Charm el-Cheikh" data-ar="شرم الشيخ">Charm el-Cheikh</span></span></div>
+            <div class="card__body">
+              <h3 class="card__title" data-fr="Charm el-Cheikh" data-ar="شرم الشيخ">Charm el-Cheikh</h3>
+              <div class="card__meta"><span data-fr="8 nuits / 9 jours · All Inclusive" data-ar="8 ليالٍ / 9 أيام · All Inclusive">8 nuits / 9 jours · All Inclusive</span></div>
+              <p class="card__desc" data-fr="Vol direct depuis Constantine (Air Algérie) · 5 départs de juillet à septembre 2026. 3 hôtels au choix, All Inclusive, transferts &amp; excursions guidées." data-ar="طيران مباشر من قسنطينة (Air Algérie) · 5 مواعيد مغادرة من جويلية إلى سبتمبر 2026. 3 فنادق للاختيار، All Inclusive، تنقّلات وجولات مع مرشد.">Vol direct depuis Constantine (Air Algérie) · 5 départs de juillet à septembre 2026. 3 hôtels au choix, All Inclusive, transferts &amp; excursions guidées.</p>
+              <div class="card__foot">
+                <div class="card__price"><small data-fr="À partir de" data-ar="يبدأ من">À partir de</small><strong><bdi>213 000</bdi> <span class="cur">DZD</span></strong></div>
+                <a class="btn btn--primary" href="sharm-el-sheikh.html" data-fr="Détails" data-ar="تفاصيل">Détails</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
     <!-- DESTINATIONS -->
     <section class="section" id="destinations">
       <div class="container">
@@ -150,9 +194,9 @@
 
           <!-- 1. Charm el-Cheikh -->
           <article class="card dest-card">
-            <div class="card__media"><img class="dest-card__img" src="assets/images/sharm.jpg" alt="Charm el-Cheikh" loading="lazy" onerror="this.remove()" /><span class="card__badge">🇪🇬 <span data-fr="Charm el-Cheikh" data-ar="شرم الشيخ">Charm el-Cheikh</span></span></div>
+            <div class="card__media"><img class="dest-card__img" src="assets/images/sharm.jpg" alt="Charm el-Cheikh + Le Caire" loading="lazy" onerror="this.remove()" /><span class="card__badge">🇪🇬 <span data-fr="Charm el-Cheikh + Le Caire" data-ar="شرم الشيخ + القاهرة">Charm el-Cheikh + Le Caire</span></span></div>
             <div class="card__body">
-              <h3 class="card__title" data-fr="Charm el-Cheikh" data-ar="شرم الشيخ">Charm el-Cheikh</h3>
+              <h3 class="card__title" data-fr="Charm el-Cheikh + Le Caire" data-ar="شرم الشيخ + القاهرة">Charm el-Cheikh + Le Caire</h3>
               <div class="card__meta"><span data-fr="9 ou 10 nuits · Charm + Le Caire" data-ar="9 أو 10 ليالٍ · شرم + القاهرة">9 ou 10 nuits · Charm + Le Caire</span></div>
               <p class="card__desc" data-fr="Vol charter direct depuis Alger · juillet–septembre 2026. Vol + visa + hôtel + All Inclusive + transferts + assistance 24/24." data-ar="طيران شارتر مباشر من الجزائر · جويلية–سبتمبر 2026. طيران + تأشيرة + فندق + All Inclusive + تنقّلات + مساعدة 24/24.">Vol charter direct depuis Alger · juillet–septembre 2026. Vol + visa + hôtel + All Inclusive + transferts + assistance 24/24.</p>
               <div class="card__foot">
