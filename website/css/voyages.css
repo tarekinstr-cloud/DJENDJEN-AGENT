@@ -6,7 +6,7 @@
 
 .voy-hero {
   position: relative;
-  min-height: 82vh;
+  min-height: clamp(420px, 58vh, 560px);   /* sized to content — avoids a large empty band on tall screens */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,5 +67,5 @@
 .voy-hero__cta { display: flex; justify-content: center; }
 
 @media (max-width: 860px) {
-  .voy-hero { min-height: 68vh; }
+  .voy-hero { min-height: clamp(360px, 52vh, 480px); }
 }
