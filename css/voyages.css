@@ -13,7 +13,7 @@
   overflow: hidden;
   isolation: isolate;
   background-color: #0d1b2a;                       /* fallback while image loads */
-  background-image: url("../images/voyages-hero.jpg");
+  background-image: url("../images/voyages-hero.jpg?v=2");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
