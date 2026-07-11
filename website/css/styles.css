@@ -522,6 +522,13 @@ img.flag { display: block; border-radius: 3px; box-shadow: 0 0 0 1px rgba(10,72,
 .request-form > p.request-form__intro { color: var(--ink-soft); margin: 0 0 var(--sp-6); }
 
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+.field-row--3 { grid-template-columns: 1fr 1fr 1fr; }
+@media (max-width: 560px) { .field-row--3 { grid-template-columns: 1fr; } }
+
+/* Booking modal — trip-type radios (Sakīna) */
+.bk-radios { display: flex; flex-wrap: wrap; gap: var(--sp-4); padding-block-start: var(--sp-1); }
+.bk-radio { display: inline-flex; align-items: center; gap: var(--sp-2); font-weight: 600; color: var(--ink); cursor: pointer; }
+.bk-radio input { accent-color: #1488C2; width: 18px; height: 18px; }
 
 select.input { appearance: none; background-image:
   linear-gradient(45deg, transparent 50%, var(--ink-soft) 50%),
