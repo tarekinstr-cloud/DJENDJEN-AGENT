@@ -45,26 +45,19 @@
             '<option value="نصف إعاشة" data-fr="Demi-pension" data-ar="نصف إعاشة">نصف إعاشة</option>' +
             '<option value="إعاشة كاملة" data-fr="Pension complète" data-ar="إعاشة كاملة">إعاشة كاملة</option>' +
           '</select></div>',
-    depAirport: '<div class="field"><label data-fr="Aéroport de départ" data-ar="مطار الانطلاق">مطار الانطلاق</label>' +
-          '<select class="input" name="مطار الانطلاق" required>' +
-            '<option value="" disabled selected data-fr="— Choisir —" data-ar="— اختر —">— اختر —</option>' +
-            '<option value="الجزائر (ALG)" data-fr="Alger (ALG)" data-ar="الجزائر (ALG)">الجزائر (ALG)</option>' +
-            '<option value="قسنطينة (CZL)" data-fr="Constantine (CZL)" data-ar="قسنطينة (CZL)">قسنطينة (CZL)</option>' +
-            '<option value="وهران (ORN)" data-fr="Oran (ORN)" data-ar="وهران (ORN)">وهران (ORN)</option>' +
-            '<option value="عنابة (AAE)" data-fr="Annaba (AAE)" data-ar="عنابة (AAE)">عنابة (AAE)</option>' +
-            '<option value="سطيف (QSF)" data-fr="Sétif (QSF)" data-ar="سطيف (QSF)">سطيف (QSF)</option>' +
-            '<option value="بجاية (BJA)" data-fr="Béjaïa (BJA)" data-ar="بجاية (BJA)">بجاية (BJA)</option>' +
-            '<option value="ورقلة (OGX)" data-fr="Ouargla (OGX)" data-ar="ورقلة (OGX)">ورقلة (OGX)</option>' +
-            '<option value="غرداية (GHA)" data-fr="Ghardaïa (GHA)" data-ar="غرداية (GHA)">غرداية (GHA)</option>' +
-            '<option value="تلمسان (TLM)" data-fr="Tlemcen (TLM)" data-ar="تلمسان (TLM)">تلمسان (TLM)</option>' +
-            '<option value="أخرى" data-fr="Autre" data-ar="أخرى">أخرى</option>' +
-          '</select></div>',
+    depAirport: '<div class="field"><label data-fr="Aéroport de départ" data-ar="مطار الانطلاق">مطار الانطلاق</label><input class="input" type="text" name="مطار الانطلاق" data-ph-fr="Ex : Alger (ALG)" data-ph-ar="مثال: الجزائر (ALG)" placeholder="مثال: الجزائر (ALG)" required /></div>',
     arrAirport: '<div class="field"><label data-fr="Aéroport d’arrivée" data-ar="مطار الوصول">مطار الوصول</label><input class="input" type="text" name="مطار الوصول" data-ph-fr="Ex : Istanbul (IST)" data-ph-ar="مثال: إسطنبول (IST)" placeholder="مثال: إسطنبول (IST)" required /></div>',
     tripType: '<div class="field"><label data-fr="Type de trajet" data-ar="نوع الرحلة">نوع الرحلة</label>' +
-          '<div class="bk-radios">' +
-            '<label class="bk-radio"><input type="radio" name="نوع الرحلة" value="ذهاب وعودة" checked /> <span data-fr="Aller-retour" data-ar="ذهاب وعودة">ذهاب وعودة</span></label>' +
-            '<label class="bk-radio"><input type="radio" name="نوع الرحلة" value="ذهاب فقط" /> <span data-fr="Aller simple" data-ar="ذهاب فقط">ذهاب فقط</span></label>' +
-          '</div></div>',
+          '<select class="input" name="نوع الرحلة" id="bkTripType" required>' +
+            '<option value="ذهاب وعودة" selected data-fr="Aller-retour" data-ar="ذهاب وعودة">ذهاب وعودة</option>' +
+            '<option value="ذهاب فقط" data-fr="Aller simple" data-ar="ذهاب فقط">ذهاب فقط</option>' +
+          '</select></div>',
+    travelClass: '<div class="field"><label data-fr="Classe" data-ar="الدرجة">الدرجة</label>' +
+          '<select class="input" name="الدرجة" required>' +
+            '<option value="سياحية" selected data-fr="Économique" data-ar="سياحية">سياحية</option>' +
+            '<option value="رجال أعمال" data-fr="Affaires" data-ar="رجال أعمال">رجال أعمال</option>' +
+            '<option value="الدرجة الأولى" data-fr="Première classe" data-ar="الدرجة الأولى">الدرجة الأولى</option>' +
+          '</select></div>',
     pax: '<div class="field-row field-row--3">' +
             '<div class="field"><label data-fr="Adultes (12+)" data-ar="البالغين (12+)">البالغين (12+)</label><input class="input" type="number" dir="ltr" min="1" value="1" name="البالغين" required /></div>' +
             '<div class="field"><label data-fr="Enfants (2-12)" data-ar="الأطفال (2-12)">الأطفال (2-12)</label><input class="input" type="number" dir="ltr" min="0" value="0" name="الأطفال" /></div>' +
@@ -79,7 +72,7 @@
       return row(FLD.name, FLD.phone) +
              row(FLD.email, FLD.passport) +
              row(FLD.depAirport, FLD.arrAirport) +
-             FLD.tripType +
+             row(FLD.tripType, FLD.travelClass) +
              row(FLD.date, FLD.returnDate) +
              FLD.pax +
              FLD.notes;
@@ -167,8 +160,8 @@
     var rf = fieldsEl.querySelector("#bkReturnField");
     if (!rf) return;
     var inp = rf.querySelector("input");
-    var round = form.querySelector('input[name="نوع الرحلة"]:checked');
-    var show = round && round.value === "ذهاب وعودة";
+    var tt = form.querySelector('[name="نوع الرحلة"]');
+    var show = tt && tt.value === "ذهاب وعودة";
     rf.style.display = show ? "" : "none";
     if (inp) { inp.disabled = !show; inp.required = !!show; if (!show) inp.value = ""; }
   }
@@ -186,10 +179,9 @@
         bkUc.onChange(function (val) { if (!val) docsUrl = ""; });
       } catch (e) { bkUc = null; }
     }
-    // wire trip-type radios (flight)
-    fieldsEl.querySelectorAll('input[name="نوع الرحلة"]').forEach(function (r) {
-      r.addEventListener("change", syncReturn);
-    });
+    // wire trip-type select (flight) → toggles the return-date field
+    var tripSel = fieldsEl.querySelector('[name="نوع الرحلة"]');
+    if (tripSel) tripSel.addEventListener("change", syncReturn);
     builtType = type;
   }
 
