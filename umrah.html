@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/umrah.css?v=3" />
+  <link rel="stylesheet" href="css/umrah.css?v=4" />
 </head>
 <body>
 
@@ -119,16 +119,20 @@
           <div class="omra-pkg__body">
             <div class="omra-pkg__price">
               <small data-fr="À partir de — par pers. (chambre quintuple, hors repas)" data-ar="يبدأ من — للشخص (غرفة خماسية، ما عدا الوجبات)">À partir de — par pers. (chambre quintuple, hors repas)</small>
-              <div class="omra-pkg__amount"><bdi>210 000</bdi> <span class="cur">DZD</span></div>
+              <div class="omra-pkg__amount"><bdi>199 000</bdi> <span class="cur">DZD</span></div>
             </div>
 
-            <p class="omra-tl-label" data-fr="Trois départs — juillet 2026" data-ar="ثلاثة انطلاقات — جويلية 2026">Trois départs — juillet 2026</p>
-            <div class="omra-timeline" aria-hidden="true">
-              <div class="omra-tl-node"><div class="omra-tl-dot"><bdi>7</bdi></div><span data-fr="juillet" data-ar="جويلية">juillet</span></div>
+            <p class="omra-tl-label" data-fr="Cinq départs — juillet &amp; août 2026" data-ar="خمسة انطلاقات — جويلية وأوت 2026">Cinq départs — juillet &amp; août 2026</p>
+            <div class="omra-timeline">
+              <div class="omra-tl-node" data-tab="0"><div class="omra-tl-dot"><bdi>27</bdi></div><span data-fr="juil." data-ar="جويلية">juil.</span></div>
               <div class="omra-tl-line"></div>
-              <div class="omra-tl-node"><div class="omra-tl-dot"><bdi>13</bdi></div><span data-fr="juillet" data-ar="جويلية">juillet</span></div>
+              <div class="omra-tl-node" data-tab="1"><div class="omra-tl-dot"><bdi>3</bdi></div><span data-fr="août" data-ar="أوت">août</span></div>
               <div class="omra-tl-line"></div>
-              <div class="omra-tl-node"><div class="omra-tl-dot"><bdi>28</bdi></div><span data-fr="juillet" data-ar="جويلية">juillet</span></div>
+              <div class="omra-tl-node" data-tab="2"><div class="omra-tl-dot"><bdi>10</bdi></div><span data-fr="août" data-ar="أوت">août</span></div>
+              <div class="omra-tl-line"></div>
+              <div class="omra-tl-node" data-tab="3"><div class="omra-tl-dot"><bdi>12</bdi></div><span data-fr="août" data-ar="أوت">août</span></div>
+              <div class="omra-tl-line"></div>
+              <div class="omra-tl-node" data-tab="4"><div class="omra-tl-dot"><bdi>31</bdi></div><span data-fr="août" data-ar="أوت">août</span></div>
             </div>
 
             <div class="omra-pkg__chips">
@@ -137,7 +141,7 @@
               <span class="omra-chip"><span aria-hidden="true">🕌</span> <span data-fr="Hôtels Al-Zahra (Médine)" data-ar="فنادق الزهراء (المدينة)">Hôtels Al-Zahra (Médine)</span></span>
             </div>
 
-            <p class="omra-pkg__desc" data-fr="Trois départs : 7, 13 et 28 juillet 2026. Hôtels à 500–700 m du Haram à La Mecque, et hôtels du groupe Al-Zahra à Médine." data-ar="ثلاثة انطلاقات: 7 و13 و28 جويلية 2026. فنادق على بُعد 500–700 م من الحرم بمكة، وفنادق مجموعة الزهراء بالمدينة المنورة.">Trois départs : 7, 13 et 28 juillet 2026. Hôtels à 500–700 m du Haram à La Mecque, et hôtels du groupe Al-Zahra à Médine.</p>
+            <p class="omra-pkg__desc" data-fr="Cinq départs de juillet à août 2026. L'hôtel et les tarifs varient selon la date de départ — voir le détail ci-dessous." data-ar="خمسة انطلاقات من جويلية إلى أوت 2026. الفندق والأسعار يختلفان حسب تاريخ المغادرة — انظر التفاصيل أدناه.">Cinq départs de juillet à août 2026. L'hôtel et les tarifs varient selon la date de départ — voir le détail ci-dessous.</p>
 
             <div class="omra-pkg__cta">
               <a class="btn btn--urgent btn--lg" href="#request" data-booking data-subject-fr="Réservation Omra" data-subject-ar="طلب حجز عمرة" data-fr="Réserver" data-ar="احجز">Réserver</a>
@@ -189,40 +193,91 @@
           </article>
         </div>
 
-        <h3 class="omra-subhead" data-fr="Tarifs par personne, selon le type de chambre" data-ar="الأسعار للشخص حسب نوع الغرفة">Tarifs par personne, selon le type de chambre</h3>
+        <h3 class="omra-subhead" data-fr="Tarifs par personne, selon la date de départ" data-ar="الأسعار للشخص حسب تاريخ المغادرة">Tarifs par personne, selon la date de départ</h3>
 
-        <div class="omra-compare-wrap">
-          <table class="omra-compare">
-            <thead>
-              <tr>
-                <th class="col-room" data-fr="Chambre" data-ar="الغرفة">Chambre</th>
-                <th class="col-afaq"><span data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</span><small data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</small></th>
-                <th class="col-infin"><span data-fr="Hôtel Infinity" data-ar="فندق إنفينيتي">Hôtel Infinity</span><small data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</small></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="is-best">
-                <td class="cell-room"><span data-fr="Quintuple" data-ar="خماسية">Quintuple</span><span class="omra-best-tag" data-fr="Meilleur prix" data-ar="أفضل سعر">Meilleur prix</span></td>
-                <td class="cell-afaq"><bdi>210 000</bdi> <span class="cur">DZD</span></td>
-                <td class="cell-infin"><bdi>225 000</bdi> <span class="cur">DZD</span></td>
-              </tr>
-              <tr>
-                <td class="cell-room" data-fr="Quadruple" data-ar="رباعية">Quadruple</td>
-                <td class="cell-afaq"><bdi>220 000</bdi> <span class="cur">DZD</span></td>
-                <td class="cell-infin"><bdi>245 000</bdi> <span class="cur">DZD</span></td>
-              </tr>
-              <tr>
-                <td class="cell-room" data-fr="Triple" data-ar="ثلاثية">Triple</td>
-                <td class="cell-afaq"><bdi>230 000</bdi> <span class="cur">DZD</span></td>
-                <td class="cell-infin"><bdi>265 000</bdi> <span class="cur">DZD</span></td>
-              </tr>
-              <tr>
-                <td class="cell-room" data-fr="Double" data-ar="ثنائية">Double</td>
-                <td class="cell-afaq"><bdi>250 000</bdi> <span class="cur">DZD</span></td>
-                <td class="cell-infin"><bdi>315 000</bdi> <span class="cur">DZD</span></td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- ===== Per-departure pricing tabs =====
+             Each tab = one departure date, with its own hotel + room-tier table.
+             To edit: change a tab's <button> label and its matching
+             .omra-fare-panel[data-tab] (hotel name + rows). Cheapest tier gets
+             .is-best + the "أفضل سعر" badge. Tables handle a variable number
+             of room rows (e.g. 12 août has 3 tiers, no خماسية/رباعية). -->
+        <div class="omra-fares">
+          <div class="omra-fare-tabs" role="tablist" aria-label="Dates de départ / تواريخ المغادرة">
+            <button type="button" class="omra-fare-tab is-active" data-tab="0" role="tab" aria-selected="true"><bdi>27</bdi> <span data-fr="juil." data-ar="جويلية">juil.</span></button>
+            <button type="button" class="omra-fare-tab" data-tab="1" role="tab" aria-selected="false"><bdi>3</bdi> <span data-fr="août" data-ar="أوت">août</span></button>
+            <button type="button" class="omra-fare-tab" data-tab="2" role="tab" aria-selected="false"><bdi>10</bdi> <span data-fr="août" data-ar="أوت">août</span></button>
+            <button type="button" class="omra-fare-tab" data-tab="3" role="tab" aria-selected="false"><bdi>12</bdi> <span data-fr="août" data-ar="أوت">août</span></button>
+            <button type="button" class="omra-fare-tab" data-tab="4" role="tab" aria-selected="false"><bdi>31</bdi> <span data-fr="août" data-ar="أوت">août</span></button>
+          </div>
+
+          <!-- TAB 1 — 27 juillet · Afaq As-Sad -->
+          <div class="omra-fare-panel is-active" data-tab="0" role="tabpanel">
+            <p class="omra-fare-hotel"><span aria-hidden="true">🏨</span> <span data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</span></p>
+            <div class="omra-compare-wrap"><table class="omra-compare omra-fare-table">
+              <thead><tr><th class="col-room" data-fr="Chambre" data-ar="الغرفة">Chambre</th><th class="col-price" data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</th></tr></thead>
+              <tbody>
+                <tr class="is-best"><td class="cell-room"><span data-fr="Quintuple" data-ar="خماسية">Quintuple</span> <span class="omra-best-tag" data-fr="Meilleur prix" data-ar="أفضل سعر">Meilleur prix</span></td><td class="cell-price"><bdi>199 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Quadruple" data-ar="رباعية">Quadruple</td><td class="cell-price"><bdi>209 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Triple" data-ar="ثلاثية">Triple</td><td class="cell-price"><bdi>224 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Double" data-ar="ثنائية">Double</td><td class="cell-price"><bdi>249 000</bdi> <span class="cur">DZD</span></td></tr>
+              </tbody>
+            </table></div>
+          </div>
+
+          <!-- TAB 2 — 3 août · Afaq As-Sad -->
+          <div class="omra-fare-panel" data-tab="1" role="tabpanel" hidden>
+            <p class="omra-fare-hotel"><span aria-hidden="true">🏨</span> <span data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</span></p>
+            <div class="omra-compare-wrap"><table class="omra-compare omra-fare-table">
+              <thead><tr><th class="col-room" data-fr="Chambre" data-ar="الغرفة">Chambre</th><th class="col-price" data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</th></tr></thead>
+              <tbody>
+                <tr class="is-best"><td class="cell-room"><span data-fr="Quintuple" data-ar="خماسية">Quintuple</span> <span class="omra-best-tag" data-fr="Meilleur prix" data-ar="أفضل سعر">Meilleur prix</span></td><td class="cell-price"><bdi>215 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Quadruple" data-ar="رباعية">Quadruple</td><td class="cell-price"><bdi>225 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Triple" data-ar="ثلاثية">Triple</td><td class="cell-price"><bdi>245 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Double" data-ar="ثنائية">Double</td><td class="cell-price"><bdi>280 000</bdi> <span class="cur">DZD</span></td></tr>
+              </tbody>
+            </table></div>
+          </div>
+
+          <!-- TAB 3 — 10 août · Infinity -->
+          <div class="omra-fare-panel" data-tab="2" role="tabpanel" hidden>
+            <p class="omra-fare-hotel"><span aria-hidden="true">🏨</span> <span data-fr="Hôtel Infinity" data-ar="فندق إنفينيتي">Hôtel Infinity</span></p>
+            <div class="omra-compare-wrap"><table class="omra-compare omra-fare-table">
+              <thead><tr><th class="col-room" data-fr="Chambre" data-ar="الغرفة">Chambre</th><th class="col-price" data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</th></tr></thead>
+              <tbody>
+                <tr class="is-best"><td class="cell-room"><span data-fr="Quintuple" data-ar="خماسية">Quintuple</span> <span class="omra-best-tag" data-fr="Meilleur prix" data-ar="أفضل سعر">Meilleur prix</span></td><td class="cell-price"><bdi>245 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Quadruple" data-ar="رباعية">Quadruple</td><td class="cell-price"><bdi>255 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Triple" data-ar="ثلاثية">Triple</td><td class="cell-price"><bdi>285 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Double" data-ar="ثنائية">Double</td><td class="cell-price"><bdi>335 000</bdi> <span class="cur">DZD</span></td></tr>
+              </tbody>
+            </table></div>
+          </div>
+
+          <!-- TAB 4 — 12 août · Al-Ayyam (3 tiers only, incl. "جماعية") -->
+          <div class="omra-fare-panel" data-tab="3" role="tabpanel" hidden>
+            <p class="omra-fare-hotel"><span aria-hidden="true">🏨</span> <span data-fr="Hôtel Al-Ayyam" data-ar="فندق الأيام">Hôtel Al-Ayyam</span> <small class="omra-fare-hotel__note" data-fr="(≈ 700 m du Haram · via Djeddah)" data-ar="(≈ 700 م من الحرم · الوجهة: جدة)">(≈ 700 m du Haram · via Djeddah)</small></p>
+            <div class="omra-compare-wrap"><table class="omra-compare omra-fare-table">
+              <thead><tr><th class="col-room" data-fr="Chambre" data-ar="الغرفة">Chambre</th><th class="col-price" data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</th></tr></thead>
+              <tbody>
+                <tr class="is-best"><td class="cell-room"><span data-fr="Collective" data-ar="جماعية">Collective</span> <span class="omra-best-tag" data-fr="Meilleur prix" data-ar="أفضل سعر">Meilleur prix</span></td><td class="cell-price"><bdi>235 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Triple" data-ar="ثلاثية">Triple</td><td class="cell-price"><bdi>255 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Double" data-ar="ثنائية">Double</td><td class="cell-price"><bdi>295 000</bdi> <span class="cur">DZD</span></td></tr>
+              </tbody>
+            </table></div>
+          </div>
+
+          <!-- TAB 5 — 31 août · Afaq As-Sad -->
+          <div class="omra-fare-panel" data-tab="4" role="tabpanel" hidden>
+            <p class="omra-fare-hotel"><span aria-hidden="true">🏨</span> <span data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</span></p>
+            <div class="omra-compare-wrap"><table class="omra-compare omra-fare-table">
+              <thead><tr><th class="col-room" data-fr="Chambre" data-ar="الغرفة">Chambre</th><th class="col-price" data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</th></tr></thead>
+              <tbody>
+                <tr class="is-best"><td class="cell-room"><span data-fr="Quintuple" data-ar="خماسية">Quintuple</span> <span class="omra-best-tag" data-fr="Meilleur prix" data-ar="أفضل سعر">Meilleur prix</span></td><td class="cell-price"><bdi>225 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Quadruple" data-ar="رباعية">Quadruple</td><td class="cell-price"><bdi>235 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Triple" data-ar="ثلاثية">Triple</td><td class="cell-price"><bdi>255 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Double" data-ar="ثنائية">Double</td><td class="cell-price"><bdi>285 000</bdi> <span class="cur">DZD</span></td></tr>
+              </tbody>
+            </table></div>
+          </div>
         </div>
 
         <div class="omra-info">
@@ -278,5 +333,45 @@
   <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8"></script>
   <script src="js/main.js"></script>
   <script src="js/booking.js?v=5"></script>
+  <!-- Per-departure pricing tabs: date circles + tab strip switch the fare panel -->
+  <script>
+    (function () {
+      var tabs   = Array.prototype.slice.call(document.querySelectorAll('.omra-fare-tab'));
+      var panels = Array.prototype.slice.call(document.querySelectorAll('.omra-fare-panel'));
+      var nodes  = Array.prototype.slice.call(document.querySelectorAll('.omra-tl-node'));
+      if (!tabs.length || !panels.length) return;
+
+      function activate(i) {
+        tabs.forEach(function (t) {
+          var on = t.getAttribute('data-tab') === String(i);
+          t.classList.toggle('is-active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        panels.forEach(function (p) {
+          var on = p.getAttribute('data-tab') === String(i);
+          p.classList.toggle('is-active', on);
+          if (on) { p.removeAttribute('hidden'); } else { p.setAttribute('hidden', ''); }
+        });
+        nodes.forEach(function (n) {
+          n.classList.toggle('is-active', n.getAttribute('data-tab') === String(i));
+        });
+      }
+
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function () { activate(t.getAttribute('data-tab')); });
+      });
+      nodes.forEach(function (n) {
+        if (!n.hasAttribute('data-tab')) return;
+        n.setAttribute('role', 'button');
+        n.setAttribute('tabindex', '0');
+        n.addEventListener('click', function () { activate(n.getAttribute('data-tab')); });
+        n.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(n.getAttribute('data-tab')); }
+        });
+      });
+
+      activate(0);
+    })();
+  </script>
 </body>
 </html>
