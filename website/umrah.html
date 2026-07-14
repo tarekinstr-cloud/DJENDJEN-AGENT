@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/umrah.css?v=4" />
+  <link rel="stylesheet" href="css/umrah.css?v=5" />
 </head>
 <body>
 
@@ -163,7 +163,7 @@
           <article class="omra-hotel">
             <div class="omra-hotel__media"><img src="images/hotel-afaq.jpg" alt="" loading="lazy" /></div>
             <div class="omra-hotel__body">
-              <div class="omra-hotel__stars" aria-hidden="true">★★★★</div>
+              <div class="omra-hotel__stars" aria-hidden="true">★★★</div>
               <h3 data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</h3>
               <span class="omra-hotel__badge"><span aria-hidden="true">📍</span> <span data-fr="≈ 700 m du Haram" data-ar="≈ 700 م من الحرم">≈ 700 m du Haram</span></span>
               <p class="omra-hotel__desc" data-fr="À 700 m du Haram, à La Mecque." data-ar="على بُعد 700 م من الحرم، بمكة المكرمة.">À 700 m du Haram, à La Mecque.</p>
@@ -185,10 +185,21 @@
           <article class="omra-hotel">
             <div class="omra-hotel__media"><img src="images/hotel-madinah.jpg" alt="" loading="lazy" /></div>
             <div class="omra-hotel__body">
-              <div class="omra-hotel__stars" aria-hidden="true">★★★★</div>
+              <div class="omra-hotel__stars" aria-hidden="true">★★★</div>
               <h3 data-fr="Hôtels à Médine" data-ar="فنادق المدينة المنورة">Hôtels à Médine</h3>
               <span class="omra-hotel__badge"><span aria-hidden="true">📍</span> <span data-fr="Proche Mosquée du Prophète" data-ar="قرب المسجد النبوي">Proche Mosquée du Prophète</span></span>
               <p class="omra-hotel__desc" data-fr="Hôtels du groupe Al-Zahra, pour un séjour paisible près de la Mosquée du Prophète." data-ar="فنادق مجموعة الزهراء، لإقامة هادئة قرب المسجد النبوي الشريف.">Hôtels du groupe Al-Zahra, pour un séjour paisible près de la Mosquée du Prophète.</p>
+            </div>
+          </article>
+
+          <article class="omra-hotel">
+            <div class="omra-hotel__media"><img src="images/hotel-afaq.jpg" alt="" loading="lazy" /></div>
+            <div class="omra-hotel__body">
+              <div class="omra-hotel__stars" aria-hidden="true">★★★</div>
+              <h3 data-fr="Hôtel Al-Ayyam" data-ar="فندق الأيام">Hôtel Al-Ayyam</h3>
+              <span class="omra-hotel__badge"><span aria-hidden="true">📍</span> <span data-fr="≈ 700 m du Haram" data-ar="≈ 700 م من الحرم">≈ 700 m du Haram</span></span>
+              <p class="omra-hotel__desc" data-fr="À 700 m du Haram, à La Mecque (arrivée via Djeddah)." data-ar="على بُعد 700 م من الحرم، بمكة المكرمة (الوصول عبر جدة).">À 700 m du Haram, à La Mecque (arrivée via Djeddah).</p>
+              <p class="omra-hotel__catering"><span aria-hidden="true">🍽️</span> <span data-fr="Départ du 12 août — chambre collective disponible." data-ar="انطلاق 12 أوت — غرفة جماعية متوفّرة.">Départ du 12 août — chambre collective disponible.</span></p>
             </div>
           </article>
         </div>
@@ -336,12 +347,36 @@
   <!-- Per-departure pricing tabs: date circles + tab strip switch the fare panel -->
   <script>
     (function () {
-      var tabs   = Array.prototype.slice.call(document.querySelectorAll('.omra-fare-tab'));
-      var panels = Array.prototype.slice.call(document.querySelectorAll('.omra-fare-panel'));
-      var nodes  = Array.prototype.slice.call(document.querySelectorAll('.omra-tl-node'));
+      var tabs     = Array.prototype.slice.call(document.querySelectorAll('.omra-fare-tab'));
+      var panels   = Array.prototype.slice.call(document.querySelectorAll('.omra-fare-panel'));
+      var nodes    = Array.prototype.slice.call(document.querySelectorAll('.omra-tl-node'));
+      var heroAmt  = document.querySelector('.omra-pkg__amount bdi');
+      var heroNote = document.querySelector('.omra-pkg__price small');
+      var fares    = document.querySelector('.omra-fares');
       if (!tabs.length || !panels.length) return;
 
+      // Keep the big hero price in sync with the active date's best (cheapest)
+      // room tier, reading straight from the pricing table so there is one
+      // single source of truth for the numbers.
+      function syncHeroPrice(panel) {
+        if (!heroAmt || !panel) return;
+        var bestRow  = panel.querySelector('tr.is-best');
+        if (!bestRow) return;
+        var priceBdi = bestRow.querySelector('.cell-price bdi');
+        var roomSpan = bestRow.querySelector('.cell-room [data-fr]');
+        if (priceBdi) heroAmt.textContent = priceBdi.textContent;
+        if (heroNote && roomSpan) {
+          var roomFr = roomSpan.getAttribute('data-fr');
+          var roomAr = roomSpan.getAttribute('data-ar');
+          heroNote.setAttribute('data-fr', 'À partir de — par pers. (chambre ' + roomFr.toLowerCase() + ', hors repas)');
+          heroNote.setAttribute('data-ar', 'يبدأ من — للشخص (غرفة ' + roomAr + '، ما عدا الوجبات)');
+          var isAr = document.documentElement.getAttribute('lang') === 'ar';
+          heroNote.innerHTML = isAr ? heroNote.getAttribute('data-ar') : heroNote.getAttribute('data-fr');
+        }
+      }
+
       function activate(i) {
+        var activePanel = null;
         tabs.forEach(function (t) {
           var on = t.getAttribute('data-tab') === String(i);
           t.classList.toggle('is-active', on);
@@ -350,11 +385,12 @@
         panels.forEach(function (p) {
           var on = p.getAttribute('data-tab') === String(i);
           p.classList.toggle('is-active', on);
-          if (on) { p.removeAttribute('hidden'); } else { p.setAttribute('hidden', ''); }
+          if (on) { p.removeAttribute('hidden'); activePanel = p; } else { p.setAttribute('hidden', ''); }
         });
         nodes.forEach(function (n) {
           n.classList.toggle('is-active', n.getAttribute('data-tab') === String(i));
         });
+        syncHeroPrice(activePanel);
       }
 
       tabs.forEach(function (t) {
@@ -364,9 +400,14 @@
         if (!n.hasAttribute('data-tab')) return;
         n.setAttribute('role', 'button');
         n.setAttribute('tabindex', '0');
-        n.addEventListener('click', function () { activate(n.getAttribute('data-tab')); });
+        function pick() {
+          activate(n.getAttribute('data-tab'));
+          // Bring the matching pricing tab into view so the full breakdown is visible.
+          if (fares && fares.scrollIntoView) fares.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        n.addEventListener('click', pick);
         n.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(n.getAttribute('data-tab')); }
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); }
         });
       });
 
