@@ -1,0 +1,368 @@
+/* =====================================================================
+   Djen-Djen Travel — Omra page (premium redesign)
+   Scoped ".omra-*" styles on top of the Sakīna design system.
+   Logo palette only: blue #1488C2 leads · red #E63946 = CTA/accent ·
+   white background · dark navy (#0d1b2a / #1a1a2e) for contrast sections.
+   ===================================================================== */
+
+/* ---------- Cinematic hero (real Kaaba photo) ---------- */
+.omra-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #0d1b2a;
+  background-image: url("../images/mecca-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.omra-hero__bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-color: #0d1b2a;
+  background-image: url("../images/mecca-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.omra-hero__overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.omra-hero__inner {
+  position: relative; z-index: 3;
+  width: 100%;
+  padding-block: clamp(var(--sp-16), 14vh, var(--sp-24));
+  text-align: center;
+  color: #fff;
+}
+.omra-hero__eyebrow {
+  display: inline-block;
+  font-family: var(--font-text);
+  letter-spacing: .14em; text-transform: uppercase;
+  font-size: .82rem; font-weight: 700;
+  color: var(--blue-100);
+  padding: var(--sp-2) var(--sp-4);
+  border: 1px solid rgba(207, 234, 247, .45);
+  border-radius: var(--r-pill);
+  margin-bottom: var(--sp-6);
+  background: rgba(20, 136, 194, .18);
+  backdrop-filter: blur(4px);
+}
+[dir="rtl"] .omra-hero__eyebrow { letter-spacing: normal; }
+.omra-hero__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  line-height: 1.05;
+  margin: 0 0 var(--sp-6);
+  color: #fff;
+  text-shadow: 0 2px 30px rgba(0,0,0,.6);
+}
+.omra-hero__title span { display: block; }
+.omra-hero__accent {
+  background: linear-gradient(180deg, #EAF6FC, #6CC4E8 70%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.omra-hero__lede {
+  max-width: 60ch; margin: 0 auto var(--sp-8);
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  color: rgba(255,255,255,.92);
+  line-height: var(--lh-body);
+  text-shadow: 0 1px 12px rgba(0,0,0,.5);
+}
+.omra-hero__cta {
+  display: flex; flex-wrap: wrap; gap: var(--sp-4); justify-content: center;
+}
+.omra-btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 52px; padding: 0 var(--sp-8);
+  border-radius: var(--r-pill);
+  background: rgba(255,255,255,.08); color: #fff;
+  border: 1px solid rgba(255,255,255,.5);
+  font-weight: 700; font-size: 1.05rem;
+  backdrop-filter: blur(4px);
+  transition: background .15s, border-color .15s, transform .1s;
+}
+.omra-btn-ghost:hover { background: rgba(255,255,255,.18); border-color: #fff; }
+.omra-btn-ghost:active { transform: translateY(1px); }
+.omra-hero__caption {
+  margin-top: var(--sp-12);
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+  color: rgba(255, 255, 255, .92);
+  text-shadow: 0 1px 12px rgba(0,0,0,.5);
+}
+[dir="rtl"] .omra-hero__caption { font-style: normal; }
+
+/* ---------- Feature strip (What's included) ---------- */
+.omra-features {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-6);
+}
+.omra-feature {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8);
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s, box-shadow .18s, border-color .18s;
+}
+.omra-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--blue-200);
+}
+.omra-feature__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 80px; height: 80px; border-radius: 50%;
+  font-size: 2.5rem; color: #1488C2;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: var(--sp-4);
+}
+.omra-feature h3 { margin: 0 0 var(--sp-2); font-size: 1.25rem; color: var(--ink); }
+.omra-feature p { margin: 0; color: var(--ink-soft); line-height: var(--lh-body); }
+
+/* ---------- Premium package card (Madinah photo header) ---------- */
+.omra-pkg {
+  max-width: 760px; margin-inline: auto;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--line);
+}
+.omra-pkg__header {
+  position: relative;
+  padding: var(--sp-16) var(--sp-8) var(--sp-8);
+  background-color: #0d1b2a;
+  background-image:
+    linear-gradient(180deg, rgba(13,27,42,.55), rgba(14,102,145,.85)),
+    url("https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&q=80");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+}
+.omra-pkg__badge {
+  position: relative; z-index: 1;
+  display: inline-block;
+  background: var(--red-500); color: #fff;
+  font-weight: 700; font-size: .82rem; letter-spacing: .06em;
+  padding: var(--sp-2) var(--sp-4); border-radius: var(--r-pill);
+  margin-bottom: var(--sp-4);
+  box-shadow: 0 4px 12px rgba(214, 40, 40, .35);
+}
+.omra-pkg__title {
+  position: relative; z-index: 1;
+  margin: 0; font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3.4vw, 2.2rem); color: #fff;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.omra-pkg__body { padding: var(--sp-8); }
+
+.omra-pkg__price {
+  text-align: center; margin-bottom: var(--sp-8);
+  padding-bottom: var(--sp-6); border-bottom: 1px dashed var(--line);
+}
+.omra-pkg__price small { display: block; color: var(--ink-soft); font-size: .9rem; margin-bottom: var(--sp-2); }
+.omra-pkg__amount {
+  font-family: var(--font-heading); font-weight: 700;
+  font-size: clamp(2.6rem, 7vw, 3.6rem); color: var(--blue-700);
+  line-height: 1;
+}
+.omra-pkg__amount .cur { font-size: .42em; color: var(--red-500); margin-inline-start: .2em; }
+
+/* Departure timeline */
+.omra-tl-label { font-weight: 700; color: var(--ink); margin: 0 0 var(--sp-4); }
+.omra-timeline {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; margin-bottom: var(--sp-8);
+}
+.omra-tl-node { text-align: center; padding-inline: var(--sp-2); }
+.omra-tl-dot {
+  width: 58px; height: 58px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto var(--sp-2);
+  font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem;
+  color: #fff; background: linear-gradient(135deg, var(--blue-400), var(--blue-700));
+  box-shadow: 0 6px 14px rgba(14, 102, 145, .3);
+}
+.omra-tl-node span { font-size: .86rem; color: var(--ink-soft); }
+.omra-tl-line { width: 46px; height: 3px; background: var(--blue-200); border-radius: 3px; }
+
+.omra-pkg__chips { display: flex; flex-wrap: wrap; gap: var(--sp-3); justify-content: center; margin-bottom: var(--sp-6); }
+.omra-chip {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  background: var(--blue-50); color: var(--blue-700);
+  border: 1px solid var(--blue-100);
+  padding: var(--sp-2) var(--sp-4); border-radius: var(--r-pill);
+  font-weight: 600; font-size: .92rem;
+}
+.omra-pkg__desc { color: var(--ink-soft); line-height: var(--lh-body); text-align: center; margin-bottom: var(--sp-8); }
+.omra-pkg__cta { text-align: center; }
+.omra-pkg__cta .btn { min-width: 240px; }
+
+/* ---------- Hotel cards (real photos) ---------- */
+.omra-hotels { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-6); }
+.omra-hotel {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s, box-shadow .18s;
+  display: flex; flex-direction: column;
+}
+.omra-hotel:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.omra-hotel__media { position: relative; height: 190px; background: var(--blue-100); overflow: hidden; }
+.omra-hotel__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.omra-hotel__body { padding: var(--sp-8); display: flex; flex-direction: column; flex: 1; }
+.omra-hotel__stars { color: var(--blue-500); letter-spacing: .1em; font-size: 1rem; margin-bottom: var(--sp-2); }
+.omra-hotel h3 { margin: 0 0 var(--sp-3); font-size: 1.3rem; color: var(--ink); }
+.omra-hotel__desc { color: var(--ink-soft); line-height: var(--lh-body); margin: 0 0 var(--sp-4); }
+.omra-hotel__badge {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  background: var(--blue-500); color: #fff;
+  padding: var(--sp-1) var(--sp-3); border-radius: var(--r-pill);
+  font-weight: 700; font-size: .82rem; margin-bottom: var(--sp-4);
+}
+.omra-hotel__catering {
+  margin-top: auto;
+  background: var(--blue-50); color: var(--blue-700);
+  border: 1px solid var(--blue-100);
+  border-radius: var(--r-sm); padding: var(--sp-3) var(--sp-4);
+  font-weight: 600; font-size: .92rem;
+  display: flex; align-items: center; gap: var(--sp-2);
+}
+
+/* ---------- Modern comparison table ---------- */
+.omra-compare-wrap { overflow-x: auto; border-radius: var(--r-lg); box-shadow: var(--shadow-md); }
+.omra-compare {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  background: var(--surface); min-width: 520px;
+}
+.omra-compare thead th {
+  padding: var(--sp-6) var(--sp-4); text-align: center; vertical-align: top;
+  font-family: var(--font-text); color: #fff;
+}
+.omra-compare thead th small { display: block; font-weight: 500; opacity: .85; font-size: .78rem; margin-top: 2px; }
+.omra-compare thead th.col-room { background: #1a1a2e; text-align: start; font-size: 1rem; }
+.omra-compare thead th.col-afaq  { background: linear-gradient(135deg, var(--red-500), var(--red-700)); font-size: 1.05rem; }
+.omra-compare thead th.col-infin { background: linear-gradient(135deg, var(--blue-400), var(--blue-700)); font-size: 1.05rem; }
+.omra-compare tbody td {
+  padding: var(--sp-4) var(--sp-4); text-align: center;
+  border-bottom: 1px solid var(--line); font-weight: 600; color: var(--ink);
+}
+.omra-compare tbody td.cell-room { text-align: start; font-weight: 700; color: var(--ink); background: var(--bg); }
+.omra-compare tbody td.cell-afaq  { background: var(--red-100); color: var(--red-700); }
+.omra-compare tbody tr:hover td { background: var(--blue-50); }
+.omra-compare tbody tr:hover td.cell-room { background: var(--blue-100); }
+.omra-compare tbody tr.is-best td { background: var(--blue-500); color: #fff; }
+.omra-compare tbody tr.is-best td.cell-room { background: var(--blue-700); color: #fff; }
+.omra-compare tbody tr.is-best:hover td { background: var(--blue-700); }
+.omra-best-tag {
+  display: inline-block; margin-inline-start: var(--sp-2);
+  background: #fff; color: var(--blue-700);
+  font-size: .68rem; font-weight: 800; letter-spacing: .04em;
+  padding: 2px var(--sp-2); border-radius: var(--r-pill); vertical-align: middle;
+}
+
+/* ---------- Per-departure pricing tabs ---------- */
+/* Timeline circles double as tab triggers */
+.omra-tl-node { cursor: pointer; transition: transform .15s; }
+.omra-tl-node:hover { transform: translateY(-3px); }
+.omra-tl-node.is-active .omra-tl-dot {
+  box-shadow: 0 0 0 4px var(--blue-100), 0 8px 18px rgba(14, 102, 145, .4);
+  transform: scale(1.06);
+}
+.omra-tl-node.is-active span { color: var(--blue-700); font-weight: 800; }
+
+.omra-fares { margin-top: var(--sp-2); }
+.omra-fare-tabs {
+  display: flex; flex-wrap: nowrap; gap: var(--sp-2);
+  overflow-x: auto; padding-bottom: var(--sp-2);
+  margin-bottom: var(--sp-6); scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.omra-fare-tab {
+  flex: 0 0 auto; cursor: pointer;
+  display: inline-flex; align-items: baseline; gap: 4px;
+  background: var(--bg); color: var(--ink-soft);
+  border: 1px solid var(--line); border-radius: var(--r-pill);
+  padding: var(--sp-2) var(--sp-5); font: inherit; font-weight: 700;
+  white-space: nowrap; transition: background .15s, color .15s, border-color .15s;
+}
+.omra-fare-tab bdi { font-size: 1.05rem; }
+.omra-fare-tab span { font-size: .85rem; font-weight: 600; }
+.omra-fare-tab:hover { border-color: var(--blue-400); color: var(--blue-700); }
+.omra-fare-tab.is-active {
+  background: linear-gradient(135deg, var(--blue-400), var(--blue-700));
+  color: #fff; border-color: transparent;
+  box-shadow: 0 6px 14px rgba(14, 102, 145, .3);
+}
+.omra-fare-tab.is-active span { color: rgba(255,255,255,.9); }
+
+.omra-fare-panel { display: none; }
+.omra-fare-panel.is-active { display: block; animation: omraFadeIn .25s both; }
+@keyframes omraFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.omra-fare-hotel {
+  display: flex; align-items: center; flex-wrap: wrap; gap: var(--sp-2);
+  margin: 0 0 var(--sp-4); font-family: var(--font-heading);
+  font-size: 1.3rem; font-weight: 700; color: var(--blue-700);
+}
+.omra-fare-hotel__note { font-family: var(--font-text); font-size: .82rem; font-weight: 500; color: var(--ink-soft); }
+
+.omra-compare thead th.col-price { background: linear-gradient(135deg, var(--blue-400), var(--blue-700)); font-size: 1.05rem; }
+.omra-compare tbody td.cell-price { background: var(--blue-50); color: var(--blue-700); font-weight: 700; }
+.omra-compare tbody tr.is-best td.cell-price { background: var(--blue-500); color: #fff; }
+
+/* ---------- Info / children pricing panel (dark section) ---------- */
+.omra-info {
+  margin-top: var(--sp-12);
+  background: linear-gradient(135deg, #0d1b2a, #1a1a2e);
+  color: #fff; border-radius: var(--r-lg); padding: var(--sp-12);
+  box-shadow: var(--shadow-lg);
+}
+.omra-info h3 { margin: 0 0 var(--sp-6); font-family: var(--font-heading); font-size: 1.6rem; color: #fff; }
+.omra-info__list { list-style: none; margin: 0 0 var(--sp-6); padding: 0; display: grid; gap: var(--sp-3); }
+.omra-info__list li {
+  position: relative; padding-inline-start: var(--sp-8);
+  line-height: var(--lh-body); color: rgba(255,255,255,.92);
+}
+.omra-info__list li::before {
+  content: "✦"; position: absolute; inset-inline-start: 0; top: 0;
+  color: var(--red-300);
+}
+.omra-info__note { margin: 0; color: rgba(255,255,255,.72); font-size: .95rem; border-top: 1px solid rgba(255,255,255,.15); padding-top: var(--sp-4); }
+
+.omra-subhead { text-align: center; margin: var(--sp-16) 0 var(--sp-8); font-family: var(--font-heading); font-size: 1.7rem; color: var(--ink); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+  .omra-hotels { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px) {
+  .omra-features { grid-template-columns: 1fr; }
+  .omra-hero { min-height: 82vh; }
+  .omra-info { padding: var(--sp-8); }
+}
+@media (max-width: 520px) {
+  .omra-hotels { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .omra-tl-line { width: 22px; }
+  .omra-tl-dot { width: 50px; height: 50px; font-size: 1.25rem; }
+  .omra-pkg__cta .btn { min-width: 100%; }
+  .omra-fare-tabs { justify-content: flex-start; }
+  .omra-fare-tab { padding: var(--sp-2) var(--sp-4); }
+}

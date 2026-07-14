@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ============ SEO (FR primary) ============ -->
+  <title>Djen-Djen Travel — Agence de voyage Omra & Hajj à Jijel</title>
+  <meta name="description" content="Djen-Djen Travel, agence de tourisme à Jijel depuis 2017, spécialisée dans les voyages Omra et Hajj. Nous vous accompagnons avec soin à chaque étape de votre voyage vers les Lieux Saints." />
+  <meta name="keywords" content="Omra, Hajj, Jijel, Algérie, agence de voyage, pèlerinage, عمرة, حج, جيجل" />
+  <meta name="author" content="Djen-Djen Travel" />
+  <meta name="theme-color" content="#1488C2" />
+
+  <!-- Arabic SEO -->
+  <meta name="description:ar" content="وكالة جن جن للسياحة والأسفار في جيجل منذ 2017، متخصّصة في رحلات العمرة والحج. نرافقك بعناية في كل خطوة نحو البيت العتيق." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Djen-Djen Travel — Omra & Hajj | وكالة جن جن للسياحة والأسفار" />
+  <meta property="og:description" content="Nous vous accompagnons dans le voyage le plus précieux de votre vie, avec soin à chaque étape." />
+  <meta property="og:locale" content="fr_DZ" />
+  <meta property="og:locale:alternate" content="ar_DZ" />
+  <link rel="canonical" href="https://www.djendjen-travel.dz/" />
+
+  <!-- ============ Fonts ============ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css?v=100" />
+  <link rel="stylesheet" href="css/styles.css?v=100" />
+  <link rel="stylesheet" href="css/index.css?v=101" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="#" aria-label="Djen-Djen Travel">
+        <img class="nav__logo" src="logo.png" alt="Djen-Djen Travel" width="44" height="44" />
+        <span class="nav__brand-text">
+          <span class="nav__brand-name" data-fr="Djen-Djen Travel" data-ar="جن جن للسياحة">Djen-Djen Travel</span>
+          <span class="nav__brand-sub" data-fr="Omra &amp; Voyages · depuis 2017" data-ar="عمرة ورحلات · منذ 2017">Omra &amp; Voyages · depuis 2017</span>
+        </span>
+      </a>
+
+      <nav aria-label="Principale">
+        <ul class="nav__links">
+          <li><a href="umrah.html" data-fr="Omra" data-ar="العمرة">Omra</a></li>
+          <li><a href="voyages.html" data-fr="Voyages" data-ar="الرحلات">Voyages</a></li>
+          <li><a href="#req=billets" data-booking data-subject-fr="Demande de billet" data-subject-ar="طلب تذكرة سفر" data-fr="Billets" data-ar="تذاكر السفر">Billets</a></li>
+          <li><a href="#req=hotels" data-booking data-subject-fr="Réservation d'hôtel" data-subject-ar="طلب حجز فندق" data-fr="Hôtels" data-ar="الفنادق">Hôtels</a></li>
+          <li><a href="visas.html" data-fr="Visas" data-ar="التأشيرات">Visas</a></li>
+          <li><a href="apropos.html" data-fr="À propos" data-ar="من نحن">À propos</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <div class="lang-switch" role="group" aria-label="Language / اللغة">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="ar" aria-pressed="false">ع</button>
+        </div>
+        <button class="btn btn--urgent btn--book" type="button" data-booking data-subject-fr="Réservation" data-subject-ar="طلب حجز" data-fr="Réserver" data-ar="احجز الآن">Réserver</button>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero-slider">
+      <div class="hero-slides" aria-hidden="true">
+        <img class="is-active" src="assets/images/kaaba.jpg" alt="" loading="eager" />
+        <img src="assets/images/plane.jpg" alt="" loading="lazy" />
+        <img src="assets/images/hotel.jpg" alt="" loading="lazy" />
+        <img src="assets/images/istanbul.jpg" alt="" loading="lazy" />
+        <img src="assets/images/sharm.jpg" alt="" loading="lazy" />
+        <img src="assets/images/baku.jpg" alt="" loading="lazy" />
+        <img src="assets/images/malaysia.jpg" alt="" loading="lazy" />
+        <img src="assets/images/passport.jpg" alt="" loading="lazy" />
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-texts">
+          <div class="hero-text is-active">
+            <h1 class="hero__title" data-fr="Votre voyage vers la Maison Sacrée" data-ar="رحلتك إلى البيت العتيق">Votre voyage vers la Maison Sacrée</h1>
+            <p class="hero__lede" data-fr="Nous vous accompagnons dans le voyage le plus précieux de votre vie, à chaque étape." data-ar="نرافقك في أهم رحلة في حياتك، بعناية في كل خطوة">Nous vous accompagnons dans le voyage le plus précieux de votre vie, à chaque étape.</p>
+          </div>
+          <div class="hero-text">
+            <h1 class="hero__title" data-fr="Billets d'avion aux meilleurs prix" data-ar="تذاكر السفر بأفضل الأسعار">Billets d'avion aux meilleurs prix</h1>
+            <p class="hero__lede" data-fr="Réservation de billets vers toutes les destinations depuis l'Algérie." data-ar="حجز تذاكر لجميع الوجهات من الجزائر">Réservation de billets vers toutes les destinations depuis l'Algérie.</p>
+          </div>
+          <div class="hero-text">
+            <h1 class="hero__title" data-fr="Des hôtels choisis avec soin" data-ar="فنادق مختارة بعناية">Des hôtels choisis avec soin</h1>
+            <p class="hero__lede" data-fr="Un séjour confortable dans les meilleurs hôtels du monde." data-ar="إقامة مريحة في أفضل الفنادق حول العالم">Un séjour confortable dans les meilleurs hôtels du monde.</p>
+          </div>
+          <div class="hero-text">
+            <h1 class="hero__title" data-fr="Découvrez Istanbul" data-ar="اكتشف إسطنبول">Découvrez Istanbul</h1>
+            <p class="hero__lede" data-fr="7 jours de beauté et d'histoire avec Turkish Airlines." data-ar="7 أيام من الجمال والتاريخ مع Turkish Airlines">7 jours de beauté et d'histoire avec Turkish Airlines.</p>
+          </div>
+          <div class="hero-text">
+            <h1 class="hero__title" data-fr="Charm el-Cheikh — soleil & mer" data-ar="شرم الشيخ — الشمس والبحر">Charm el-Cheikh — soleil &amp; mer</h1>
+            <p class="hero__lede" data-fr="9 ou 10 nuits All Inclusive, de juillet à septembre." data-ar="9 أو 10 ليالي All Inclusive من جويلية إلى سبتمبر">9 ou 10 nuits All Inclusive, de juillet à septembre.</p>
+          </div>
+          <div class="hero-text">
+            <h1 class="hero__title" data-fr="Bakou — le joyau de l'Azerbaïdjan" data-ar="باكو — جوهرة أذربيجان">Bakou — le joyau de l'Azerbaïdjan</h1>
+            <p class="hero__lede" data-fr="8 jours de découverte avec un guide algérien." data-ar="8 أيام من الاكتشاف مع مرشد جزائري">8 jours de découverte avec un guide algérien.</p>
+          </div>
+          <div class="hero-text">
+            <h1 class="hero__title" data-fr="Malaisie + Vietnam" data-ar="ماليزيا + فيتنام">Malaisie + Vietnam</h1>
+            <p class="hero__lede" data-fr="14 nuits au cœur de l'Asie du Sud-Est." data-ar="14 ليلة في قلب جنوب شرق آسيا">14 nuits au cœur de l'Asie du Sud-Est.</p>
+          </div>
+          <div class="hero-text">
+            <h1 class="hero__title" data-fr="Les visas en toute simplicité" data-ar="التأشيرات بكل سهولة">Les visas en toute simplicité</h1>
+            <p class="hero__lede" data-fr="Nous gérons votre dossier de visa de A à Z." data-ar="نتكفل بملف تأشيرتك من أول خطوة لآخرها">Nous gérons votre dossier de visa de A à Z.</p>
+          </div>
+        </div>
+        <a href="#request" class="btn-primary" data-booking data-subject-fr="Réservation Omra" data-subject-ar="طلب حجز عمرة" data-fr="Réserver une place" data-ar="احجز مكانك">Réserver une place</a>
+      </div>
+
+      <button type="button" class="hero-prev" aria-label="Précédent">&#8249;</button>
+      <button type="button" class="hero-next" aria-label="Suivant">&#8250;</button>
+      <div class="hero-dots"></div>
+    </section>
+
+    <!-- ===================== PACKAGES ===================== -->
+    <section class="section home-offers-section" id="packages">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-fr="Nos offres" data-ar="عروضنا">Nos offres</p>
+          <h2 data-fr="Des voyages pensés pour la sérénité" data-ar="رحلات مُعدّة من أجل راحتك">Des voyages pensés pour la sérénité</h2>
+          <p data-fr="Vols, hôtels proches des sanctuaires, accompagnateur expérimenté et assistance complète sur place." data-ar="رحلات جوية، فنادق قريبة من الحرمين، مرافق ذو خبرة ومساعدة كاملة في عين المكان.">
+            Vols, hôtels proches des sanctuaires, accompagnateur expérimenté et assistance complète sur place.
+          </p>
+        </div>
+
+        <div class="home-offers">
+          <!-- Omra -->
+          <article class="home-offer">
+            <div class="home-offer__media"><img src="images/mecca-hero.jpg" alt="" loading="lazy" /></div>
+            <div class="home-offer__header">
+              <h3 class="home-offer__title" data-fr="Omra" data-ar="العمرة">Omra</h3>
+            </div>
+            <div class="home-offer__body">
+              <p class="home-offer__desc" data-fr="Vol direct depuis Constantine — environ un départ par semaine" data-ar="رحلاة مباشرة من قسنطينة — بمعدل رحلة كل أسبوع">Vol direct depuis Constantine — environ un départ par semaine</p>
+              <a class="home-offer__cta" href="umrah.html" data-fr="Découvrir le forfait" data-ar="اكتشف الباقة">Découvrir le forfait</a>
+            </div>
+          </article>
+
+          <!-- Voyages -->
+          <article class="home-offer">
+            <div class="home-offer__media"><img src="assets/images/istanbul.jpg" alt="" loading="lazy" /></div>
+            <div class="home-offer__header">
+              <h3 class="home-offer__title" data-fr="Voyages" data-ar="الرحلات السياحية">Voyages</h3>
+            </div>
+            <div class="home-offer__body">
+              <p class="home-offer__desc" data-fr="Des destinations choisies dans le monde, avec guide algérien" data-ar="وجهات مختارة حول العالم مع مرشد جزائري">Des destinations choisies dans le monde, avec guide algérien</p>
+              <p class="home-offer__price" data-fr="Prix compétitifs" data-ar="أسعار تنافسية">Prix compétitifs</p>
+              <a class="home-offer__cta" href="voyages.html" data-fr="Découvrir les destinations" data-ar="اكتشف الوجهات">Découvrir les destinations</a>
+            </div>
+          </article>
+
+          <!-- Hôtels -->
+          <article class="home-offer">
+            <div class="home-offer__media"><img src="assets/images/hotel.jpg" alt="" loading="lazy" /></div>
+            <div class="home-offer__header">
+              <h3 class="home-offer__title" data-fr="Hôtels" data-ar="الفنادق">Hôtels</h3>
+            </div>
+            <div class="home-offer__body">
+              <p class="home-offer__desc" data-fr="Des hôtels sélectionnés avec soin, aux meilleurs emplacements" data-ar="فنادق مختارة بعناية في أفضل المواقع">Des hôtels sélectionnés avec soin, aux meilleurs emplacements</p>
+              <p class="home-offer__price" data-fr="Réservez votre place" data-ar="احجز مكانك">Réservez votre place</p>
+              <a class="home-offer__cta" href="hotels.html" data-fr="Voir les hôtels" data-ar="تصفح الفنادق">Voir les hôtels</a>
+            </div>
+          </article>
+
+          <!-- Billets -->
+          <article class="home-offer">
+            <div class="home-offer__media"><img src="assets/images/plane.jpg" alt="" loading="lazy" /></div>
+            <div class="home-offer__header">
+              <h3 class="home-offer__title" data-fr="Billets d'avion" data-ar="تذاكر السفر">Billets d'avion</h3>
+            </div>
+            <div class="home-offer__body">
+              <p class="home-offer__desc" data-fr="Les meilleurs prix sur toutes les compagnies aériennes" data-ar="أفضل الأسعار على جميع الخطوط الجوية">Les meilleurs prix sur toutes les compagnies aériennes</p>
+              <p class="home-offer__price" data-fr="Prix spéciaux" data-ar="أسعار خاصة">Prix spéciaux</p>
+              <a class="home-offer__cta" href="billets.html" data-fr="Demander un billet" data-ar="اطلب تذكرة">Demander un billet</a>
+            </div>
+          </article>
+
+          <!-- Visas -->
+          <article class="home-offer">
+            <div class="home-offer__media"><img src="assets/images/passport.jpg" alt="" loading="lazy" /></div>
+            <div class="home-offer__header">
+              <h3 class="home-offer__title" data-fr="Visas" data-ar="التأشيرات">Visas</h3>
+            </div>
+            <div class="home-offer__body">
+              <p class="home-offer__desc" data-fr="Nous obtenons votre visa pour plus de 26 pays" data-ar="نحضّل فيزاك لأكثر من 26 دولة">Nous obtenons votre visa pour plus de 26 pays</p>
+              <a class="home-offer__cta" href="visas.html" data-fr="Découvrir le service" data-ar="اكتشف الخدمة">Découvrir le service</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CUSTOMER REVIEWS (آراء الزبائن) ===================== -->
+    <!--
+      Testimonials — PLACEHOLDER content, to be replaced with real reviews.
+      To add / edit a review, copy one <article class="review-card"> block and change:
+        • stars  : number of ★ inside .review-card__stars (+ aria-label)
+        • quote  : .review-card__quote  (data-fr / data-ar)
+        • avatar : .review-card__avatar (single initial, data-fr / data-ar)
+        • name   : .review-card__name   (data-fr / data-ar)
+        • tag    : .review-card__tag    (data-fr / data-ar) — service / destination
+    -->
+    <section class="section home-reviews">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-fr="Témoignages" data-ar="شهادات عملائنا">Témoignages</p>
+          <h2 data-fr="Avis de nos clients" data-ar="آراء الزبائن">Avis de nos clients</h2>
+          <p data-fr="La confiance de nos clients est notre plus belle réussite." data-ar="ثقة عملائنا هي أكبر إنجاز لنا.">La confiance de nos clients est notre plus belle réussite.</p>
+        </div>
+
+        <div class="home-reviews__grid">
+
+          <!-- Review 1 -->
+          <article class="review-card">
+            <div class="review-card__stars" role="img" aria-label="5/5">★★★★★</div>
+            <p class="review-card__quote" data-fr="Une Omra inoubliable : organisation parfaite et accompagnement excellent, du départ au retour." data-ar="تجربة عمرة لا تُنسى، تنظيم محكم ومرافقة ممتازة من أول خطوة إلى العودة.">Une Omra inoubliable : organisation parfaite et accompagnement excellent, du départ au retour.</p>
+            <div class="review-card__foot">
+              <span class="review-card__avatar" aria-hidden="true" data-fr="A" data-ar="أ">A</span>
+              <div class="review-card__meta">
+                <span class="review-card__name" data-fr="Ahmed B." data-ar="أحمد. ب">Ahmed B.</span>
+                <span class="review-card__tag" data-fr="Omra 2026" data-ar="عمرة 2026">Omra 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 2 -->
+          <article class="review-card">
+            <div class="review-card__stars" role="img" aria-label="5/5">★★★★★</div>
+            <p class="review-card__quote" data-fr="J'ai réservé mon séjour à Charm el-Cheikh très facilement : prix excellents et équipe très à l'écoute." data-ar="حجزت رحلتي إلى شرم الشيخ بكل سهولة، الأسعار ممتازة والفريق متعاون جداً.">J'ai réservé mon séjour à Charm el-Cheikh très facilement : prix excellents et équipe très à l'écoute.</p>
+            <div class="review-card__foot">
+              <span class="review-card__avatar" aria-hidden="true" data-fr="F" data-ar="ف">F</span>
+              <div class="review-card__meta">
+                <span class="review-card__name" data-fr="Fatima Z." data-ar="فاطمة. ز">Fatima Z.</span>
+                <span class="review-card__tag" data-fr="Charm el-Cheikh" data-ar="شرم الشيخ">Charm el-Cheikh</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 3 -->
+          <article class="review-card">
+            <div class="review-card__stars" role="img" aria-label="5/5">★★★★★</div>
+            <p class="review-card__quote" data-fr="Service rapide et prix compétitifs sur les billets d'avion. Je recommande vivement." data-ar="خدمة سريعة وأسعار تنافسية على تذاكر الطيران، أنصح بها بشدّة.">Service rapide et prix compétitifs sur les billets d'avion. Je recommande vivement.</p>
+            <div class="review-card__foot">
+              <span class="review-card__avatar" aria-hidden="true" data-fr="Y" data-ar="ي">Y</span>
+              <div class="review-card__meta">
+                <span class="review-card__name" data-fr="Youcef M." data-ar="يوسف. م">Youcef M.</span>
+                <span class="review-card__tag" data-fr="Billets d'avion" data-ar="تذاكر سفر">Billets d'avion</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 4 -->
+          <article class="review-card">
+            <div class="review-card__stars" role="img" aria-label="5/5">★★★★★</div>
+            <p class="review-card__quote" data-fr="Mon visa a été obtenu en un temps record et sans aucune complication. Merci Djen-Djen Travel." data-ar="استخرجت تأشيرتي في وقت قياسي وبدون أي تعقيد، شكراً جن جن للسياحة.">Mon visa a été obtenu en un temps record et sans aucune complication. Merci Djen-Djen Travel.</p>
+            <div class="review-card__foot">
+              <span class="review-card__avatar" aria-hidden="true" data-fr="K" data-ar="خ">K</span>
+              <div class="review-card__meta">
+                <span class="review-card__name" data-fr="Khadija A." data-ar="خديجة. ع">Khadija A.</span>
+                <span class="review-card__tag" data-fr="Visa" data-ar="تأشيرة">Visa</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 5 -->
+          <article class="review-card">
+            <div class="review-card__stars" role="img" aria-label="5/5">★★★★★</div>
+            <p class="review-card__quote" data-fr="Un hôtel superbe et bien situé, un accueil soigné et des informations fiables." data-ar="فندق رائع وقريب من كل شيء، تعامل راقٍ ومصداقية في المعلومات.">Un hôtel superbe et bien situé, un accueil soigné et des informations fiables.</p>
+            <div class="review-card__foot">
+              <span class="review-card__avatar" aria-hidden="true" data-fr="S" data-ar="س">S</span>
+              <div class="review-card__meta">
+                <span class="review-card__name" data-fr="Samir H." data-ar="سمير. ح">Samir H.</span>
+                <span class="review-card__tag" data-fr="Hôtels" data-ar="فنادق">Hôtels</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 6 -->
+          <article class="review-card">
+            <div class="review-card__stars" role="img" aria-label="5/5">★★★★★</div>
+            <p class="review-card__quote" data-fr="Un voyage organisé à Istanbul très professionnel. Nous répéterons l'expérience, incha’Allah." data-ar="رحلة منظّمة إلى إسطنبول بكل احترافية، سنكرّر التجربة بالتأكيد إن شاء الله.">Un voyage organisé à Istanbul très professionnel. Nous répéterons l'expérience, incha’Allah.</p>
+            <div class="review-card__foot">
+              <span class="review-card__avatar" aria-hidden="true" data-fr="N" data-ar="ن">N</span>
+              <div class="review-card__meta">
+                <span class="review-card__name" data-fr="Nabila K." data-ar="نبيلة. ك">Nabila K.</span>
+                <span class="review-card__tag" data-fr="Istanbul" data-ar="إسطنبول">Istanbul</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <img class="footer__logo" src="logo.png" alt="Djen-Djen Travel" width="48" height="48" />
+            <span class="footer__name" data-fr="Djen-Djen Travel" data-ar="جن جن للسياحة والأسفار">Djen-Djen Travel</span>
+          </div>
+          <p data-fr="Agence de tourisme à Jijel depuis 2017, spécialisée dans les voyages Omra et Hajj. Avec vous, avec soin, à chaque étape." data-ar="وكالة سياحة بجيجل منذ 2017، متخصّصة في رحلات العمرة والحج. معك، وبعناية، في كل خطوة.">
+            Agence de tourisme à Jijel depuis 2017, spécialisée dans les voyages Omra et Hajj. Avec vous, avec soin, à chaque étape.
+          </p>
+        </div>
+
+        <div>
+          <h4 data-fr="Contact" data-ar="اتصل بنا">Contact</h4>
+          <ul class="footer__contact">
+            <li><span class="ico">📞</span> <a href="tel:+213661417571"><bdi>0661 41 75 71</bdi></a> <span class="footer__tag" data-fr="(Renseignements)" data-ar="(للاستفسار)">(للاستفسار)</span></li>
+            <li><span class="ico">📞</span> <a href="tel:+213673098932"><bdi>0673 09 89 32</bdi></a></li>
+            <li><span class="ico">☎️</span> <a href="tel:+213030547293"><bdi>030 54 72 93</bdi></a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 data-fr="Adresse" data-ar="العنوان">Adresse</h4>
+          <ul>
+            <li data-fr="Rue Larbi Ben M'hidi (السيرك)" data-ar="شارع العربي بن مهيدي (السيرك)">Rue Larbi Ben M'hidi (السيرك)</li>
+            <li data-fr="Jijel, Algérie" data-ar="جيجل، الجزائر">Jijel, Algérie</li>
+            <li style="margin-top:8px;"><a href="#" data-fr="Voir sur la carte" data-ar="عرض على الخريطة">Voir sur la carte →</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span data-fr="© 2026 Djen-Djen Travel. Tous droits réservés." data-ar="© 2026 جن جن للسياحة والأسفار. جميع الحقوق محفوظة.">© 2026 Djen-Djen Travel. Tous droits réservés.</span>
+        <span data-fr="Omra · Voyages · Billets · Hôtels · Visas" data-ar="عمرة · رحلات · تذاكر · فنادق · تأشيرات">Omra · Voyages · Billets · Hôtels · Visas</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Uploadcare file uploader -->
+  <script>UPLOADCARE_PUBLIC_KEY = "7f2d6ea226a5ab97ef6e";</script>
+  <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js?v=5"></script>
+</body>
+</html>

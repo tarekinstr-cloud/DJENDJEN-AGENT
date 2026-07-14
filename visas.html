@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Visas — Djen-Djen Travel | التأشيرات</title>
+  <meta name="description" content="Obtention de visas pour de nombreux pays avec Djen-Djen Travel à Jijel : Égypte, Émirats, Turquie, Arabie Saoudite, Asie et plus. Tarifs et délais." />
+  <meta name="description:ar" content="استخراج تأشيرات لعدة دول مع وكالة جن جن للسياحة بجيجل: مصر، الإمارات، تركيا، السعودية، آسيا وغيرها. الأسعار والمدة." />
+  <meta name="theme-color" content="#1488C2" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Visas — Djen-Djen Travel | التأشيرات" />
+  <meta property="og:locale" content="fr_DZ" />
+  <meta property="og:locale:alternate" content="ar_DZ" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/visas.css?v=2" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html" aria-label="Djen-Djen Travel">
+        <img class="nav__logo" src="logo.png" alt="Djen-Djen Travel" width="44" height="44" />
+        <span class="nav__brand-text">
+          <span class="nav__brand-name" data-fr="Djen-Djen Travel" data-ar="جن جن للسياحة">Djen-Djen Travel</span>
+          <span class="nav__brand-sub" data-fr="Omra &amp; Voyages · depuis 2017" data-ar="عمرة ورحلات · منذ 2017">Omra &amp; Voyages · depuis 2017</span>
+        </span>
+      </a>
+      <nav aria-label="Principale">
+        <ul class="nav__links">
+          <li><a href="umrah.html" data-fr="Omra" data-ar="العمرة">Omra</a></li>
+          <li><a href="voyages.html" data-fr="Voyages" data-ar="الرحلات">Voyages</a></li>
+          <li><a href="#" data-booking data-subject-fr="Billets d'avion" data-subject-ar="طلب تذكرة سفر" data-fr="Billets" data-ar="تذاكر السفر">Billets</a></li>
+          <li><a href="#" data-booking data-subject-fr="Réservation d'hôtel" data-subject-ar="طلب حجز فندق" data-fr="Hôtels" data-ar="الفنادق">Hôtels</a></li>
+          <li><a href="visas.html" data-fr="Visas" data-ar="التأشيرات">Visas</a></li>
+          <li><a href="apropos.html" data-fr="À propos" data-ar="من نحن">À propos</a></li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <div class="lang-switch" role="group" aria-label="Language / اللغة">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="ar" aria-pressed="false">ع</button>
+        </div>
+        <a class="btn btn--urgent btn--book" href="#" data-booking data-subject-fr="Demande de réservation" data-subject-ar="طلب حجز" data-fr="Réserver" data-ar="احجز الآن">Réserver</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="visa-hero">
+      <div class="visa-hero__inner container">
+        <h1 class="visa-hero__title" data-fr="Visas" data-ar="التأشيرات">Visas</h1>
+        <p class="visa-hero__sub" data-fr="Votre voyage commence ici" data-ar="سفرك يبدأ من هنا">Votre voyage commence ici</p>
+        <div class="visa-search">
+          <span class="visa-search__ic" aria-hidden="true">🔍</span>
+          <input id="visaSearch" type="search" class="visa-search__input"
+            data-ph-fr="Rechercher un pays…" data-ph-ar="ابحث عن دولة…"
+            placeholder="Rechercher un pays…" aria-label="Rechercher un pays / ابحث عن دولة" />
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTRIES GRID + DETAILS -->
+    <section class="section visa-section">
+      <div class="container">
+        <div class="visa-grid" id="visaGrid" role="list" aria-label="Pays / الدول"></div>
+        <p class="visa-empty" id="visaEmpty" hidden data-fr="Aucun pays trouvé." data-ar="لا توجد دولة مطابقة.">Aucun pays trouvé.</p>
+        <div class="visa-details" id="visaDetails" aria-live="polite"></div>
+        <div class="visa-banner" data-fr="⚠️ Prix susceptibles de changer — pour toute information ou réservation, contactez-nous." data-ar="⚠️ الأسعار قابلة للتغيير — للاستفسار والحجز اتصل بنا">⚠️ Prix susceptibles de changer — pour toute information ou réservation, contactez-nous.</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- VISA APPLICATION MODAL -->
+  <div class="modal" id="visaModal" role="dialog" aria-modal="true" aria-labelledby="visaModalTitle" hidden>
+    <div class="modal__overlay" data-visa-close></div>
+    <div class="modal__dialog modal__dialog--lg">
+      <button class="modal__close" data-visa-close aria-label="Fermer">✕</button>
+      <h3 id="visaModalTitle" data-fr="Demande de visa" data-ar="طلب تأشيرة">طلب تأشيرة</h3>
+      <p class="visa-picked" id="visaPicked"></p>
+
+      <form id="visaForm" class="visa-form" action="https://formspree.io/f/xaqgjkly" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="طلب تأشيرة - Djen-Djen Travel" />
+        <input type="hidden" name="الدولة" id="visaCountryInput" />
+        <input type="hidden" name="نوع التأشيرة" id="visaTypeInput" />
+
+        <div class="field-row">
+          <div class="field">
+            <label data-fr="Nom complet" data-ar="الاسم الكامل">الاسم الكامل</label>
+            <input class="input" type="text" name="الاسم الكامل" required />
+          </div>
+          <div class="field">
+            <label data-fr="Téléphone" data-ar="رقم الهاتف">رقم الهاتف</label>
+            <input class="input" type="tel" dir="ltr" name="رقم الهاتف" placeholder="0661 00 00 00" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label data-fr="E-mail (optionnel)" data-ar="البريد الإلكتروني (اختياري)">البريد الإلكتروني (اختياري)</label>
+            <input class="input" type="email" dir="ltr" name="البريد الإلكتروني" />
+          </div>
+          <div class="field">
+            <label data-fr="Date de naissance" data-ar="تاريخ الميلاد">تاريخ الميلاد</label>
+            <input class="input" type="date" dir="ltr" name="تاريخ الميلاد" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label data-fr="N° de passeport" data-ar="رقم جواز السفر">رقم جواز السفر</label>
+            <input class="input" type="text" dir="ltr" name="رقم جواز السفر" required />
+          </div>
+          <div class="field">
+            <label data-fr="Date d'expiration du passeport" data-ar="تاريخ انتهاء الجواز">تاريخ انتهاء الجواز</label>
+            <input class="input" type="date" dir="ltr" name="تاريخ انتهاء الجواز" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label data-fr="Nombre de voyageurs" data-ar="عدد المسافرين">عدد المسافرين</label>
+            <input class="input" type="number" dir="ltr" min="1" value="1" name="عدد المسافرين" required />
+          </div>
+          <div class="field">
+            <label data-fr="Date de voyage souhaitée" data-ar="تاريخ السفر المرغوب">تاريخ السفر المرغوب</label>
+            <input class="input" type="date" dir="ltr" name="تاريخ السفر المرغوب" required />
+          </div>
+        </div>
+        <div class="field">
+          <label data-fr="Documents (passeport, photos, PDF…)" data-ar="الوثائق (جواز السفر، صور، PDF…)">الوثائق (جواز السفر، صور، PDF…)</label>
+          <input type="hidden" role="uploadcare-uploader" id="visaDocs" data-public-key="7f2d6ea226a5ab97ef6e" data-multiple="true" data-multiple-max="10" data-tabs="file camera url" data-locale="fr" />
+        </div>
+        <div class="field">
+          <label data-fr="Remarques (optionnel)" data-ar="ملاحظات (اختياري)">ملاحظات (اختياري)</label>
+          <textarea class="input" rows="3" name="ملاحظات"></textarea>
+        </div>
+
+        <div class="wa-actions">
+          <button type="submit" class="btn btn--primary btn--block" id="visaSubmitBtn" data-fr="Envoyer la demande" data-ar="إرسال الطلب">إرسال الطلب</button>
+        </div>
+        <p class="visa-error" id="visaError" hidden data-fr="Une erreur s'est produite. Veuillez réessayer." data-ar="حدث خطأ. يرجى المحاولة مرة أخرى.">حدث خطأ. يرجى المحاولة مرة أخرى.</p>
+      </form>
+
+      <div class="visa-success" id="visaSuccess" hidden>
+        <div class="modal__icon" aria-hidden="true">✅</div>
+        <h3 data-fr="Demande envoyée !" data-ar="تم إرسال طلبك بنجاح!">تم إرسال طلبك بنجاح!</h3>
+        <p data-fr="Notre équipe vous contactera bientôt. Continuez sur WhatsApp pour finaliser." data-ar="سيتواصل معك فريقنا قريباً. تابع عبر واتساب لإتمام طلبك.">سيتواصل معك فريقنا قريباً. تابع عبر واتساب لإتمام طلبك.</p>
+        <a class="btn btn--whatsapp btn--block" id="visaWaLink" target="_blank" rel="noopener"><span class="wa-icon">💬</span> <span data-fr="Continuer sur WhatsApp" data-ar="متابعة عبر واتساب">متابعة عبر واتساب</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <img class="footer__logo" src="logo.png" alt="Djen-Djen Travel" width="48" height="48" />
+            <span class="footer__name" data-fr="Djen-Djen Travel" data-ar="جن جن للسياحة والأسفار">Djen-Djen Travel</span>
+          </div>
+          <p data-fr="Agence de tourisme à Jijel depuis 2017. Avec vous, avec soin, à chaque étape." data-ar="وكالة سياحة بجيجل منذ 2017. معك، وبعناية، في كل خطوة.">Agence de tourisme à Jijel depuis 2017. Avec vous, avec soin, à chaque étape.</p>
+        </div>
+        <div>
+          <h4 data-fr="Contact" data-ar="اتصل بنا">Contact</h4>
+          <ul class="footer__contact">
+            <li><span class="ico">📞</span> <a href="tel:+213661417571"><bdi>0661 41 75 71</bdi></a> <span class="footer__tag" data-fr="(Renseignements)" data-ar="(للاستفسار)">(للاستفسار)</span></li>
+            <li><span class="ico">📞</span> <a href="tel:+213673098932"><bdi>0673 09 89 32</bdi></a></li>
+            <li><span class="ico">☎️</span> <a href="tel:+213030547293"><bdi>030 54 72 93</bdi></a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-fr="Adresse" data-ar="العنوان">Adresse</h4>
+          <ul>
+            <li data-fr="Rue Larbi Ben M'hidi (السيرك)" data-ar="شارع العربي بن مهيدي (السيرك)">Rue Larbi Ben M'hidi (السيرك)</li>
+            <li data-fr="Jijel, Algérie" data-ar="جيجل، الجزائر">Jijel, Algérie</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-fr="© 2026 Djen-Djen Travel. Tous droits réservés." data-ar="© 2026 جن جن للسياحة والأسفار. جميع الحقوق محفوظة.">© 2026 Djen-Djen Travel. Tous droits réservés.</span>
+        <span data-fr="Omra · Voyages · Billets · Hôtels · Visas" data-ar="عمرة · رحلات · تذاكر · فنادق · تأشيرات">Omra · Voyages · Billets · Hôtels · Visas</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Uploadcare file uploader -->
+  <script>UPLOADCARE_PUBLIC_KEY = "7f2d6ea226a5ab97ef6e";</script>
+  <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8"></script>
+  <script src="js/main.js"></script>
+  <script src="js/visas.js?v=99"></script>
+  <script src="js/booking.js?v=5"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* =====================================================================
+   Djen-Djen Travel — Design Tokens
+   The single source of truth for colors, typography, spacing & radius.
+   Blue leads. Red = sharp accent only. Gold = premium moments only.
+   ===================================================================== */
+
+:root {
+  /* ---- Primary — Sky Blue (calm, sky, trust) ---- */
+  --blue-50:  #EAF6FC;
+  --blue-100: #CFEAF7;
+  --blue-200: #A6D9F0;
+  --blue-300: #6CC4E8;
+  --blue-400: #38ABDB;
+  --blue-500: #1488C2;  /* base */
+  --blue-700: #0E6691;
+  --blue-900: #0A4865;
+
+  /* ---- Gold — premium accent (use sparingly) ---- */
+  --gold-200: #F6EDD7;
+  --gold-400: #DDBE7E;
+  --gold-600: #B8893B;
+  --gold-800: #8A6A22;
+
+  /* ---- Red — sharp accent only (urgency / single CTA) ---- */
+  --red-100: #FBE9E9;
+  --red-300: #EE8A8A;
+  --red-500: #D62828;
+  --red-700: #9E1C1C;
+
+  /* ---- Neutrals (light mode) ---- */
+  --ink:      #15242E;   /* primary text */
+  --ink-soft: #4A5A64;   /* secondary text */
+  --line:     #E2E8EC;   /* hairlines / borders */
+  --surface:  #FFFFFF;   /* cards */
+  --bg:       #F8FBFD;   /* page background */
+  --bg-tint:  #EAF6FC;   /* soft blue wash */
+
+  /* ---- Typography ---- */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body:    "Manrope", system-ui, -apple-system, sans-serif;
+  --font-ar-display: "Amiri", "Cormorant Garamond", serif;
+  --font-ar-body:    "Tajawal", "Manrope", system-ui, sans-serif;
+
+  /* Active stacks — swapped by [dir] below */
+  --font-heading: var(--font-display);
+  --font-text:    var(--font-body);
+  --lh-body: 1.6;
+
+  /* ---- Spacing — 8px base scale ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-24: 96px;
+
+  /* ---- Radius — soft, never sharp ---- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-pill: 100px;
+
+  /* ---- Layout ---- */
+  --container: 1180px;
+  --gutter: 24px;
+
+  /* ---- Elevation ---- */
+  --shadow-sm: 0 1px 2px rgba(10, 72, 101, .06), 0 1px 3px rgba(10, 72, 101, .08);
+  --shadow-md: 0 4px 12px rgba(10, 72, 101, .08), 0 2px 6px rgba(10, 72, 101, .06);
+  --shadow-lg: 0 16px 40px rgba(10, 72, 101, .14);
+
+  --focus-ring: 0 0 0 3px rgba(20, 136, 194, .35);
+}
+
+/* Arabic activates the Arabic font stacks + roomier line-height */
+[dir="rtl"] {
+  --font-heading: var(--font-ar-display);
+  --font-text:    var(--font-ar-body);
+  --lh-body: 1.95; /* Arabic line-height ≥ 1.9 */
+}

@@ -1,0 +1,71 @@
+/* =====================================================================
+   Djen-Djen Travel — Voyages page
+   Static hero (single image), mirroring umrah.html's .omra-hero pattern.
+   Palette: sky blue #1488C2 · white · dark overlay. RTL-aware.
+   ===================================================================== */
+
+.voy-hero {
+  position: relative;
+  min-height: clamp(420px, 58vh, 560px);   /* sized to content — avoids a large empty band on tall screens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #0d1b2a;                       /* fallback while image loads */
+  background-image: url("../images/voyages-hero.jpg?v=2");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.voy-hero__overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(6,17,25,.55) 0%, rgba(6,17,25,.45) 45%, rgba(6,17,25,.74) 100%);
+}
+.voy-hero__inner {
+  position: relative; z-index: 2;
+  width: 100%;
+  padding-block: clamp(var(--sp-16), 12vh, var(--sp-24));
+  text-align: center;
+  color: #fff;
+}
+.voy-hero__eyebrow {
+  display: inline-block;
+  font-family: var(--font-text);
+  letter-spacing: .12em; text-transform: uppercase;
+  font-size: .8rem; font-weight: 700;
+  color: var(--blue-100);
+  padding: var(--sp-2) var(--sp-4);
+  border: 1px solid rgba(207, 234, 247, .45);
+  border-radius: var(--r-pill);
+  margin-bottom: var(--sp-6);
+  background: rgba(20, 136, 194, .18);
+  backdrop-filter: blur(4px);
+}
+[dir="rtl"] .voy-hero__eyebrow { letter-spacing: normal; }
+.voy-hero__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 6.5vw, 4.8rem);
+  line-height: 1.06;
+  margin: 0 0 var(--sp-6);
+  color: #fff;
+  text-shadow: 0 2px 28px rgba(0,0,0,.6);
+}
+.voy-hero__title .accent {
+  display: block;
+  background: linear-gradient(180deg, #EAF6FC, #6CC4E8 70%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.voy-hero__lede {
+  max-width: 56ch; margin: 0 auto var(--sp-8);
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  color: rgba(255,255,255,.92);
+  line-height: var(--lh-body);
+  text-shadow: 0 1px 12px rgba(0,0,0,.5);
+}
+.voy-hero__cta { display: flex; justify-content: center; }
+
+@media (max-width: 860px) {
+  .voy-hero { min-height: clamp(360px, 52vh, 480px); }
+}

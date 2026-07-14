@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Omra — Djen-Djen Travel | العمرة</title>
+  <meta name="description" content="Forfaits Omra avec Djen-Djen Travel, Jijel : vols, hôtels proches du Haram et accompagnement attentionné. Réservez votre Omra via WhatsApp." />
+  <meta name="description:ar" content="باقات العمرة مع وكالة جن جن للسياحة، جيجل: رحلات جوية، فنادق قريبة من الحرم، ومرافقة بعناية. احجز عمرتك عبر واتساب." />
+  <meta name="theme-color" content="#1488C2" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Omra — Djen-Djen Travel | العمرة" />
+  <meta property="og:locale" content="fr_DZ" />
+  <meta property="og:locale:alternate" content="ar_DZ" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/umrah.css?v=5" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html" aria-label="Djen-Djen Travel">
+        <img class="nav__logo" src="logo.png" alt="Djen-Djen Travel" width="44" height="44" />
+        <span class="nav__brand-text">
+          <span class="nav__brand-name" data-fr="Djen-Djen Travel" data-ar="جن جن للسياحة">Djen-Djen Travel</span>
+          <span class="nav__brand-sub" data-fr="Omra &amp; Voyages · depuis 2017" data-ar="عمرة ورحلات · منذ 2017">Omra &amp; Voyages · depuis 2017</span>
+        </span>
+      </a>
+      <nav aria-label="Principale">
+        <ul class="nav__links">
+          <li><a href="umrah.html" data-fr="Omra" data-ar="العمرة">Omra</a></li>
+          <li><a href="voyages.html" data-fr="Voyages" data-ar="الرحلات">Voyages</a></li>
+          <li><a href="index.html#req=billets" data-booking data-subject-fr="Demande de billet" data-subject-ar="طلب تذكرة سفر" data-fr="Billets" data-ar="تذاكر السفر">Billets</a></li>
+          <li><a href="index.html#req=hotels" data-booking data-subject-fr="Réservation d'hôtel" data-subject-ar="طلب حجز فندق" data-fr="Hôtels" data-ar="الفنادق">Hôtels</a></li>
+          <li><a href="index.html#req=visas" data-fr="Visas" data-ar="التأشيرات">Visas</a></li>
+          <li><a href="apropos.html" data-fr="À propos" data-ar="من نحن">À propos</a></li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <div class="lang-switch" role="group" aria-label="Language / اللغة">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="ar" aria-pressed="false">ع</button>
+        </div>
+        <a class="btn btn--urgent btn--book" href="#" data-booking data-subject-fr="Réservation Omra" data-subject-ar="طلب حجز عمرة" data-fr="Réserver" data-ar="احجز الآن">Réserver</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO — cinematic -->
+    <section class="omra-hero">
+      <div class="omra-hero__bg" aria-hidden="true"></div>
+      <div class="omra-hero__overlay" aria-hidden="true"></div>
+      <div class="container omra-hero__inner">
+        <p class="omra-hero__eyebrow" data-fr="Omra · La Mecque &amp; Médine" data-ar="العمرة · مكة والمدينة">Omra · La Mecque &amp; Médine</p>
+        <h1 class="omra-hero__title">
+          <span data-fr="La Omra," data-ar="العمرة،">La Omra,</span>
+          <span class="omra-hero__accent" data-fr="en toute sérénité" data-ar="في طمأنينة">en toute sérénité</span>
+        </h1>
+        <p class="omra-hero__lede" data-fr="Nous vous accompagnons dans le voyage le plus précieux de votre vie, avec soin à chaque étape — du visa au retour." data-ar="نرافقكم في أنفس رحلة في حياتكم، بعناية في كل خطوة — من التأشيرة إلى العودة.">
+          Nous vous accompagnons dans le voyage le plus précieux de votre vie, avec soin à chaque étape — du visa au retour.
+        </p>
+        <div class="omra-hero__cta">
+          <a class="btn btn--urgent btn--lg" href="#request" data-booking data-subject-fr="Réservation Omra" data-subject-ar="طلب حجز عمرة" data-fr="Demander ma Omra" data-ar="اطلب عمرتك">Demander ma Omra</a>
+          <a class="omra-btn-ghost" href="#packages" data-fr="Voir les forfaits" data-ar="شاهد الباقات">Voir les forfaits</a>
+        </div>
+        <p class="omra-hero__caption" data-fr="« Répondre à l'appel, le cœur apaisé. »" data-ar="«تلبية النداء، والقلب مطمئن.»">« Répondre à l'appel, le cœur apaisé. »</p>
+      </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-fr="Ce qui est inclus" data-ar="ما تتضمّنه الباقة">Ce qui est inclus</p>
+          <h2 data-fr="Un accompagnement complet" data-ar="مرافقة كاملة">Un accompagnement complet</h2>
+        </div>
+        <div class="omra-features">
+          <article class="omra-feature">
+            <div class="omra-feature__icon" aria-hidden="true"><i class="fas fa-plane-departure"></i></div>
+            <h3 data-fr="Vol direct &amp; transferts" data-ar="رحلة مباشرة وتنقّلات">Vol direct &amp; transferts</h3>
+            <p data-fr="Vol direct depuis l'aéroport de Constantine, et déplacements entre l'aéroport, les hôtels et les Lieux Saints." data-ar="رحلة مباشرة من مطار قسنطينة، والتنقّلات بين المطار والفنادق والحرمين الشريفين.">Vol direct depuis l'aéroport de Constantine, et déplacements entre l'aéroport, les hôtels et les Lieux Saints.</p>
+          </article>
+          <article class="omra-feature">
+            <div class="omra-feature__icon" aria-hidden="true"><i class="fas fa-hotel"></i></div>
+            <h3 data-fr="Hôtels proches du Haram" data-ar="فنادق قريبة من الحرم">Hôtels proches du Haram</h3>
+            <p data-fr="Hôtels 4★ à quelques pas des sanctuaires, pour prier sans fatigue." data-ar="فنادق 4★ على بُعد خطوات من الحرمين، لأداء الصلاة بلا عناء.">Hôtels 4★ à quelques pas des sanctuaires, pour prier sans fatigue.</p>
+          </article>
+          <article class="omra-feature">
+            <div class="omra-feature__icon" aria-hidden="true"><i class="fas fa-user-tie"></i></div>
+            <h3 data-fr="Accompagnateur dédié" data-ar="مرافق مختصّ">Accompagnateur dédié</h3>
+            <p data-fr="Un guide expérimenté à vos côtés pour les rites et l'assistance sur place." data-ar="مرشد ذو خبرة بجانبكم لأداء المناسك والمساعدة في عين المكان.">Un guide expérimenté à vos côtés pour les rites et l'assistance sur place.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES — premium card -->
+    <section class="section" id="packages" style="background: var(--bg-tint);">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-fr="Notre forfait Omra" data-ar="باقة العمرة">Notre forfait Omra</p>
+          <h2 data-fr="Forfait Omra — Juillet 2026" data-ar="باقة العمرة — جويلية 2026">Forfait Omra — Juillet 2026</h2>
+        </div>
+
+        <article class="omra-pkg">
+          <div class="omra-pkg__header">
+            <span class="omra-pkg__badge" data-fr="Juillet 2026" data-ar="جويلية 2026">Juillet 2026</span>
+            <h3 class="omra-pkg__title" data-fr="Forfait Omra — Juillet 2026" data-ar="باقة العمرة — جويلية 2026">Forfait Omra — Juillet 2026</h3>
+          </div>
+          <div class="omra-pkg__body">
+            <div class="omra-pkg__price">
+              <small data-fr="À partir de — par pers. (chambre quintuple, hors repas)" data-ar="يبدأ من — للشخص (غرفة خماسية، ما عدا الوجبات)">À partir de — par pers. (chambre quintuple, hors repas)</small>
+              <div class="omra-pkg__amount"><bdi>199 000</bdi> <span class="cur">DZD</span></div>
+            </div>
+
+            <p class="omra-tl-label" data-fr="Cinq départs — juillet &amp; août 2026" data-ar="خمسة انطلاقات — جويلية وأوت 2026">Cinq départs — juillet &amp; août 2026</p>
+            <div class="omra-timeline">
+              <div class="omra-tl-node" data-tab="0"><div class="omra-tl-dot"><bdi>27</bdi></div><span data-fr="juil." data-ar="جويلية">juil.</span></div>
+              <div class="omra-tl-line"></div>
+              <div class="omra-tl-node" data-tab="1"><div class="omra-tl-dot"><bdi>3</bdi></div><span data-fr="août" data-ar="أوت">août</span></div>
+              <div class="omra-tl-line"></div>
+              <div class="omra-tl-node" data-tab="2"><div class="omra-tl-dot"><bdi>10</bdi></div><span data-fr="août" data-ar="أوت">août</span></div>
+              <div class="omra-tl-line"></div>
+              <div class="omra-tl-node" data-tab="3"><div class="omra-tl-dot"><bdi>12</bdi></div><span data-fr="août" data-ar="أوت">août</span></div>
+              <div class="omra-tl-line"></div>
+              <div class="omra-tl-node" data-tab="4"><div class="omra-tl-dot"><bdi>31</bdi></div><span data-fr="août" data-ar="أوت">août</span></div>
+            </div>
+
+            <div class="omra-pkg__chips">
+              <span class="omra-chip"><span aria-hidden="true">✈️</span> <span data-fr="Vol direct depuis Constantine" data-ar="رحلة مباشرة من قسنطينة">Vol direct depuis Constantine</span></span>
+              <span class="omra-chip"><span aria-hidden="true">🕋</span> <span data-fr="500–700 m du Haram (La Mecque)" data-ar="500–700 م من الحرم (مكة)">500–700 m du Haram (La Mecque)</span></span>
+              <span class="omra-chip"><span aria-hidden="true">🕌</span> <span data-fr="Hôtels Al-Zahra (Médine)" data-ar="فنادق الزهراء (المدينة)">Hôtels Al-Zahra (Médine)</span></span>
+            </div>
+
+            <p class="omra-pkg__desc" data-fr="Cinq départs de juillet à août 2026. L'hôtel et les tarifs varient selon la date de départ — voir le détail ci-dessous." data-ar="خمسة انطلاقات من جويلية إلى أوت 2026. الفندق والأسعار يختلفان حسب تاريخ المغادرة — انظر التفاصيل أدناه.">Cinq départs de juillet à août 2026. L'hôtel et les tarifs varient selon la date de départ — voir le détail ci-dessous.</p>
+
+            <div class="omra-pkg__cta">
+              <a class="btn btn--urgent btn--lg" href="#request" data-booking data-subject-fr="Réservation Omra" data-subject-ar="طلب حجز عمرة" data-fr="Réserver" data-ar="احجز">Réserver</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PACKAGE DETAILS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-fr="Détails du forfait" data-ar="تفاصيل الباقة">Détails du forfait</p>
+          <h2 data-fr="Hôtels, options et restauration" data-ar="الفنادق والخيارات والإطعام">Hôtels, options et restauration</h2>
+        </div>
+
+        <div class="omra-hotels">
+          <article class="omra-hotel">
+            <div class="omra-hotel__media"><img src="images/hotel-afaq.jpg" alt="" loading="lazy" /></div>
+            <div class="omra-hotel__body">
+              <div class="omra-hotel__stars" aria-hidden="true">★★★</div>
+              <h3 data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</h3>
+              <span class="omra-hotel__badge"><span aria-hidden="true">📍</span> <span data-fr="≈ 700 m du Haram" data-ar="≈ 700 م من الحرم">≈ 700 m du Haram</span></span>
+              <p class="omra-hotel__desc" data-fr="À 700 m du Haram, à La Mecque." data-ar="على بُعد 700 م من الحرم، بمكة المكرمة.">À 700 m du Haram, à La Mecque.</p>
+              <p class="omra-hotel__catering"><span aria-hidden="true">🍽️</span> <span data-fr="Demi-pension en option : +25 000 DZD / personne." data-ar="نصف إعاشة اختيارية: +25,000 دج للشخص.">Demi-pension en option : +25 000 DZD / personne.</span></p>
+            </div>
+          </article>
+
+          <article class="omra-hotel">
+            <div class="omra-hotel__media"><img src="images/hotel-infiniti.webp" alt="" loading="lazy" /></div>
+            <div class="omra-hotel__body">
+              <div class="omra-hotel__stars" aria-hidden="true">★★★★</div>
+              <h3 data-fr="Hôtel Infinity" data-ar="فندق إنفينيتي">Hôtel Infinity</h3>
+              <span class="omra-hotel__badge"><span aria-hidden="true">📍</span> <span data-fr="≈ 500 m du Haram" data-ar="≈ 500 م من الحرم">≈ 500 m du Haram</span></span>
+              <p class="omra-hotel__desc" data-fr="À 500 m du Haram, à La Mecque." data-ar="على بُعد 500 م من الحرم، بمكة المكرمة.">À 500 m du Haram, à La Mecque.</p>
+              <p class="omra-hotel__catering"><span aria-hidden="true">🍽️</span> <span data-fr="Demi-pension en option : +35 000 DZD / personne." data-ar="نصف إعاشة اختيارية: +35,000 دج للشخص.">Demi-pension en option : +35 000 DZD / personne.</span></p>
+            </div>
+          </article>
+
+          <article class="omra-hotel">
+            <div class="omra-hotel__media"><img src="images/hotel-madinah.jpg" alt="" loading="lazy" /></div>
+            <div class="omra-hotel__body">
+              <div class="omra-hotel__stars" aria-hidden="true">★★★</div>
+              <h3 data-fr="Hôtels à Médine" data-ar="فنادق المدينة المنورة">Hôtels à Médine</h3>
+              <span class="omra-hotel__badge"><span aria-hidden="true">📍</span> <span data-fr="Proche Mosquée du Prophète" data-ar="قرب المسجد النبوي">Proche Mosquée du Prophète</span></span>
+              <p class="omra-hotel__desc" data-fr="Hôtels du groupe Al-Zahra, pour un séjour paisible près de la Mosquée du Prophète." data-ar="فنادق مجموعة الزهراء، لإقامة هادئة قرب المسجد النبوي الشريف.">Hôtels du groupe Al-Zahra, pour un séjour paisible près de la Mosquée du Prophète.</p>
+            </div>
+          </article>
+
+          <article class="omra-hotel">
+            <div class="omra-hotel__media"><img src="images/hotel-afaq.jpg" alt="" loading="lazy" /></div>
+            <div class="omra-hotel__body">
+              <div class="omra-hotel__stars" aria-hidden="true">★★★</div>
+              <h3 data-fr="Hôtel Al-Ayyam" data-ar="فندق الأيام">Hôtel Al-Ayyam</h3>
+              <span class="omra-hotel__badge"><span aria-hidden="true">📍</span> <span data-fr="≈ 700 m du Haram" data-ar="≈ 700 م من الحرم">≈ 700 m du Haram</span></span>
+              <p class="omra-hotel__desc" data-fr="À 700 m du Haram, à La Mecque (arrivée via Djeddah)." data-ar="على بُعد 700 م من الحرم، بمكة المكرمة (الوصول عبر جدة).">À 700 m du Haram, à La Mecque (arrivée via Djeddah).</p>
+              <p class="omra-hotel__catering"><span aria-hidden="true">🍽️</span> <span data-fr="Départ du 12 août — chambre collective disponible." data-ar="انطلاق 12 أوت — غرفة جماعية متوفّرة.">Départ du 12 août — chambre collective disponible.</span></p>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="omra-subhead" data-fr="Tarifs par personne, selon la date de départ" data-ar="الأسعار للشخص حسب تاريخ المغادرة">Tarifs par personne, selon la date de départ</h3>
+
+        <!-- ===== Per-departure pricing tabs =====
+             Each tab = one departure date, with its own hotel + room-tier table.
+             To edit: change a tab's <button> label and its matching
+             .omra-fare-panel[data-tab] (hotel name + rows). Cheapest tier gets
+             .is-best + the "أفضل سعر" badge. Tables handle a variable number
+             of room rows (e.g. 12 août has 3 tiers, no خماسية/رباعية). -->
+        <div class="omra-fares">
+          <div class="omra-fare-tabs" role="tablist" aria-label="Dates de départ / تواريخ المغادرة">
+            <button type="button" class="omra-fare-tab is-active" data-tab="0" role="tab" aria-selected="true"><bdi>27</bdi> <span data-fr="juil." data-ar="جويلية">juil.</span></button>
+            <button type="button" class="omra-fare-tab" data-tab="1" role="tab" aria-selected="false"><bdi>3</bdi> <span data-fr="août" data-ar="أوت">août</span></button>
+            <button type="button" class="omra-fare-tab" data-tab="2" role="tab" aria-selected="false"><bdi>10</bdi> <span data-fr="août" data-ar="أوت">août</span></button>
+            <button type="button" class="omra-fare-tab" data-tab="3" role="tab" aria-selected="false"><bdi>12</bdi> <span data-fr="août" data-ar="أوت">août</span></button>
+            <button type="button" class="omra-fare-tab" data-tab="4" role="tab" aria-selected="false"><bdi>31</bdi> <span data-fr="août" data-ar="أوت">août</span></button>
+          </div>
+
+          <!-- TAB 1 — 27 juillet · Afaq As-Sad -->
+          <div class="omra-fare-panel is-active" data-tab="0" role="tabpanel">
+            <p class="omra-fare-hotel"><span aria-hidden="true">🏨</span> <span data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</span></p>
+            <div class="omra-compare-wrap"><table class="omra-compare omra-fare-table">
+              <thead><tr><th class="col-room" data-fr="Chambre" data-ar="الغرفة">Chambre</th><th class="col-price" data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</th></tr></thead>
+              <tbody>
+                <tr class="is-best"><td class="cell-room"><span data-fr="Quintuple" data-ar="خماسية">Quintuple</span> <span class="omra-best-tag" data-fr="Meilleur prix" data-ar="أفضل سعر">Meilleur prix</span></td><td class="cell-price"><bdi>199 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Quadruple" data-ar="رباعية">Quadruple</td><td class="cell-price"><bdi>209 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Triple" data-ar="ثلاثية">Triple</td><td class="cell-price"><bdi>224 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Double" data-ar="ثنائية">Double</td><td class="cell-price"><bdi>249 000</bdi> <span class="cur">DZD</span></td></tr>
+              </tbody>
+            </table></div>
+          </div>
+
+          <!-- TAB 2 — 3 août · Afaq As-Sad -->
+          <div class="omra-fare-panel" data-tab="1" role="tabpanel" hidden>
+            <p class="omra-fare-hotel"><span aria-hidden="true">🏨</span> <span data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</span></p>
+            <div class="omra-compare-wrap"><table class="omra-compare omra-fare-table">
+              <thead><tr><th class="col-room" data-fr="Chambre" data-ar="الغرفة">Chambre</th><th class="col-price" data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</th></tr></thead>
+              <tbody>
+                <tr class="is-best"><td class="cell-room"><span data-fr="Quintuple" data-ar="خماسية">Quintuple</span> <span class="omra-best-tag" data-fr="Meilleur prix" data-ar="أفضل سعر">Meilleur prix</span></td><td class="cell-price"><bdi>215 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Quadruple" data-ar="رباعية">Quadruple</td><td class="cell-price"><bdi>225 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Triple" data-ar="ثلاثية">Triple</td><td class="cell-price"><bdi>245 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Double" data-ar="ثنائية">Double</td><td class="cell-price"><bdi>280 000</bdi> <span class="cur">DZD</span></td></tr>
+              </tbody>
+            </table></div>
+          </div>
+
+          <!-- TAB 3 — 10 août · Infinity -->
+          <div class="omra-fare-panel" data-tab="2" role="tabpanel" hidden>
+            <p class="omra-fare-hotel"><span aria-hidden="true">🏨</span> <span data-fr="Hôtel Infinity" data-ar="فندق إنفينيتي">Hôtel Infinity</span></p>
+            <div class="omra-compare-wrap"><table class="omra-compare omra-fare-table">
+              <thead><tr><th class="col-room" data-fr="Chambre" data-ar="الغرفة">Chambre</th><th class="col-price" data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</th></tr></thead>
+              <tbody>
+                <tr class="is-best"><td class="cell-room"><span data-fr="Quintuple" data-ar="خماسية">Quintuple</span> <span class="omra-best-tag" data-fr="Meilleur prix" data-ar="أفضل سعر">Meilleur prix</span></td><td class="cell-price"><bdi>245 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Quadruple" data-ar="رباعية">Quadruple</td><td class="cell-price"><bdi>255 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Triple" data-ar="ثلاثية">Triple</td><td class="cell-price"><bdi>285 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Double" data-ar="ثنائية">Double</td><td class="cell-price"><bdi>335 000</bdi> <span class="cur">DZD</span></td></tr>
+              </tbody>
+            </table></div>
+          </div>
+
+          <!-- TAB 4 — 12 août · Al-Ayyam (3 tiers only, incl. "جماعية") -->
+          <div class="omra-fare-panel" data-tab="3" role="tabpanel" hidden>
+            <p class="omra-fare-hotel"><span aria-hidden="true">🏨</span> <span data-fr="Hôtel Al-Ayyam" data-ar="فندق الأيام">Hôtel Al-Ayyam</span> <small class="omra-fare-hotel__note" data-fr="(≈ 700 m du Haram · via Djeddah)" data-ar="(≈ 700 م من الحرم · الوجهة: جدة)">(≈ 700 m du Haram · via Djeddah)</small></p>
+            <div class="omra-compare-wrap"><table class="omra-compare omra-fare-table">
+              <thead><tr><th class="col-room" data-fr="Chambre" data-ar="الغرفة">Chambre</th><th class="col-price" data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</th></tr></thead>
+              <tbody>
+                <tr class="is-best"><td class="cell-room"><span data-fr="Collective" data-ar="جماعية">Collective</span> <span class="omra-best-tag" data-fr="Meilleur prix" data-ar="أفضل سعر">Meilleur prix</span></td><td class="cell-price"><bdi>235 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Triple" data-ar="ثلاثية">Triple</td><td class="cell-price"><bdi>255 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Double" data-ar="ثنائية">Double</td><td class="cell-price"><bdi>295 000</bdi> <span class="cur">DZD</span></td></tr>
+              </tbody>
+            </table></div>
+          </div>
+
+          <!-- TAB 5 — 31 août · Afaq As-Sad -->
+          <div class="omra-fare-panel" data-tab="4" role="tabpanel" hidden>
+            <p class="omra-fare-hotel"><span aria-hidden="true">🏨</span> <span data-fr="Hôtel Afaq As-Sad" data-ar="فندق آفاق السد">Hôtel Afaq As-Sad</span></p>
+            <div class="omra-compare-wrap"><table class="omra-compare omra-fare-table">
+              <thead><tr><th class="col-room" data-fr="Chambre" data-ar="الغرفة">Chambre</th><th class="col-price" data-fr="Prix / pers." data-ar="السعر / للشخص">Prix / pers.</th></tr></thead>
+              <tbody>
+                <tr class="is-best"><td class="cell-room"><span data-fr="Quintuple" data-ar="خماسية">Quintuple</span> <span class="omra-best-tag" data-fr="Meilleur prix" data-ar="أفضل سعر">Meilleur prix</span></td><td class="cell-price"><bdi>225 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Quadruple" data-ar="رباعية">Quadruple</td><td class="cell-price"><bdi>235 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Triple" data-ar="ثلاثية">Triple</td><td class="cell-price"><bdi>255 000</bdi> <span class="cur">DZD</span></td></tr>
+                <tr><td class="cell-room" data-fr="Double" data-ar="ثنائية">Double</td><td class="cell-price"><bdi>285 000</bdi> <span class="cur">DZD</span></td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </div>
+
+        <div class="omra-info">
+          <h3 data-fr="Tarifs enfants &amp; informations" data-ar="أسعار الأطفال ومعلومات">Tarifs enfants &amp; informations</h3>
+          <ul class="omra-info__list">
+            <li data-fr="Enfants (2–12 ans) : −25 000 DZD sur le prix." data-ar="الأطفال (2–12 سنة): -25,000 دج من السعر.">Enfants (2–12 ans) : −25 000 DZD sur le prix.</li>
+            <li data-fr="Moins de 2 ans : 65 000 DZD (Afaq As-Sad) / 80 000 DZD (Infinity)." data-ar="أقل من سنتين: 65,000 دج (آفاق السد) / 80,000 دج (إنفينيتي).">Moins de 2 ans : 65 000 DZD (Afaq As-Sad) / 80 000 DZD (Infinity).</li>
+            <li data-fr="Demi-pension (La Mecque uniquement) : +25 000 / +35 000 DZD selon l'hôtel." data-ar="نصف إعاشة (مكة فقط): +25,000 / +35,000 دج حسب الفندق.">Demi-pension (La Mecque uniquement) : +25 000 / +35 000 DZD selon l'hôtel.</li>
+          </ul>
+          <p class="omra-info__note" data-fr="L'hôtel définitif est confirmé à la réservation. Restauration à La Mecque uniquement — non incluse à Médine." data-ar="يُؤكَّد الفندق النهائي عند الحجز. الإطعام في مكة فقط — لا يشمل المدينة المنورة.">L'hôtel définitif est confirmé à la réservation. Restauration à La Mecque uniquement — non incluse à Médine.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <img class="footer__logo" src="logo.png" alt="Djen-Djen Travel" width="48" height="48" />
+            <span class="footer__name" data-fr="Djen-Djen Travel" data-ar="جن جن للسياحة والأسفار">Djen-Djen Travel</span>
+          </div>
+          <p data-fr="Agence de tourisme à Jijel depuis 2017. Avec vous, avec soin, à chaque étape." data-ar="وكالة سياحة بجيجل منذ 2017. معك، وبعناية، في كل خطوة.">Agence de tourisme à Jijel depuis 2017. Avec vous, avec soin, à chaque étape.</p>
+        </div>
+        <div>
+          <h4 data-fr="Contact" data-ar="اتصل بنا">Contact</h4>
+          <ul class="footer__contact">
+            <li><span class="ico">📞</span> <a href="tel:+213661417571"><bdi>0661 41 75 71</bdi></a> <span class="footer__tag" data-fr="(Renseignements)" data-ar="(للاستفسار)">(للاستفسار)</span></li>
+            <li><span class="ico">📞</span> <a href="tel:+213673098932"><bdi>0673 09 89 32</bdi></a></li>
+            <li><span class="ico">☎️</span> <a href="tel:+213030547293"><bdi>030 54 72 93</bdi></a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-fr="Adresse" data-ar="العنوان">Adresse</h4>
+          <ul>
+            <li data-fr="Rue Larbi Ben M'hidi (السيرك)" data-ar="شارع العربي بن مهيدي (السيرك)">Rue Larbi Ben M'hidi (السيرك)</li>
+            <li data-fr="Jijel, Algérie" data-ar="جيجل، الجزائر">Jijel, Algérie</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-fr="© 2026 Djen-Djen Travel. Tous droits réservés." data-ar="© 2026 جن جن للسياحة والأسفار. جميع الحقوق محفوظة.">© 2026 Djen-Djen Travel. Tous droits réservés.</span>
+        <span data-fr="Omra · Voyages · Billets · Hôtels · Visas" data-ar="عمرة · رحلات · تذاكر · فنادق · تأشيرات">Omra · Voyages · Billets · Hôtels · Visas</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Uploadcare file uploader -->
+  <script>UPLOADCARE_PUBLIC_KEY = "7f2d6ea226a5ab97ef6e";</script>
+  <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js?v=5"></script>
+  <!-- Per-departure pricing tabs: date circles + tab strip switch the fare panel -->
+  <script>
+    (function () {
+      var tabs     = Array.prototype.slice.call(document.querySelectorAll('.omra-fare-tab'));
+      var panels   = Array.prototype.slice.call(document.querySelectorAll('.omra-fare-panel'));
+      var nodes    = Array.prototype.slice.call(document.querySelectorAll('.omra-tl-node'));
+      var heroAmt  = document.querySelector('.omra-pkg__amount bdi');
+      var heroNote = document.querySelector('.omra-pkg__price small');
+      var fares    = document.querySelector('.omra-fares');
+      if (!tabs.length || !panels.length) return;
+
+      // Keep the big hero price in sync with the active date's best (cheapest)
+      // room tier, reading straight from the pricing table so there is one
+      // single source of truth for the numbers.
+      function syncHeroPrice(panel) {
+        if (!heroAmt || !panel) return;
+        var bestRow  = panel.querySelector('tr.is-best');
+        if (!bestRow) return;
+        var priceBdi = bestRow.querySelector('.cell-price bdi');
+        var roomSpan = bestRow.querySelector('.cell-room [data-fr]');
+        if (priceBdi) heroAmt.textContent = priceBdi.textContent;
+        if (heroNote && roomSpan) {
+          var roomFr = roomSpan.getAttribute('data-fr');
+          var roomAr = roomSpan.getAttribute('data-ar');
+          heroNote.setAttribute('data-fr', 'À partir de — par pers. (chambre ' + roomFr.toLowerCase() + ', hors repas)');
+          heroNote.setAttribute('data-ar', 'يبدأ من — للشخص (غرفة ' + roomAr + '، ما عدا الوجبات)');
+          var isAr = document.documentElement.getAttribute('lang') === 'ar';
+          heroNote.innerHTML = isAr ? heroNote.getAttribute('data-ar') : heroNote.getAttribute('data-fr');
+        }
+      }
+
+      function activate(i) {
+        var activePanel = null;
+        tabs.forEach(function (t) {
+          var on = t.getAttribute('data-tab') === String(i);
+          t.classList.toggle('is-active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        panels.forEach(function (p) {
+          var on = p.getAttribute('data-tab') === String(i);
+          p.classList.toggle('is-active', on);
+          if (on) { p.removeAttribute('hidden'); activePanel = p; } else { p.setAttribute('hidden', ''); }
+        });
+        nodes.forEach(function (n) {
+          n.classList.toggle('is-active', n.getAttribute('data-tab') === String(i));
+        });
+        syncHeroPrice(activePanel);
+      }
+
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function () { activate(t.getAttribute('data-tab')); });
+      });
+      nodes.forEach(function (n) {
+        if (!n.hasAttribute('data-tab')) return;
+        n.setAttribute('role', 'button');
+        n.setAttribute('tabindex', '0');
+        function pick() {
+          activate(n.getAttribute('data-tab'));
+          // Bring the matching pricing tab into view so the full breakdown is visible.
+          if (fares && fares.scrollIntoView) fares.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        n.addEventListener('click', pick);
+        n.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); }
+        });
+      });
+
+      activate(0);
+    })();
+  </script>
+</body>
+</html>
