@@ -276,17 +276,14 @@
   padding: 2px var(--sp-2); border-radius: var(--r-pill); vertical-align: middle;
 }
 
-/* ---------- Per-departure pricing tabs ---------- */
-/* Timeline circles double as tab triggers */
-.omra-tl-node { cursor: pointer; transition: transform .15s; }
-.omra-tl-node:hover { transform: translateY(-3px); }
-.omra-tl-node.is-active .omra-tl-dot {
-  box-shadow: 0 0 0 4px var(--blue-100), 0 8px 18px rgba(14, 102, 145, .4);
-  transform: scale(1.06);
-}
-.omra-tl-node.is-active span { color: var(--blue-700); font-weight: 800; }
-
+/* ---------- Pricing table (simple / single-fare) ---------- */
 .omra-fares { margin-top: var(--sp-2); }
+.omra-fare-note {
+  margin: var(--sp-4) 0 0; padding: var(--sp-3) var(--sp-4);
+  background: var(--blue-50); border: 1px solid var(--blue-100);
+  border-radius: var(--r-md); color: var(--ink-soft); font-size: .95rem;
+  display: flex; align-items: center; gap: var(--sp-2);
+}
 .omra-fare-tabs {
   display: flex; flex-wrap: nowrap; gap: var(--sp-2);
   overflow-x: auto; padding-bottom: var(--sp-2);
